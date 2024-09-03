@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes blink {
+  0% { box-shadow: 0 0 10px rgba(238, 148, 147, 1); }
+  50% { box-shadow: 0 0 20px rgba(238, 148, 147, 0.2); }
+  100% { box-shadow: 0 0 10px rgba(238, 148, 147, 1); }
+}
+
+.glow {
+  animation: blink 0.5s infinite;
+}
