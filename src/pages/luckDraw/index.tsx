@@ -17,6 +17,7 @@ import { useBindDialog } from './component/useBindDialog'
 import music from '../../assets/video/music.mp3'
 import { addGlowEffect } from './core'
 import { useGainCouponNode } from './component/useGainCoupon'
+import jinbi from '@/assets/video/jinbi.mp3'
 
 export function LuckDraw() {
 	const myLucky = useRef<any>()
@@ -172,6 +173,12 @@ export function LuckDraw() {
 		audioRef?.current?.play?.()
 		myLucky.current.play()
 		const index = drawPrizeIndex()
+		if (index === 5) {
+			// @ts-ignore
+			document.getElementById('jinbi').muted = true
+			// @ts-ignore
+			document.getElementById('jinbi').play()
+		}
 		setTimeout(() => {
 			myLucky.current.stop(index)
 		}, 1500)
@@ -488,6 +495,12 @@ export function LuckDraw() {
 				className=" absolute -left-[300px] -top-[1000px]"
 				src={music}
 				ref={audioRef}
+			/>
+			<audio
+				id="jinbi"
+				className=" absolute -left-[400px] -top-[1000px]"
+				src={jinbi}
+				autoPlay={false}
 			/>
 		</div>
 	)
