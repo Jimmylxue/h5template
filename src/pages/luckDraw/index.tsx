@@ -1,7 +1,7 @@
 // @ts-ignore
 import { LuckyGrid } from '@lucky-canvas/react'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Dialog, Input, Toast } from 'react-vant'
+import { Button, Dialog, Input, Toast } from 'react-vant'
 import { useWinPrize } from './component/useWinPrize'
 import { PrizeList } from './const'
 import { useLocalStorageState } from 'ahooks'
@@ -18,11 +18,14 @@ import music from '../../assets/video/music.mp3'
 import { addGlowEffect } from './core'
 import { useGainCouponNode } from './component/useGainCoupon'
 import jinbi from '@/assets/video/jinbi.mp3'
+import { useTranslation } from 'react-i18next'
 
 export function LuckDraw() {
 	const myLucky = useRef<any>()
 	const navigate = useNavigate()
 	const location = useLocation()
+
+	const { t, i18n } = useTranslation()
 
 	const query = new URLSearchParams(location.search)
 	/**
@@ -198,6 +201,14 @@ export function LuckDraw() {
 				<div className=" text-center text-[#cb4664] text-md font-semibold mb-3">
 					你還有（{drawCount}）次抽獎機會
 				</div>
+				<div>{t('login.home')}</div>
+				<Button
+					onClick={() => {
+						i18n.changeLanguage('en')
+					}}
+				>
+					change
+				</Button>
 				{/* <div
 					className=" text-center text-sm mb-2 text-blue-400 underline"
 					onClick={() => {

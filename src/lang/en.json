@@ -1,0 +1,13 @@
+{
+  "login": {
+    "register": "注册",
+    "signin": "登录",
+    "home": "deno"
+  },
+  "footer": {
+    "text": "版权所有 @ React"
+  },
+  "home": {
+    "title": "首页"
+  }
+}
