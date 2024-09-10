@@ -1,8 +1,123 @@
 {
-  "login": {
-    "register": "注册",
-    "signin": "登录",
-    "home": "首页"
+  "luckDraw": {
+    "drawCount_before": "你還有",
+    "drawCount_after": "次抽獎機會",
+    "prizeRecord":"中獎记录",
+    "prize":"奖品",
+    "operator":"操作",
+    "toGain":"去领取",
+    "gainFirst":"請先領取上一個獎品",
+    "hasGain":"已领取",
+    "bindMember":"绑定會員",
+    "inputMemberCodeText":"輸入會員碼",
+    "pleaseInputText":"請輸入會員碼",
+    "pleaseBindMemberCode":"綁定NU NU會員碼領取",
+    "pleaseInputTreeMemberCode":"請輸入正確的會員碼",
+    "inputMemberPlaceholder":"輸入NU NU會員碼",
+    "bindMemberCodeSuccess":"會員碼綁定成功",
+    "bindModalTitle":"正確輸入NU NU app會員碼",
+    "editText":"修改",
+    "bindText":"绑定",
+    "changeSuccessText":"修改成功",
+    "confirmText":"確認",
+    "seeVideo":"查看教程"
+  },
+  "goodDetail":{
+    "saleText":"秒殺價 NT$",
+    "originPriceText":"原價 NT$",
+    "saleCount":"活動已搶 | 已售240件",
+    "goodPrize":"恭喜中獎",
+    "timeOut":"距離結束僅30分鐘",
+    "getPackagePay":"貨到付款",
+    "home":"首页",
+    "inputAddressBtn":"輸入地址領取"
+  },
+  "lineModal":{
+    "waiting":"請稍後",
+    "submitSuccess":"提交成功",
+    "jumpText":"正在跳轉line",
+    "arriveText":"7個工作天內到達",
+    "packageText":"追蹤包裹LINE",
+    "confirmText":"確認"
+  },
+  "ChatLineAbout":{
+    "kefuLine":"客服LINE",
+    "findKf":"請截圖此頁面去找客服核對",
+    "hasCopyText":"已複製id",
+    "quChat":"去聯絡"
+  },
+  "waitingNode":{
+    "waiting":"請稍後",
+    "jumpText":"正在跳轉line"
+  },
+  "bindDialog":{
+    "toBind":"去綁定領取"
+  },
+  "gainCoupon":{
+    "gainSuccess":"領取成功",
+    "chatKf":"請聯絡客服"
+  },
+  "winPrize":{
+    "gongxiText":"恭喜您中獎啦",
+    "noGoalText":"很遺憾未中獎",
+    "toGain":"去领取",
+    "onceAgain":"再抽一次 - 剩餘",
+    "count":"次",
+    "bindAppText":"绑定NU NU app會員碼領取",
+    "sorryText":"感謝參與"
+  },
+  "addressSelect":{
+    "pleaseText":"填寫收貨地址",
+    "subSuccess":"填寫成功，等待送貨上門",
+    "submitText":"提交",
+    "confirmText":"確定",
+    "phoneLabel":"手機號",
+    "phoneRule":"請填寫手機號碼",
+    "userNameLabel":"聯絡人",
+    "userNameRule":"請填寫聯絡人",
+    "detailLabel":"詳細地址",
+    "detailRule":"請填寫詳細地址",
+    "shopLabel":"詳細地址",
+    "shopRule":"請填寫詳細地址",
+    "cityLabel":"區域",
+    "cityRule":"請選擇區域",
+    "cancelText":"取消",
+    "placeHolderText":"請選擇"
+  },
+  "prizeList":{
+    "powerBank":{
+      "giftName":"NT$15貨到付款",
+      "name":"KC認證行動充10000毫安",
+      "colorAttrName":"颜色",
+      "colorAttrValue":"随机颜色",
+      "capacityAttrName":"容量",
+      "capacityAttrValue":"10000毫安",
+      "desc1":"時尚優雅，多種顏色隨機出貨",
+      "desc2":"相容市面絕大多數手機快充協議",
+      "desc3":"10000毫安超大容量"
+    },
+    "oneZhe":{
+      "giftName":"NT$3960貨到付款",
+      "name":"【官方正品】Apple/蘋果 iPhone 15 全新未拆封",
+      "colorAttrName":"颜色",
+      "colorAttrValue1":"黑色",
+      "colorAttrValue2":"粉色",
+      "colorAttrValue3":"黄色",
+      "colorAttrValue4":"蓝色",
+      "colorAttrValue5":"绿色",
+      "storageAttrName":"存储",
+      "storageAttrValue":"256G-39600",
+      "desc1":"6.7英寸超視網膜XDR顯示屏，ProMotion自適應刷新率技術",
+      "desc2":"露動島功能和iPhone互動的新方式",
+      "desc3":"具備抗水性能，在6米深的水下停留時間最長可達30分鐘",
+      "desc4":"4800萬主摄、1200萬超廣角及1200萬長焦三攝，4K視频拍摄",
+      "desc5":"1200萬像素前置原深感攝像頭，支持人像模式智能HDR",
+      "desc6":"A17Pro芯片，6核中央處理器，6核圖形處理器，16核網絡引擎",
+      "desc7":"面容ID，SOS緊急聯絡車祸檢测，USB-C接口"
+    },
+    "NuNuTicker":{
+      "giftName":"Nu Nu-折價卷NT$100"
+    }
   },
   "footer": {
     "text": "版权所有 @ React"

@@ -6,10 +6,12 @@ import { lineBox } from './lineModalShow'
 import { useSystemConfig } from '../../../api/address'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export const LineModal = observer(() => {
 	const [showWait, setShowWait] = useState<boolean>(false)
 	const navigate = useNavigate()
+	const { t } = useTranslation()
 
 	const { data } = useSystemConfig({
 		queryKey: ['systemConfig'],
@@ -29,24 +31,28 @@ export const LineModal = observer(() => {
 			>
 				<div className=" w-[250px] rounded-md py-4">
 					<div className=" text-center text-lg font-bold">
-						{showWait ? '請稍後' : '提交成功'}
+						{showWait ? t('lineModal.waiting') : t('lineModal.submitSuccess')}
 					</div>
 					{showWait ? (
 						<>
 							<div className=" flex flex-col items-center justify-center my-2">
 								<img src={wait} className=" size-[100px]" alt="" />
 							</div>
-							<div className=" text-center mt-2 text-sm">正在跳轉line</div>
+							<div className=" text-center mt-2 text-sm">
+								{t('lineModal.jumpText')}
+							</div>
 						</>
 					) : (
 						<>
 							<div className=" flex flex-col items-center justify-center">
 								<img src={kuaidi} className=" size-[100px]" alt="" />
-								<div className=" text-xs text-gray-600">7個工作天內到達</div>
+								<div className=" text-xs text-gray-600">
+									{t('lineModal.arriveText')}
+								</div>
 							</div>
 							{lineBox.canNavigate && (
 								<div className=" text-center mt-2 text-sm">
-									追蹤包裹LINE:{LineCode}
+									{t('lineModal.packageText')}:{LineCode}
 								</div>
 							)}
 						</>
@@ -69,7 +75,7 @@ export const LineModal = observer(() => {
 									}, 300)
 								}}
 							>
-								確認
+								{t('lineModal.confirmText')}
 							</Button>
 						</div>
 					)}

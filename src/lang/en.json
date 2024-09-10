@@ -1,8 +1,122 @@
 {
-  "login": {
-    "register": "注册",
-    "signin": "登录",
-    "home": "deno"
+  "luckDraw": {
+    "drawCount_before": "",
+    "drawCount_after": "Residual opportunities",
+    "prizeRecord":"Winning record",
+    "prize":"Prize",
+    "operator":"operation",
+    "toGain":"Get it",
+    "gainFirst":"Please claim the previous prize first",
+    "hasGain":"Obtained",
+    "bindMember":"Bind members",
+    "inputMemberCodeText":"Enter membership code",
+    "pleaseInputText":"Please bind the bites membership code",
+    "pleaseBindMemberCode":"Please bind the bites membership code",
+    "pleaseInputTreeMemberCode":"Please bind the bites membership code",
+    "inputMemberPlaceholder":"Enter membership code",
+    "bindMemberCodeSuccess":"Binding successful",
+    "bindModalTitle":"Binding membership code",
+    "editText":"Binding",
+    "bindText":"Binding",
+    "changeSuccessText":"Binding successful",
+    "seeVideo":"View tutorial",
+    "confirmText":"Binding"
+  },
+  "goodDetail":{
+    "saleText":"Flash NT$",
+    "originPriceText":"Original NT$",
+    "saleCount":"Snapped up | 240 pieces sold",
+    "goodPrize":"Congratulations",
+    "timeOut":"30 min to the end",
+    "getPackagePay":"Cash on Delivery",
+    "home":"Home",
+    "inputAddressBtn":"Enter address to pick up"
+  },
+  "lineModal":{
+    "waiting":"waiting~",
+    "submitSuccess":"submitSuccess~",
+    "jumpText":"jumpText~",
+    "arriveText":"arriveText~",
+    "packageText":"packageText~",
+    "confirmText":"confirmText~"
+  },
+  "ChatLineAbout":{
+    "kefuLine":"facebook",
+    "findKf":"Take a screenshot of this page and contact customer service for verification",
+    "hasCopyText":"hasCopyText~",
+    "quChat":"Link"
+  },
+  "waitingNode":{
+    "waiting":"waiting~",
+    "jumpText":"jumpText~"
+  },
+  "bindDialog":{
+    "toBind":"Connect and get it"
+  },
+  "gainCoupon":{
+    "gainSuccess":"Successfully received",
+    "chatKf":"Please contact customer service"
+  },
+  "winPrize":{
+    "gongxiText":"Congratulations on winning the prize",
+    "noGoalText":"Unfortunately, I didn't win the prize",
+    "toGain":"Go and collect it",
+    "onceAgain":"Draw again, the remaining",
+    "count":"times",
+    "bindAppText":"Bind the app membership code to receive it",
+    "sorryText":"Thank you for participating"
+  },
+  "addressSelect":{
+    "pleaseText":"Fill in the delivery address",
+    "subSuccess":"Fill in successfully, waiting for delivery",
+    "submitText":"Submit",
+    "confirmText":"Confirm",
+    "phoneLabel":"Phone",
+    "phoneRule":"Please enter phone number",
+    "userNameLabel":"Name",
+    "userNameRule":"Please enter name",
+    "detailLabel":"Address",
+    "detailRule":"Please enter street address & house number",
+    "shopLabel":"Postcode",
+    "shopRule":"Please enter Postcode",
+    "cityLabel":"City",
+    "cityRule":"Please choose city",
+    "cancelText":"Cancel",
+    "placeHolderText":"Choose"
+  },
+  "prizeList":{
+    "powerBank":{
+      "giftName":"RM3 COD",
+      "name":"KC certified mobile charger 10000 mAh",
+      "colorAttrName":"Color",
+      "colorAttrValue":"Random Color",
+      "capacityAttrName":"Capacity",
+      "capacityAttrValue":"10000 mAh",
+      "desc1":"Fashionable and elegant, multiple colors shipped randomly",
+      "desc2":"Compatible with most mobile phone fast charging protocols on the market",
+      "desc3":"10000 mAh large capacity"
+    },
+    "oneZhe":{
+      "giftName":"RM560 COD",
+      "colorAttrName":"Color",
+      "colorAttrValue1":"Black",
+      "colorAttrValue2":"Pink",
+      "colorAttrValue3":"Yellow",
+      "colorAttrValue4":"Blue",
+      "colorAttrValue5":"Green",
+      "storageAttrName":"Storage",
+      "storageAttrValue":"256G-39600",
+      "desc1":"6.7-inch Super Retina XDR display, ProMotion adaptive refresh rate technology",
+      "desc2":"New ways to interact with the Ludo Island feature and iPhone",
+      "desc3":"Water-resistant, can stay underwater for up to 30 minutes at a depth of 6 meters",
+      "desc4":"48MP main camera, 12MP ultra-wide-angle camera and 12MP telephoto camera, 4K video shooting",
+      "desc5":"12-megapixel front-facing camera with TrueDepth, supporting portrait mode and smart HDR",
+      "desc6":"A17 Pro chip, 6-core CPU, 6-core GPU, 16-core network engine",
+      "desc7":"Face ID, SOS emergency contact car accident detection, USB-C interface"
+    },
+    "NuNuTicker":{
+      "giftName":"NT $100 coupon"
+    }
   },
   "footer": {
     "text": "版权所有 @ React"

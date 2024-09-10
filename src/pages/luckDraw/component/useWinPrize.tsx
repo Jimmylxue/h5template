@@ -3,9 +3,11 @@ import { useRef, useState } from 'react'
 import { Overlay } from 'react-vant'
 import box from '@/assets/img/box.gif'
 import flower from '@/assets/img/flower.gif'
+import { useTranslation } from 'react-i18next'
 
 export function useWinPrize() {
 	const [show, setShow] = useState<boolean>(false)
+	const { t } = useTranslation()
 
 	const [boxShow, setBoxShow] = useState<boolean>(false)
 	const [modalShow, setModalShow] = useState<boolean>(false)
@@ -87,7 +89,9 @@ export function useWinPrize() {
 					{modalShow && (
 						<div className="bg-[url('/src/assets/img/dialogBg.png')] bg-[length:100%_100%] bg-no-repeat w-3/4 pb-5 rounded-lg relative">
 							<div className=" text-[#d2555c] text-center text-[22px] font-semibold mt-8 mb-2">
-								{isGoalPrize ? '恭喜您中獎啦' : '很遺憾未中獎'}
+								{isGoalPrize
+									? t('winPrize.gongxiText')
+									: t('winPrize.noGoalText')}
 							</div>
 							<div className=" flex flex-col justify-center items-center">
 								<div
@@ -125,14 +129,14 @@ export function useWinPrize() {
 							>
 								<div className="bg-[url('/src/assets/img/bigButtonBg.png')] text-sm flex justify-center items-center px-3 py-1 text-[#905224] text-[19px] mx-auto rounded-2xl mt-2 w-[254px] h-[54px] bg-contain">
 									{canShowAddAddress.current
-										? '去领取'
-										: `再抽一次 - 剩餘(${localStorage.getItem(
+										? t('winPrize.toGain')
+										: `${t('winPrize.onceAgain')} ${localStorage.getItem(
 												'snow-draw-count'
-										  )})次`}
+										  )} ${t('winPrize.count')}`}
 								</div>
 								{canShowAddAddress.current && (
 									<div className=" text-sm text-center mt-4 text-[#999999]">
-										绑定NU NU app會員碼領取
+										{t('winPrize.bindAppText')}
 									</div>
 								)}
 							</div>

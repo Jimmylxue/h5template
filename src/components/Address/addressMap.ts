@@ -1,3 +1,5 @@
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+
 const city_list = {
 	'710100': '台北市',
 	'710200': '高雄市',
@@ -23,4 +25,23 @@ const city_list = {
 	'712800': '連江縣',
 }
 
-export const cityArr = Object.values(city_list)
+const en_list = [
+	'√Johor',
+	'Kedah',
+	'Kelantan',
+	'Melaka',
+	'Negeri Sembilan',
+	'Pahang',
+	'Perak',
+	'Perlis',
+	'Pulau Pinang',
+	'Selangor',
+	'Terengganu',
+]
+
+const cityMap = {
+	zh: Object.values(city_list),
+	en: en_list,
+}
+
+export const cityArr = cityMap[lang]

@@ -6,8 +6,11 @@ import { ImagePreloader } from './components/ImagePreloader'
 import box from '@/assets/img/box.gif'
 import flower from '@/assets/img/flower.gif'
 import jinbi from '@/assets/video/jinbi.mp3'
+import { useLanguage } from './lang/useLanguage'
 
 function App() {
+	useLanguage()
+
 	return (
 		<>
 			<ImagePreloader src={box} />

@@ -5,6 +5,8 @@ import zh from './zh.json'
 // //英文语言包
 import en from './en.json'
 
+const lang = import.meta.env.VITE_APP_LANGUAGE
+
 const resources = {
 	en: {
 		translation: en,
@@ -16,7 +18,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
 	resources,
-	lng: 'zh', //设置默认语言（可用三元表达式进行动态切换）
+	lng: lang, //设置默认语言（可用三元表达式进行动态切换）
 	interpolation: {
 		escapeValue: false,
 	},

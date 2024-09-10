@@ -1,16 +1,18 @@
 import { useSystemConfig } from '../../../api/address'
 import { useWaitingNode } from './WaitingNode'
-import kflogo from '../../../assets/img/kflogo.png'
 import { useEffect } from 'react'
 import { addGlowEffect } from '../core'
 import { Toast } from 'react-vant'
 import { copyToClipboard } from '../../../utils'
+import { useTranslation } from 'react-i18next'
+import { kflogo } from '@/assets/index'
 
 export function ChatLineAbout() {
 	const { data } = useSystemConfig({
 		queryKey: ['systemConfig'],
 		refetchOnWindowFocus: false,
 	})
+	const { t } = useTranslation()
 
 	const { node: waitingNode } = useWaitingNode()
 
@@ -30,15 +32,15 @@ export function ChatLineAbout() {
 					<div className=" w-3/4 text-xs flex justify-start items-center pl-2 relative">
 						<img
 							src={kflogo}
-							className=" w-[44px] h-[38px] rounded-full z-2  "
+							className=" w-[44px] h-[44px] rounded-full z-2  "
 							alt=""
 						/>
 						<div className=" whitespace-nowrap ml-2">
 							<div className=" text-[#FF681D] text-xs font-bold mb-1">
-								客服LINE：{data?.result?.[0]?.lineCode}
+								{t('ChatLineAbout.kefuLine')}：{data?.result?.[0]?.lineCode}
 							</div>
-							<div className=" text-[#A2846E] text-xs">
-								請截圖此頁面去找客服核對
+							<div className=" text-[#A2846E] text-[10px] w-[150px] whitespace-normal">
+								{t('ChatLineAbout.findKf')}
 							</div>
 						</div>
 					</div>
@@ -50,7 +52,11 @@ export function ChatLineAbout() {
 								navigator.clipboard
 									.writeText(data?.result?.[0]?.lineCode!)
 									.then(function () {
-										Toast.info(`已複製id：${data?.result?.[0]?.lineCode}`)
+										Toast.info(
+											`${t('ChatLineAbout.hasCopyText')}：${
+												data?.result?.[0]?.lineCode
+											}`
+										)
 									})
 									.catch(function (err) {
 										console.error('複製失败:', err)
@@ -58,7 +64,11 @@ export function ChatLineAbout() {
 							} catch (error) {
 								console.log('error', error)
 								copyToClipboard(data?.result?.[0]?.lineCode!)
-								Toast.info(`已複製id：${data?.result?.[0]?.lineCode}`)
+								Toast.info(
+									`${t('ChatLineAbout.hasCopyText')}：${
+										data?.result?.[0]?.lineCode
+									}`
+								)
 							}
 							/**
 							 * confirmEndLine 是跳转line 的埋点
@@ -73,7 +83,7 @@ export function ChatLineAbout() {
 							// }, 1500)
 						}}
 					>
-						去聯絡
+						{t('ChatLineAbout.quChat')}
 					</button>
 				</div>
 			</div>

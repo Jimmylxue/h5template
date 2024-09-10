@@ -13,8 +13,10 @@ import { addressParams, useUploadAddress } from '../../api/address'
 import { useLocalStorageState } from 'ahooks'
 import { useLocation } from 'react-router-dom'
 import { lineBox } from '../../pages/goodDetail/components/lineModalShow'
+import { useTranslation } from 'react-i18next'
 
 export function useAddressSelect() {
+	const { t } = useTranslation()
 	const location = useLocation()
 	const query = new URLSearchParams(location.search)
 	const goodId = query.get('goodId')
@@ -45,7 +47,7 @@ export function useAddressSelect() {
 		<Popup
 			visible={show}
 			closeable
-			title="填寫收貨地址"
+			title={t('addressSelect.pleaseText')}
 			position="bottom"
 			round
 			onClose={() => {
@@ -66,7 +68,7 @@ export function useAddressSelect() {
 						}
 						await mutateAsync(params)
 						fbq('trackCustom', 'confirmAddress')
-						Toast.success('填寫成功，等待送貨上門')
+						Toast.success(t('addressSelect.subSuccess'))
 						setGoodAddress(params)
 						setShow(false)
 						setTimeout(() => {
@@ -77,7 +79,7 @@ export function useAddressSelect() {
 						!goodAddress ? (
 							<div className=" bg-white" style={{ margin: '16px 16px 0' }}>
 								<Button round nativeType="submit" type="danger" block>
-									提交
+									{t('addressSelect.submitText')}
 								</Button>
 							</div>
 						) : (
@@ -95,7 +97,7 @@ export function useAddressSelect() {
 										lineBox.showModal(false)
 									}}
 								>
-									確定
+									{t('addressSelect.confirmText')}
 								</Button>
 							</div>
 						)
@@ -104,51 +106,57 @@ export function useAddressSelect() {
 					<Form.Item
 						key="phone"
 						name="phone"
-						label="手機號"
-						rules={[{ required: true, message: '請填寫手機號碼' }]}
+						label={t('addressSelect.phoneLabel')}
+						rules={[{ required: true, message: t('addressSelect.phoneRule') }]}
 					>
-						<Input placeholder="請輸入手機號" />
+						<Input placeholder={t('addressSelect.phoneRule')} />
 					</Form.Item>
 					<Form.Item
 						key="username"
 						name="username"
-						label="聯絡人"
-						rules={[{ required: true, message: '請填寫聯絡人' }]}
+						label={t('addressSelect.userNameLabel')}
+						rules={[
+							{ required: true, message: t('addressSelect.userNameRule') },
+						]}
 					>
-						<Input placeholder="請輸入聯絡人" />
+						<Input placeholder={t('addressSelect.userNameRule')} />
 					</Form.Item>
 					<Form.Item
 						name="city"
-						label="區域"
+						label={t('addressSelect.cityLabel')}
 						trigger="onConfirm"
-						rules={[{ required: true, message: '請選擇區域' }]}
+						rules={[{ required: true, message: t('addressSelect.cityRule') }]}
 						onClick={(_, actions: any) => actions.current?.open()}
 					>
 						<Picker
 							popup
 							columns={cityArr}
-							confirmButtonText="確認"
-							cancelButtonText="取消"
-							placeholder="請選擇"
+							confirmButtonText={t('addressSelect.confirmText')}
+							cancelButtonText={t('addressSelect.cancelText')}
+							placeholder={t('addressSelect.placeHolderText')}
 						>
 							{val =>
-								val ? <Typography.Text>{val}</Typography.Text> : '請選擇區域'
+								val ? (
+									<Typography.Text>{val}</Typography.Text>
+								) : (
+									t('addressSelect.placeHolderText')
+								)
 							}
 						</Picker>
 					</Form.Item>
 					<Form.Item
 						name="detail"
-						label="詳細地址"
-						rules={[{ required: true, message: '請填寫詳細地址' }]}
+						label={t('addressSelect.detailLabel')}
+						rules={[{ required: true, message: t('addressSelect.detailRule') }]}
 					>
-						<Input.TextArea placeholder="地址一定要詳細" />
+						<Input.TextArea placeholder={t('addressSelect.detailRule')} />
 					</Form.Item>
 					<Form.Item
 						name="shop"
-						label="超商門市"
-						rules={[{ required: true, message: '請輸入7-11/全家門市' }]}
+						label={t('addressSelect.shopLabel')}
+						rules={[{ required: true, message: t('addressSelect.shopRule') }]}
 					>
-						<Input placeholder="請輸入7-11/全家門市" />
+						<Input placeholder={t('addressSelect.shopRule')} />
 					</Form.Item>
 				</Form>
 			}

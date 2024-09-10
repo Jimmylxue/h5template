@@ -7,8 +7,10 @@ import { useEffect, useMemo, useState } from 'react'
 import { PrizeList } from '../luckDraw/const'
 import { cloneDeep } from 'lodash-es'
 import { LineModal } from './components/lineModal'
+import { useTranslation } from 'react-i18next'
 
 export function GoodDetail() {
+	const { t } = useTranslation()
 	const { addressNode, showAddressNode } = useAddressSelect()
 	const location = useLocation()
 	const navigate = useNavigate()
@@ -59,19 +61,24 @@ export function GoodDetail() {
 					<div className=" flex flex-col flex-grow justify-center pl-4 font-light bg-[#e94b57] pb-2">
 						<div className=" flex items-center">
 							<div>
-								秒殺價 NT$
+								{t('goodDetail.saleText')}
 								<span className=" text-2xl">{nowSalePrice}</span>
-								<span className=" ml-1">原價 NT${good.originPrice}</span>
+								<span className=" ml-1">
+									{t('goodDetail.originPriceText')}
+									{good.originPrice}
+								</span>
 							</div>
 						</div>
 						<div className=" text-[#fae2e4] font-extralight">
-							活動已搶 | 已售240件
+							{t('goodDetail.saleCount')}
 						</div>
 					</div>
 					<div className=" flex flex-col justify-center px-4 bg-[#f5d661]">
-						<div className=" text-[#7b382d] font-bold text-sm">恭喜中獎</div>
+						<div className=" text-[#7b382d] font-bold text-sm">
+							{t('goodDetail.goodPrize')}
+						</div>
 						<div className=" text-[#84531f] font-extralight">
-							距離結束僅30分鐘
+							{t('goodDetail.timeOut')}
 						</div>
 					</div>
 				</div>
@@ -79,7 +86,7 @@ export function GoodDetail() {
 					{good.name}
 					<span>
 						<Tag className=" px-2 py-1 ml-2" type="success">
-							貨到付款
+							{t('goodDetail.getPackagePay')}
 						</Tag>
 					</span>
 				</div>
@@ -129,14 +136,14 @@ export function GoodDetail() {
 				<ActionBar>
 					<ActionBar.Icon
 						icon={<WapHomeO />}
-						text="首頁"
+						text={t('goodDetail.home')}
 						onClick={() => {
 							navigate(-1)
 						}}
 					/>
 					<ActionBar.Button
 						type="danger"
-						text="輸入地址領取"
+						text={t('goodDetail.inputAddressBtn')}
 						onClick={() => {
 							fbq('trackCustom', 'showAddress')
 							showAddressNode()

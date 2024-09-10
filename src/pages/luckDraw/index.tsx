@@ -1,15 +1,14 @@
 // @ts-ignore
 import { LuckyGrid } from '@lucky-canvas/react'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Button, Dialog, Input, Toast } from 'react-vant'
+import { Dialog, Input, Toast } from 'react-vant'
 import { useWinPrize } from './component/useWinPrize'
 import { PrizeList } from './const'
 import { useLocalStorageState } from 'ahooks'
 import { cloneDeep } from 'lodash-es'
 import { useLocation, useNavigate } from 'react-router-dom'
-import drawbtn from '../../assets/img/button.png'
 import { useVideoModal } from '../../components/VideoModal'
-import bgTop from '../../assets/img/bg-top.png'
+import { bgTop, drawBtn, modalTitle } from '@/assets/index'
 import classNames from 'classnames'
 import { ChatLineAbout } from './component/ChatLineAbout'
 import jiaocheng from '../../assets/img/jiaocheng.png'
@@ -19,13 +18,18 @@ import { addGlowEffect } from './core'
 import { useGainCouponNode } from './component/useGainCoupon'
 import jinbi from '@/assets/video/jinbi.mp3'
 import { useTranslation } from 'react-i18next'
+import { LuckDrawBlocks } from '../../lang/langOtherConfig'
+
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+
+const isNotZh = lang !== 'zh'
 
 export function LuckDraw() {
 	const myLucky = useRef<any>()
 	const navigate = useNavigate()
 	const location = useLocation()
 
-	const { t, i18n } = useTranslation()
+	const { t } = useTranslation()
 
 	const query = new URLSearchParams(location.search)
 	/**
@@ -199,16 +203,9 @@ export function LuckDraw() {
 			<img src={bgTop} className=" h-[250px] w-full" alt="" />
 			<div className=" py-6 -mt-6 ">
 				<div className=" text-center text-[#cb4664] text-md font-semibold mb-3">
-					你還有（{drawCount}）次抽獎機會
+					{t('luckDraw.drawCount_before')}（{drawCount}）
+					{t('luckDraw.drawCount_after')}
 				</div>
-				<div>{t('login.home')}</div>
-				<Button
-					onClick={() => {
-						i18n.changeLanguage('en')
-					}}
-				>
-					change
-				</Button>
 				{/* <div
 					className=" text-center text-sm mb-2 text-blue-400 underline"
 					onClick={() => {
@@ -225,11 +222,7 @@ export function LuckDraw() {
 						ref={myLucky}
 						width="92vw"
 						height="92vw"
-						blocks={[
-							{ padding: '10px', background: '#fff', borderRadius: 15 },
-							{ padding: '10px', background: '#FD8EAE', borderRadius: 15 },
-							// { padding: '10px', background: '#f2da86', borderRadius: 15 },
-						]}
+						blocks={LuckDrawBlocks}
 						prizes={PrizeList}
 						buttons={[
 							{
@@ -238,7 +231,7 @@ export function LuckDraw() {
 								background: '#eedb91',
 								imgs: [
 									{
-										src: drawbtn,
+										src: drawBtn,
 										width: '102px',
 										height: '102px',
 										top: 1,
@@ -300,13 +293,24 @@ export function LuckDraw() {
 					></LuckyGrid>
 				</div>
 				<div className=" px-4 relative mt-6">
-					<div className="bg-[url('assets/img/modalTitle.png')] absolute -translate-x-1/2 px-3 rounded -top-2 w-[164px] h-[43px] z-[1] left-1/2 bg-contain bg-no-repeat text-white flex justify-center items-center text-xl">
-						中獎记录
+					<div
+						className={`absolute px-3 rounded -top-2  z-[1] bg-contain bg-no-repeat text-white flex justify-center items-center text-xl left-1/2 -translate-x-1/2`}
+					>
+						<img src={modalTitle} className="w-[164px] h-[43px] " alt="" />
+						<div
+							className={classNames('absolute', {
+								'text-base': isNotZh,
+							})}
+						>
+							{t('luckDraw.prizeRecord')}
+						</div>
 					</div>
 					<div className=" bg-[#fff] mx-auto mt-4 relative pt-10 pb-4 border px-4 text-[#333] rounded-2xl">
 						<div className=" flex justify-between items-center py-2 mt-4 bg-[#F3F3F3] rounded-lg">
-							<div className=" w-2/5 text-center">獎品</div>
-							<div className=" w-[80px] text-center">操作</div>
+							<div className=" w-2/5 text-center">{t('luckDraw.prize')}</div>
+							<div className=" w-[80px] text-center">
+								{t('luckDraw.operator')}
+							</div>
 						</div>
 						{rewardList.map((reward, index) => {
 							// 上传了会员码 && 苹果的去领取 && 充电宝未领取
@@ -345,7 +349,7 @@ export function LuckDraw() {
 										onClick={() => {
 											if (!hasUploadDownloadImage) {
 												addGlowEffect('memberCodeInput')
-												Toast.info('綁定NU NU會員碼領取')
+												Toast.info(t('luckDraw.pleaseInputTreeMemberCode'))
 												return
 											}
 											if (isComingByShare) {
@@ -369,7 +373,7 @@ export function LuckDraw() {
 													if (index === 1 && !hasRewardItem[0]) {
 														addGlowEffect('reward-0')
 														// 领取苹果 但是充电宝还未领取
-														Toast.info('請先領取上一個獎品')
+														Toast.info(t('luckDraw.gainFirst'))
 														return
 													}
 													document.querySelector('html')!.scrollTop = 0 // document.getElementById('root')!.scrollTop = 0
@@ -379,7 +383,9 @@ export function LuckDraw() {
 											}
 										}}
 									>
-										{!!hasRewardItem[index] ? '已領取' : '去領取'}
+										{!!hasRewardItem[index]
+											? t('luckDraw.hasGain')
+											: t('luckDraw.toGain')}
 									</div>
 								</div>
 							)
@@ -394,8 +400,17 @@ export function LuckDraw() {
 						id="taskContainer"
 						className="bg-[#fff] mx-auto mt-4 relative pt-10 pb-2 border px-4 text-[#333] rounded-2xl"
 					>
-						<div className="bg-[url('assets/img/modalTitle.png')] absolute -translate-x-1/2 px-3 rounded -top-2 w-[164px] h-[43px] z-[1] left-1/2 bg-contain bg-no-repeat text-white flex justify-center items-center text-xl">
-							绑定會員
+						<div
+							className={`absolute px-3 rounded -top-2  z-[1] bg-contain bg-no-repeat text-white flex justify-center items-center text-xl left-1/2 -translate-x-1/2`}
+						>
+							<img src={modalTitle} className="w-[164px] h-[43px] " alt="" />
+							<div
+								className={classNames('absolute', {
+									'text-base': isNotZh,
+								})}
+							>
+								{t('luckDraw.bindMember')}
+							</div>
 						</div>
 						<div className=" flex justify-between items-center text-white py-2 text-sm">
 							<div className="w-[320px] h-[48px] text-center flex justify-end items-center px-4 mt-2 bg-[url('assets/img/inputBg.png')] bg-contain">
@@ -409,7 +424,7 @@ export function LuckDraw() {
 									style={{
 										padding: '5px 10px',
 									}}
-									placeholder="輸入NU NU會員碼"
+									placeholder={t('luckDraw.inputMemberPlaceholder')}
 								/>
 								<div
 									className="flex-shrink-0 w-[80px] h-[35px] bg-contain flex justify-center items-center bg-[url('assets/img/canGain.png')] text-[#905224]"
@@ -420,14 +435,14 @@ export function LuckDraw() {
 											const inputValue = inputRef.current.value
 											console.log('inputValue', inputValue)
 											if (!inputValue) {
-												Toast.info('請輸入會員碼')
+												Toast.info(t('luckDraw.pleaseInputText'))
 												return
 											}
 											if (String(inputValue).length < 8) {
-												Toast.info('請輸入正確的會員碼')
+												Toast.info(t('luckDraw.pleaseInputTreeMemberCode'))
 												return
 											}
-											Toast.info('會員碼綁定成功')
+											Toast.info(t('luckDraw.bindMemberCodeSuccess'))
 											if (!isComingByShare) {
 												navigate(`/luck?shareMemberCode=${inputValue}`, {
 													replace: true,
@@ -439,18 +454,22 @@ export function LuckDraw() {
 											// 修改逻辑
 											let temp = inviteCode || ''
 											Dialog.alert({
-												title: '輸入會員碼',
+												title: t('luckDraw.inputMemberCodeText'),
 												closeOnClickOverlay: true,
 												message: (
 													<div>
-														<p className=" mb-2">正確輸入NU NU app會員碼</p>
+														<p className=" mb-2">
+															{t('luckDraw.bindModalTitle')}
+														</p>
 														<div className=" mt-4">
 															<Input
 																onChange={text => {
 																	temp = text
 																}}
 																defaultValue={inviteCode}
-																placeholder="輸入NU NU會員碼"
+																placeholder={t(
+																	'luckDraw.inputMemberPlaceholder'
+																)}
 																clearable
 															/>
 														</div>
@@ -459,24 +478,24 @@ export function LuckDraw() {
 												onClosed: () => console.log('onClosed'),
 												onConfirm: () => {
 													if (!temp) {
-														Toast.info('請輸入會員碼')
+														Toast.info(t('luckDraw.pleaseInputText'))
 														return
 													}
 													if (temp.length < 8) {
-														Toast.info('請輸入正確的會員碼')
+														Toast.info(t('luckDraw.pleaseInputTreeMemberCode'))
 														return
 													}
 													setInviteCode(temp)
 													inputRef.current.value = temp
-													Toast.info('修改成功')
+													Toast.info(t('luckDraw.changeSuccessText'))
 												},
 												theme: 'round-button',
-												confirmButtonText: '確認',
+												confirmButtonText: t('luckDraw.confirmText'),
 											})
 										}
 									}}
 								>
-									{inviteCode ? '修改' : '绑定'}
+									{inviteCode ? t('luckDraw.editText') : t('luckDraw.bindText')}
 								</div>
 							</div>
 						</div>
@@ -492,7 +511,7 @@ export function LuckDraw() {
 								className=" flex justify-center items-center px-2 py-1"
 							>
 								<img src={jiaocheng} className=" size-[21px] mr-2" alt="" />
-								查看教程
+								{t('luckDraw.seeVideo')}
 							</div>
 						</div>
 					</div>

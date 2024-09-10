@@ -1,10 +1,13 @@
-import fiveZhe from '../../assets/img/5zhe.png'
-import threeZhe from '../../assets/img/3zhe.png'
-import oneZhe from '../../assets/img/1zhe.png'
-import xsmr from '../../assets/img/xsmr.png'
-import jiujiu from '../../assets/img/jiujiu.png'
-import sorry from '../../assets/img/sorry.png'
-import powerBank from '../../assets/img/powerBank.png'
+import {
+	xsmr,
+	powerBank,
+	fiveZhe,
+	threeZhe,
+	oneZhe,
+	sorry,
+	jiujiu,
+} from '@/assets/index'
+
 import iphone from '../../assets/img/iphone2.jpg'
 import chongdianbao from '../../assets/img/chongdianbao.jpg'
 import iphoneGift from '../../assets/img/iphoneGift.png'
@@ -20,6 +23,8 @@ import siphone3 from '../../assets/img/swiper/iphone3.jpg'
 import siphone4 from '../../assets/img/swiper/iphone4.jpg'
 import siphone5 from '../../assets/img/swiper/iphone5.jpg'
 import siphone6 from '../../assets/img/swiper/iphone6.jpg'
+
+import i18n from '../../lang/config'
 
 export const PrizeList = [
 	{
@@ -37,7 +42,7 @@ export const PrizeList = [
 		name: 'Nu Nu-折價卷NT$100',
 		borderRadius: 10,
 		giftLogo: xsmr,
-		giftName: 'Nu Nu-折價卷NT$100',
+		giftName: i18n.t('prizeList.NuNuTicker.giftName'),
 	},
 	{
 		id: 2,
@@ -52,8 +57,8 @@ export const PrizeList = [
 			},
 		],
 		discount: 10,
-		name: 'KC認證行動充10000毫安',
-		giftName: 'NT$15貨到付款',
+		name: i18n.t('prizeList.powerBank.name'),
+		giftName: i18n.t('prizeList.powerBank.giftName'),
 		giftLogo: powerBankGift,
 		price: 15,
 		borderRadius: 10,
@@ -63,9 +68,9 @@ export const PrizeList = [
 		attrs: [
 			{
 				type: 'color',
-				attr: '颜色',
+				attr: i18n.t('prizeList.powerBank.colorAttrName'),
 				values: [
-					'随机颜色',
+					i18n.t('prizeList.powerBank.colorAttrValue'),
 					// '黑色-0^^disabled',
 					// '白色-0^^disabled',
 					// '蓝色-0^^disabled',
@@ -74,15 +79,15 @@ export const PrizeList = [
 			},
 			{
 				type: 'number',
-				attr: '颜色',
+				attr: i18n.t('prizeList.powerBank.capacityAttrName'),
 				// values: ['10000毫安', '20000毫安-0^^disabled'],
-				values: ['10000毫安'],
+				values: [i18n.t('prizeList.powerBank.capacityAttrValue')],
 			},
 		],
 		desc: [
-			'時尚優雅，多種顏色隨機出貨',
-			'相容市面絕大多數手機快充協議',
-			'10000毫安超大容量',
+			i18n.t('prizeList.powerBank.desc1'),
+			i18n.t('prizeList.powerBank.desc2'),
+			i18n.t('prizeList.powerBank.desc3'),
 		],
 	},
 	{
@@ -174,7 +179,7 @@ export const PrizeList = [
 		],
 		giftLogo: sorryLogo,
 		originImage: sorry,
-		name: '感謝參與',
+		name: i18n.t('winPrize.sorryText'),
 		borderRadius: 10,
 	},
 	{
@@ -189,8 +194,8 @@ export const PrizeList = [
 				height: 100,
 			},
 		],
-		name: '【官方正品】Apple/蘋果 iPhone 15 全新未拆封',
-		giftName: 'NT$3960貨到付款',
+		name: i18n.t('prizeList.oneZhe.name'),
+		giftName: i18n.t('prizeList.oneZhe.giftName'),
 		giftLogo: iphoneGift,
 		borderRadius: 10,
 		originPrice: 39600,
@@ -200,24 +205,30 @@ export const PrizeList = [
 		attrs: [
 			{
 				type: 'color',
-				attr: '颜色',
-				values: ['黑色', '粉色', '黄色', '蓝色', '绿色'],
+				attr: i18n.t('prizeList.oneZhe.colorAttrName'),
+				values: [
+					i18n.t('prizeList.oneZhe.colorAttrValue1'),
+					i18n.t('prizeList.oneZhe.colorAttrValue2'),
+					i18n.t('prizeList.oneZhe.colorAttrValue3'),
+					i18n.t('prizeList.oneZhe.colorAttrValue4'),
+					i18n.t('prizeList.oneZhe.colorAttrValue5'),
+				],
 			},
 			{
 				type: 'price',
-				attr: '存储',
+				attr: i18n.t('prizeList.oneZhe.storageAttrName'),
 				// values: ['256G-48000', '512G-52000^^disabled', '1T-58900^^disabled'],
-				values: ['256G-39600'],
+				values: [i18n.t('prizeList.oneZhe.storageAttrValue')],
 			},
 		],
 		desc: [
-			'6.7英寸超視網膜XDR顯示屏，ProMotion自適應刷新率技術',
-			'露動島功能和iPhone互動的新方式',
-			'具備抗水性能，在6米深的水下停留時間最長可達30分鐘',
-			'4800萬主摄、1200萬超廣角及1200萬長焦三攝，4K視频拍摄',
-			'1200萬像素前置原深感攝像頭，支持人像模式智能HDR',
-			'A17Pro芯片，6核中央處理器，6核圖形處理器，16核網絡引擎',
-			'面容ID，SOS緊急聯絡車祸檢测，USB-C接口',
+			i18n.t('prizeList.oneZhe.desc1'),
+			i18n.t('prizeList.oneZhe.desc2'),
+			i18n.t('prizeList.oneZhe.desc3'),
+			i18n.t('prizeList.oneZhe.desc4'),
+			i18n.t('prizeList.oneZhe.desc5'),
+			i18n.t('prizeList.oneZhe.desc6'),
+			i18n.t('prizeList.oneZhe.desc7'),
 		],
 	},
 	{

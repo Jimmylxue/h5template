@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { Overlay } from 'react-vant'
-import xiajiText from '../../../assets/img/xiajiText.png'
 import star from '../../../assets/img/star.png'
 import codeImage from '../../../assets/img/codeImage.png'
-import bindLogo from '../../../assets/img/bindLogo.png'
-import smallText from '../../../assets/img/smallText.png'
 import { addGlowEffect } from '../core'
+import { useTranslation } from 'react-i18next'
+import { xiajiText, bindLogo, smallText } from '@/assets/index'
 
 export function useBindDialog() {
+	const { t } = useTranslation()
 	const [show, setShow] = useState<boolean>(false)
 
 	const node = (
@@ -52,7 +52,7 @@ export function useBindDialog() {
 							}, 200)
 						}}
 					>
-						去綁定領取
+						{t('bindDialog.toBind')}
 					</div>
 					<img
 						className=" mt-4"
