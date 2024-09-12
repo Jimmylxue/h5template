@@ -23,8 +23,8 @@
     "confirmText":"Binding"
   },
   "goodDetail":{
-    "saleText":"Flash NT$",
-    "originPriceText":"Original NT$",
+    "saleText":"Event price RM",
+    "originPriceText":"Original price RM",
     "saleCount":"Snapped up | 240 pieces sold",
     "goodPrize":"Congratulations",
     "timeOut":"30 min to the end",
@@ -33,22 +33,22 @@
     "inputAddressBtn":"Enter address to pick up"
   },
   "lineModal":{
-    "waiting":"waiting~",
-    "submitSuccess":"submitSuccess~",
-    "jumpText":"jumpText~",
-    "arriveText":"arriveText~",
-    "packageText":"packageText~",
-    "confirmText":"confirmText~"
+    "waiting":"Please wait",
+    "submitSuccess":"Submit successfully",
+    "jumpText":"Redirecting",
+    "arriveText":"Arrives within 7 working days",
+    "packageText":"Track package contact facebook",
+    "confirmText":"Confirm"
   },
   "ChatLineAbout":{
     "kefuLine":"facebook",
     "findKf":"Take a screenshot of this page and contact customer service for verification",
-    "hasCopyText":"hasCopyText~",
+    "hasCopyText":"Copied id",
     "quChat":"Link"
   },
   "waitingNode":{
-    "waiting":"waiting~",
-    "jumpText":"jumpText~"
+    "waiting":"Please wait",
+    "jumpText":"Redirecting"
   },
   "bindDialog":{
     "toBind":"Connect and get it"
@@ -58,12 +58,12 @@
     "chatKf":"Please contact customer service"
   },
   "winPrize":{
-    "gongxiText":"Congratulations on winning the prize",
-    "noGoalText":"Unfortunately, I didn't win the prize",
+    "gongxiText":"You received a discounted prize",
+    "noGoalText":"Sorry, didn't win",
     "toGain":"Go and collect it",
-    "onceAgain":"Draw again, the remaining",
-    "count":"times",
-    "bindAppText":"Bind the app membership code to receive it",
+    "onceAgain":"Raffle again",
+    "count":"",
+    "bindAppText":"App member ID code bound to bites",
     "sorryText":"Thank you for participating"
   },
   "addressSelect":{
@@ -94,9 +94,12 @@
       "capacityAttrValue":"10000 mAh",
       "desc1":"Fashionable and elegant, multiple colors shipped randomly",
       "desc2":"Compatible with most mobile phone fast charging protocols on the market",
-      "desc3":"10000 mAh large capacity"
+      "desc3":"10000 mAh large capacity",
+      "originPrice":50,
+      "price":5
     },
     "oneZhe":{
+      "name":"KC certified mobile charger 10000 mAh",
       "giftName":"RM560 COD",
       "colorAttrName":"Color",
       "colorAttrValue1":"Black",
@@ -112,10 +115,12 @@
       "desc4":"48MP main camera, 12MP ultra-wide-angle camera and 12MP telephoto camera, 4K video shooting",
       "desc5":"12-megapixel front-facing camera with TrueDepth, supporting portrait mode and smart HDR",
       "desc6":"A17 Pro chip, 6-core CPU, 6-core GPU, 16-core network engine",
-      "desc7":"Face ID, SOS emergency contact car accident detection, USB-C interface"
+      "desc7":"Face ID, SOS emergency contact car accident detection, USB-C interface",
+      "originPrice":50,
+      "price":5
     },
     "NuNuTicker":{
-      "giftName":"NT $100 coupon"
+      "giftName":"RM30 coupon"
     }
   },
   "footer": {

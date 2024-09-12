@@ -14,6 +14,7 @@ import { useLocalStorageState } from 'ahooks'
 import { useLocation } from 'react-router-dom'
 import { lineBox } from '../../pages/goodDetail/components/lineModalShow'
 import { useTranslation } from 'react-i18next'
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
 
 export function useAddressSelect() {
 	const { t } = useTranslation()
@@ -61,7 +62,7 @@ export function useAddressSelect() {
 					onFinish={async values => {
 						const params = {
 							...values,
-							province: '台灣省',
+							province: lang === 'en' ? '马来西亚' : '台湾省',
 							area: '',
 							memberCode: inviteCode,
 							productType: isIphone ? 2 : 1,

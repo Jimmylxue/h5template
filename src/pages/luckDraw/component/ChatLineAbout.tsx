@@ -6,6 +6,7 @@ import { Toast } from 'react-vant'
 import { copyToClipboard } from '../../../utils'
 import { useTranslation } from 'react-i18next'
 import { kflogo } from '@/assets/index'
+import bindKfBg from '@/assets/img/bindKfBg.png'
 
 export function ChatLineAbout() {
 	const { data } = useSystemConfig({
@@ -24,10 +25,13 @@ export function ChatLineAbout() {
 
 	return (
 		<>
-			<div
-				id="bindKf"
-				className="ml-2 bg-[url('/src/assets/img/bindKfBg.png')] w-[320px] h-[78px] bg-contain flex justify-between"
-			>
+			<div className="flex justify-between relative">
+				<img
+					src={bindKfBg}
+					id="bindKf"
+					alt=""
+					className=" absolute w-full h-full"
+				/>
 				<div className=" w-full flex justify-between items-center text-white py-2 text-sm pr-2">
 					<div className=" w-3/4 text-xs flex justify-start items-center pl-2 relative">
 						<img
@@ -45,7 +49,7 @@ export function ChatLineAbout() {
 						</div>
 					</div>
 					<button
-						className="bg-[url('/src/assets/img/canGain.png')] w-[80px] h-[35px] text-[#905224] bg-contain flex justify-center items-center"
+						className=" relative bg-[url('/src/assets/img/canGain.png')] w-[80px] h-[35px] text-[#905224] bg-contain flex justify-center items-center"
 						onClick={() => {
 							fbq('trackCustom', 'confirmEndLine')
 							try {

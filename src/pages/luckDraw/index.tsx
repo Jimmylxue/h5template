@@ -19,6 +19,7 @@ import { useGainCouponNode } from './component/useGainCoupon'
 import jinbi from '@/assets/video/jinbi.mp3'
 import { useTranslation } from 'react-i18next'
 import { LuckDrawBlocks } from '../../lang/langOtherConfig'
+import inputBg from '@/assets/img/inputBg.png'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
 
@@ -412,8 +413,9 @@ export function LuckDraw() {
 								{t('luckDraw.bindMember')}
 							</div>
 						</div>
-						<div className=" flex justify-between items-center text-white py-2 text-sm">
-							<div className="w-[320px] h-[48px] text-center flex justify-end items-center px-4 mt-2 bg-[url('assets/img/inputBg.png')] bg-contain">
+						<div className=" flex justify-between items-center text-white py-2 text-sm relative my-6">
+							<img src={inputBg} alt="" className=" absolute" />
+							<div className=" absolute w-full h-[55px] text-center flex justify-end items-center px-4">
 								<input
 									type="text"
 									id="memberCodeInput"

@@ -94,7 +94,9 @@
       "capacityAttrValue":"10000毫安",
       "desc1":"時尚優雅，多種顏色隨機出貨",
       "desc2":"相容市面絕大多數手機快充協議",
-      "desc3":"10000毫安超大容量"
+      "desc3":"10000毫安超大容量",
+      "originPrice":380,
+      "price":15
     },
     "oneZhe":{
       "giftName":"NT$3960貨到付款",
@@ -113,7 +115,9 @@
       "desc4":"4800萬主摄、1200萬超廣角及1200萬長焦三攝，4K視频拍摄",
       "desc5":"1200萬像素前置原深感攝像頭，支持人像模式智能HDR",
       "desc6":"A17Pro芯片，6核中央處理器，6核圖形處理器，16核網絡引擎",
-      "desc7":"面容ID，SOS緊急聯絡車祸檢测，USB-C接口"
+      "desc7":"面容ID，SOS緊急聯絡車祸檢测，USB-C接口",
+      "originPrice":39600,
+      "price":15
     },
     "NuNuTicker":{
       "giftName":"Nu Nu-折價卷NT$100"

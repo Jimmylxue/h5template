@@ -26,7 +26,6 @@ const city_list = {
 }
 
 const en_list = [
-	'√Johor',
 	'Kedah',
 	'Kelantan',
 	'Melaka',
@@ -37,6 +36,8 @@ const en_list = [
 	'Pulau Pinang',
 	'Selangor',
 	'Terengganu',
+	'Sarawak',
+	'Selangor',
 ]
 
 const cityMap = {

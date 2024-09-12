@@ -6,6 +6,9 @@ import {
 	oneZhe,
 	sorry,
 	jiujiu,
+	spowerbank1,
+	spowerbank2,
+	spowerbank3,
 } from '@/assets/index'
 
 import iphone from '../../assets/img/iphone2.jpg'
@@ -14,9 +17,6 @@ import iphoneGift from '../../assets/img/iphoneGift.png'
 import powerBankGift from '../../assets/img/powerBankGift.png'
 import sorryLogo from '../../assets/img/sorryLogo.png'
 // 轮播图
-import spowerbank1 from '../../assets/img/swiper/powerbank1.jpg'
-import spowerbank2 from '../../assets/img/swiper/powerbank2.png'
-import spowerbank3 from '../../assets/img/swiper/powerbank3.png'
 import siphone1 from '../../assets/img/swiper/iphone1.jpg'
 import siphone2 from '../../assets/img/swiper/iphone2.jpg'
 import siphone3 from '../../assets/img/swiper/iphone3.jpg'
@@ -60,9 +60,9 @@ export const PrizeList = [
 		name: i18n.t('prizeList.powerBank.name'),
 		giftName: i18n.t('prizeList.powerBank.giftName'),
 		giftLogo: powerBankGift,
-		price: 15,
+		price: i18n.t('prizeList.powerBank.price'),
 		borderRadius: 10,
-		originPrice: 380,
+		originPrice: i18n.t('prizeList.powerBank.originPrice'),
 		originImage: chongdianbao,
 		swiperImages: [spowerbank1, spowerbank2, spowerbank3, powerBankGift],
 		attrs: [
@@ -199,6 +199,7 @@ export const PrizeList = [
 		giftLogo: iphoneGift,
 		borderRadius: 10,
 		originPrice: 39600,
+		price: 3960,
 		originImage: iphone,
 		swiperImages: [siphone1, siphone2, siphone3, siphone4, siphone5, siphone6],
 		discount: 1,

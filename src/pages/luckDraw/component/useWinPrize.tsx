@@ -4,6 +4,7 @@ import { Overlay } from 'react-vant'
 import box from '@/assets/img/box.gif'
 import flower from '@/assets/img/flower.gif'
 import { useTranslation } from 'react-i18next'
+import { iconMap } from '@/assets/index'
 
 export function useWinPrize() {
 	const [show, setShow] = useState<boolean>(false)
@@ -30,6 +31,11 @@ export function useWinPrize() {
 	 * 是否是中奖
 	 */
 	const isGoalPrize = prizeMsg.current?.id !== 5
+
+	/**
+	 * 是否展示 ICON
+	 */
+	const showIcon = [2, 6].includes(prizeMsg.current?.id!)
 
 	const node = (
 		<>
@@ -88,6 +94,14 @@ export function useWinPrize() {
 					)}
 					{modalShow && (
 						<div className="bg-[url('/src/assets/img/dialogBg.png')] bg-[length:100%_100%] bg-no-repeat w-3/4 pb-5 rounded-lg relative">
+							{showIcon && (
+								<img
+									// @ts-ignore
+									src={iconMap[prizeMsg.current?.id]}
+									alt=""
+									className=" size-[70px] absolute right-[45px] top-[100px]"
+								/>
+							)}
 							<div className=" text-[#d2555c] text-center text-[22px] font-semibold mt-8 mb-2">
 								{isGoalPrize
 									? t('winPrize.gongxiText')

@@ -48,5 +48,25 @@ export const bindLogo = __bindLogo.default
 
 const __smallText = await import(`../assets/${basePath}/smallText.png`)
 export const smallText = __smallText.default
+
+const __powerBankGift = await import(`../assets/${basePath}/powerBankGift.png`)
+export const powerBankGift = __powerBankGift.default
+
+const __powerbank1 = await import(`../assets/${basePath}/swiper/powerbank1.jpg`)
+export const spowerbank1 = __powerbank1.default
+
+const __powerbank2 = await import(`../assets/${basePath}/swiper/powerbank2.jpg`)
+export const spowerbank2 = __powerbank2.default
+
+const __powerbank3 = await import(`../assets/${basePath}/swiper/powerbank3.jpg`)
+export const spowerbank3 = __powerbank3.default
 // bg - [url('assets/img/modalTitle.png')]
 // bg - [url('assets/enImg/modalTitle.png')]
+
+const __2Icon = await import(`../assets/${basePath}/2Icon.png`)
+const __6Icon = await import(`../assets/${basePath}/6Icon.png`)
+
+export const iconMap = {
+	2: __2Icon.default,
+	6: __6Icon.default,
+}

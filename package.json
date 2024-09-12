@@ -8,6 +8,7 @@
     "dev:en": "vite --mode en",
     "build": "tsc -b && vite --mode production build",
     "build-jiujiu": "tsc -b && vite --mode jiujiu build",
+    "build-en": "tsc -b && vite --mode en build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

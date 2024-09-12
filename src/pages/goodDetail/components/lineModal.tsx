@@ -8,6 +8,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
+const lang = import.meta.env.VITE_APP_LANGUAGE
+
 export const LineModal = observer(() => {
 	const [showWait, setShowWait] = useState<boolean>(false)
 	const navigate = useNavigate()
@@ -52,7 +54,8 @@ export const LineModal = observer(() => {
 							</div>
 							{lineBox.canNavigate && (
 								<div className=" text-center mt-2 text-sm">
-									{t('lineModal.packageText')}:{LineCode}
+									{t('lineModal.packageText')}{' '}
+									{lang === 'en' ? '' : `: ${LineCode}`}
 								</div>
 							)}
 						</>
