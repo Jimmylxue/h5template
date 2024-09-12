@@ -49,9 +49,6 @@ export const bindLogo = __bindLogo.default
 const __smallText = await import(`../assets/${basePath}/smallText.png`)
 export const smallText = __smallText.default
 
-const __powerBankGift = await import(`../assets/${basePath}/powerBankGift.png`)
-export const powerBankGift = __powerBankGift.default
-
 const __powerbank1 = await import(`../assets/${basePath}/swiper/powerbank1.jpg`)
 export const spowerbank1 = __powerbank1.default
 
