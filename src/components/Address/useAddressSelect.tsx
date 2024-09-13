@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
 	Button,
 	Form,
@@ -36,6 +36,8 @@ export function useAddressSelect() {
 		defaultValue: '',
 	})
 
+	const isSubmitting = useRef<boolean>(false)
+
 	const { mutateAsync } = useUploadAddress()
 
 	useEffect(() => {
@@ -60,6 +62,10 @@ export function useAddressSelect() {
 					colon
 					form={form}
 					onFinish={async values => {
+						if (isSubmitting.current) {
+							return
+						}
+						isSubmitting.current = true
 						const params = {
 							...values,
 							province: lang === 'en' ? '马来西亚' : '台湾省',
@@ -74,6 +80,7 @@ export function useAddressSelect() {
 						setShow(false)
 						setTimeout(() => {
 							lineBox.showModal(isIphone)
+							isSubmitting.current = false
 						}, 200)
 					}}
 					footer={
@@ -89,6 +96,7 @@ export function useAddressSelect() {
 									round
 									type="danger"
 									block
+									// nativeType="submit"
 									onClick={() => {
 										fbq('trackCustom', 'confirmAddressAgain')
 										// 到这里的时候 hasUploadAddressCount 一定是至少为1的
