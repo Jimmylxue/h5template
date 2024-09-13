@@ -7,58 +7,175 @@ const langImgBasePath = {
 
 const basePath = langImgBasePath[lang]
 
-const __bgTop = await import(`../assets/${basePath}/bg-top.png`)
-export const bgTop = __bgTop.default
+import zhBgTop from '@/assets/img/bg-top.png'
+import enBgTop from '@/assets/enImg/bg-top.png'
 
-const __drawBtn = await import(`../assets/${basePath}/drawBtn.png`)
-export const drawBtn = __drawBtn.default
+const bgTopMap = {
+	zh: zhBgTop,
+	en: enBgTop,
+}
 
-const __xsmr = await import(`../assets/${basePath}/xsmr.png`)
-export const xsmr = __xsmr.default
+export const bgTop = bgTopMap[lang]
 
-const __powerBank = await import(`../assets/${basePath}/powerBank.png`)
-export const powerBank = __powerBank.default
+import zhDrawBtn from '@/assets/img/drawBtn.png'
+import enDrawBtn from '@/assets/enImg/drawBtn.png'
 
-const __fiveZhe = await import(`../assets/${basePath}/5zhe.png`)
-export const fiveZhe = __fiveZhe.default
+const drawBtnMap = {
+	zh: zhDrawBtn,
+	en: enDrawBtn,
+}
 
-const __threeZhe = await import(`../assets/${basePath}/3zhe.png`)
-export const threeZhe = __threeZhe.default
+export const drawBtn = drawBtnMap[lang]
 
-const __sorry = await import(`../assets/${basePath}/sorry.png`)
-export const sorry = __sorry.default
+import zhXsmr from '@/assets/img/xsmr.png'
+import enXsmr from '@/assets/enImg/xsmr.png'
 
-const __oneZhe = await import(`../assets/${basePath}/1zhe.png`)
-export const oneZhe = __oneZhe.default
+const xsmrMap = {
+	zh: zhXsmr,
+	en: enXsmr,
+}
 
-const __jiujiu = await import(`../assets/${basePath}/jiujiu.png`)
-export const jiujiu = __jiujiu.default
+export const xsmr = xsmrMap[lang]
 
-const __kflogo = await import(`../assets/${basePath}/kflogo.png`)
-export const kflogo = __kflogo.default
+import zhPowerBank from '@/assets/img/powerBank.png'
+import enPowerBank from '@/assets/enImg/powerBank.png'
 
-const __modalTitle = await import(`../assets/${basePath}/modalTitle.png`)
-export const modalTitle = __modalTitle.default
+const powerBankMap = {
+	zh: zhPowerBank,
+	en: enPowerBank,
+}
 
-const __xiajiText = await import(`../assets/${basePath}/xiajiText.png`)
-export const xiajiText = __xiajiText.default
+export const powerBank = powerBankMap[lang]
 
-const __bindLogo = await import(`../assets/${basePath}/bindLogo.png`)
-export const bindLogo = __bindLogo.default
+import zhFiveZhe from '@/assets/img/5zhe.png'
+import enFiveZhe from '@/assets/enImg/5zhe.png'
 
-const __smallText = await import(`../assets/${basePath}/smallText.png`)
-export const smallText = __smallText.default
+const fiveZheMap = {
+	zh: zhFiveZhe,
+	en: enFiveZhe,
+}
 
-const __powerbank1 = await import(`../assets/${basePath}/swiper/powerbank1.jpg`)
-export const spowerbank1 = __powerbank1.default
+export const fiveZhe = fiveZheMap[lang]
 
-const __powerbank2 = await import(`../assets/${basePath}/swiper/powerbank2.jpg`)
-export const spowerbank2 = __powerbank2.default
+import zhThreeZhe from '@/assets/img/3zhe.png'
+import enThreeZhe from '@/assets/enImg/3zhe.png'
 
-const __powerbank3 = await import(`../assets/${basePath}/swiper/powerbank3.jpg`)
-export const spowerbank3 = __powerbank3.default
-// bg - [url('assets/img/modalTitle.png')]
-// bg - [url('assets/enImg/modalTitle.png')]
+const threeZheMap = {
+	zh: zhThreeZhe,
+	en: enThreeZhe,
+}
+
+export const threeZhe = threeZheMap[lang]
+
+import zhSorry from '@/assets/img/sorry.png'
+import enSorry from '@/assets/enImg/sorry.png'
+
+const sorryMap = {
+	zh: zhSorry,
+	en: enSorry,
+}
+
+export const sorry = sorryMap[lang]
+
+import zhOneZhe from '@/assets/img/1zhe.png'
+import enOneZhe from '@/assets/enImg/1zhe.png'
+
+const oneZheMap = {
+	zh: zhOneZhe,
+	en: enOneZhe,
+}
+
+export const oneZhe = oneZheMap[lang]
+
+import zhJiuJiu from '@/assets/img/jiujiu.png'
+import enJiuJiu from '@/assets/enImg/jiujiu.png'
+
+const jiujiuMap = {
+	zh: zhJiuJiu,
+	en: enJiuJiu,
+}
+
+export const jiujiu = jiujiuMap[lang]
+
+import zhKfLogo from '@/assets/img/kflogo.png'
+import enKfLogo from '@/assets/enImg/kflogo.png'
+
+const kflogoMap = {
+	zh: zhKfLogo,
+	en: enKfLogo,
+}
+
+export const kflogo = kflogoMap[lang]
+
+import zhModalTitle from '@/assets/img/modalTitle.png'
+import enModalTitle from '@/assets/enImg/modalTitle.png'
+
+const modalTitleMap = {
+	zh: zhModalTitle,
+	en: enModalTitle,
+}
+
+export const modalTitle = modalTitleMap[lang]
+
+import zhXiajiText from '@/assets/img/xiajiText.png'
+import enXiajiText from '@/assets/enImg/xiajiText.png'
+
+const xiajiTextMap = {
+	zh: zhXiajiText,
+	en: enXiajiText,
+}
+
+export const xiajiText = xiajiTextMap[lang]
+
+import zhBindLogo from '@/assets/img/bindLogo.png'
+import enBindLogo from '@/assets/enImg/bindLogo.png'
+
+const bindLogoMap = {
+	zh: zhBindLogo,
+	en: enBindLogo,
+}
+
+export const bindLogo = bindLogoMap[lang]
+
+import zhSmallText from '@/assets/img/smallText.png'
+import enSmallText from '@/assets/enImg/smallText.png'
+
+const smallTextMap = {
+	zh: zhSmallText,
+	en: enSmallText,
+}
+
+export const smallText = smallTextMap[lang]
+
+import zhPowerbank1 from '@/assets/img/swiper/powerbank1.jpg'
+import enPowerbank1 from '@/assets/enImg/swiper/powerbank1.jpg'
+
+const powerbank1Map = {
+	zh: zhPowerbank1,
+	en: enPowerbank1,
+}
+
+export const spowerbank1 = powerbank1Map[lang]
+
+import zhPowerbank2 from '@/assets/img/swiper/powerbank2.jpg'
+import enPowerbank2 from '@/assets/enImg/swiper/powerbank2.jpg'
+
+const powerbank2Map = {
+	zh: zhPowerbank2,
+	en: enPowerbank2,
+}
+
+export const spowerbank2 = powerbank2Map[lang]
+
+import zhPowerbank3 from '@/assets/img/swiper/powerbank3.jpg'
+import enPowerbank3 from '@/assets/enImg/swiper/powerbank3.jpg'
+
+const powerbank3Map = {
+	zh: zhPowerbank3,
+	en: enPowerbank3,
+}
+
+export const spowerbank3 = powerbank3Map[lang]
 
 const __2Icon = await import(`../assets/${basePath}/2Icon.png`)
 const __6Icon = await import(`../assets/${basePath}/6Icon.png`)
