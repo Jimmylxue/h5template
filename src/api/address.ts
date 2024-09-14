@@ -5,6 +5,9 @@ import {
 	useQuery,
 } from '@tanstack/react-query'
 import { ClientError, post } from '.'
+import { subPost } from './subIndex'
+
+const subSiteEnable = import.meta.env.VITE_APP_USE_SUB_SITE_ENABLED
 
 export type addressParams = {
 	province: string
@@ -21,7 +24,12 @@ export const useUploadAddress = (
 ) => {
 	return useMutation<boolean, ClientError, addressParams>({
 		mutationFn: async data => {
-			const response: any = await post('/address/add', data)
+			const query = new URLSearchParams(location.hash)
+			const isSubSite = Number(query.get('subSite'))
+			const useSubSite = isSubSite && subSiteEnable === 'true'
+			const response: any = (await useSubSite)
+				? subPost('/address/add', data)
+				: post('/address/add', data)
 			console.log('response', response)
 			return response
 		},

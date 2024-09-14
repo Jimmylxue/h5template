@@ -38,6 +38,8 @@ export function LuckDraw() {
 	 */
 	const shareMemberCode = query.get('shareMemberCode')
 
+	const subSite = query.get('subSite')
+
 	// console.log('isShareLink', isShareLink)
 
 	const audioRef = useRef(null)
@@ -379,7 +381,9 @@ export function LuckDraw() {
 													}
 													document.querySelector('html')!.scrollTop = 0 // document.getElementById('root')!.scrollTop = 0
 
-													navigate(`/good?goodId=${reward.id}`)
+													navigate(
+														`/good?goodId=${reward.id}&subSite=${subSite || 0}`
+													)
 												}
 											}
 										}}
