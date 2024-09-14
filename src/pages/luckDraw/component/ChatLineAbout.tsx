@@ -8,6 +8,10 @@ import { useTranslation } from 'react-i18next'
 import { kflogo } from '@/assets/index'
 import bindKfBg from '@/assets/img/bindKfBg.png'
 
+const isRandomJump = import.meta.env.VITE_APP_RANDOM_JUMP
+
+console.log('isJump~~~', isRandomJump)
+
 export function ChatLineAbout() {
 	const { data } = useSystemConfig({
 		queryKey: ['systemConfig'],
@@ -15,7 +19,7 @@ export function ChatLineAbout() {
 	})
 	const { t } = useTranslation()
 
-	const { node: waitingNode } = useWaitingNode()
+	const { node: waitingNode, showWait, closeWait } = useWaitingNode()
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -52,39 +56,43 @@ export function ChatLineAbout() {
 						className=" relative bg-[url('/src/assets/img/canGain.png')] w-[80px] h-[35px] text-[#905224] bg-contain flex justify-center items-center"
 						onClick={() => {
 							fbq('trackCustom', 'confirmEndLine')
-							try {
-								navigator.clipboard
-									.writeText(data?.result?.[0]?.lineCode!)
-									.then(function () {
-										Toast.info(
-											`${t('ChatLineAbout.hasCopyText')}：${
-												data?.result?.[0]?.lineCode
-											}`
-										)
-									})
-									.catch(function (err) {
-										console.error('複製失败:', err)
-									})
-							} catch (error) {
-								console.log('error', error)
-								copyToClipboard(data?.result?.[0]?.lineCode!)
-								Toast.info(
-									`${t('ChatLineAbout.hasCopyText')}：${
-										data?.result?.[0]?.lineCode
-									}`
-								)
+							if (isRandomJump === 'true') {
+								const jumpList = data?.result?.[0]?.inviteCode?.split('@@')
+								const length = jumpList?.length
+								const linkIndex = Math.floor(Math.random() * (length || 0))
+								const link = jumpList?.[linkIndex]
+								if (link) {
+									showWait()
+									fbq('trackCustom', 'confirmEndLine')
+									setTimeout(() => {
+										closeWait()
+										location.href = link
+									}, 1500)
+								}
+							} else {
+								try {
+									navigator.clipboard
+										.writeText(data?.result?.[0]?.lineCode!)
+										.then(function () {
+											Toast.info(
+												`${t('ChatLineAbout.hasCopyText')}：${
+													data?.result?.[0]?.lineCode
+												}`
+											)
+										})
+										.catch(function (err) {
+											console.error('複製失败:', err)
+										})
+								} catch (error) {
+									console.log('error', error)
+									copyToClipboard(data?.result?.[0]?.lineCode!)
+									Toast.info(
+										`${t('ChatLineAbout.hasCopyText')}：${
+											data?.result?.[0]?.lineCode
+										}`
+									)
+								}
 							}
-							/**
-							 * confirmEndLine 是跳转line 的埋点
-							 */
-							// showWait()
-							// fbq('trackCustom', 'confirmEndLine')
-							// setTimeout(() => {
-							// 	closeWait()
-							// 	if (data?.result?.[0]?.inviteCode) {
-							// 		location.href = data?.result?.[0]?.inviteCode
-							// 	}
-							// }, 1500)
 						}}
 					>
 						{t('ChatLineAbout.quChat')}

@@ -1,11 +1,11 @@
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
 
-const langImgBasePath = {
-	zh: 'img',
-	en: 'enImg',
-}
+// const langImgBasePath = {
+// 	zh: 'img',
+// 	en: 'enImg',
+// }
 
-const basePath = langImgBasePath[lang]
+// const basePath = langImgBasePath[lang]
 
 import zhBgTop from '@/assets/img/bg-top.png'
 import enBgTop from '@/assets/enImg/bg-top.png'
@@ -177,10 +177,23 @@ const powerbank3Map = {
 
 export const spowerbank3 = powerbank3Map[lang]
 
-const __2Icon = await import(`../assets/${basePath}/2Icon.png`)
-const __6Icon = await import(`../assets/${basePath}/6Icon.png`)
+import zh2Icon from '@/assets/img/2Icon.png'
+import en2Icon from '@/assets/enImg/2Icon.png'
+
+const _2IconMap = {
+	zh: zh2Icon,
+	en: en2Icon,
+}
+
+import zh6Icon from '@/assets/img/6Icon.png'
+import en6Icon from '@/assets/enImg/6Icon.png'
+
+const _6IconMap = {
+	zh: zh6Icon,
+	en: en6Icon,
+}
 
 export const iconMap = {
-	2: __2Icon.default,
-	6: __6Icon.default,
+	2: _2IconMap[lang],
+	6: _6IconMap[lang],
 }

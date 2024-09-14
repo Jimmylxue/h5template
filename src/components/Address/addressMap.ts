@@ -26,6 +26,7 @@ const city_list = {
 }
 
 const en_list = [
+	'Johor',
 	'Kedah',
 	'Kelantan',
 	'Melaka',
@@ -34,10 +35,10 @@ const en_list = [
 	'Perak',
 	'Perlis',
 	'Pulau Pinang',
-	'Selangor',
-	'Terengganu',
+	'Sabah',
 	'Sarawak',
 	'Selangor',
+	'Terengganu',
 ]
 
 const cityMap = {

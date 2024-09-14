@@ -29,18 +29,19 @@ export function GoodDetail() {
 	}, [good])
 
 	const nowSalePrice = useMemo(() => {
-		const priceIndex = good?.attrs?.findIndex(item => item?.type === 'price')
+		// const priceIndex = good?.attrs?.findIndex(item => item?.type === 'price')
 
-		const priceAttrValue = (
-			priceIndex ? good?.attrs?.[priceIndex]?.values : []
-		)?.map(item => item.split('-')?.[1])
+		// const priceAttrValue = (
+		// 	priceIndex ? good?.attrs?.[priceIndex]?.values : []
+		// )?.map(item => item.split('-')?.[1])
 
-		const selectPriceAttr = selectAttrs?.[priceIndex || 0]
+		// const selectPriceAttr = selectAttrs?.[priceIndex || 0]
 
-		const selectValue = Number(priceAttrValue?.[selectPriceAttr]) || 0
+		// const selectValue = Number(priceAttrValue?.[selectPriceAttr]) || 0
 
-		const nowSale = selectValue * ((good?.discount || 10) / 10)
-		return nowSale || good?.price
+		// const nowSale = selectValue * ((good?.discount || 10) / 10)
+		// return nowSale || good?.price
+		return good?.price
 	}, [selectAttrs])
 
 	return (
