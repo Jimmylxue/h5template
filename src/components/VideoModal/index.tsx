@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Overlay } from 'react-vant'
-import videoSource from '../../assets/video/video3.mp4'
 import { Cross } from '@react-vant/icons'
+import { video3 } from '@/assets/index'
 
 export function useVideoModal() {
 	const [show, setShow] = useState<boolean>(false)
@@ -22,12 +22,7 @@ export function useVideoModal() {
 					}}
 				/>
 				<div className=" absolute w-full z-10 flex justify-center items-center h-full">
-					<video
-						src={videoSource}
-						className=" size-[80%]"
-						controls
-						autoPlay
-					></video>
+					<video src={video3} className=" size-[80%]" controls autoPlay></video>
 				</div>
 			</div>
 		</Overlay>

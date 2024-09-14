@@ -197,3 +197,13 @@ export const iconMap = {
 	2: _2IconMap[lang],
 	6: _6IconMap[lang],
 }
+
+import zhVideo3 from '@/assets/video/video3.mp4'
+import enVideo3 from '@/assets/enVideo/video3.mp4'
+
+const video3Map = {
+	zh: zhVideo3,
+	en: enVideo3,
+}
+
+export const video3 = video3Map[lang]
