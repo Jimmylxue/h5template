@@ -22,6 +22,7 @@ import { LuckDrawBlocks } from '../../lang/langOtherConfig'
 import inputBg from '@/assets/img/inputBg.png'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+const memberCodeLength = Number(import.meta.env.VITE_APP_MEMBER_CODE_LENGTH)
 
 const isNotZh = lang !== 'zh'
 
@@ -444,7 +445,7 @@ export function LuckDraw() {
 												Toast.info(t('luckDraw.pleaseInputText'))
 												return
 											}
-											if (String(inputValue).length < 8) {
+											if (String(inputValue).length < memberCodeLength) {
 												Toast.info(t('luckDraw.pleaseInputTreeMemberCode'))
 												return
 											}
@@ -487,7 +488,7 @@ export function LuckDraw() {
 														Toast.info(t('luckDraw.pleaseInputText'))
 														return
 													}
-													if (temp.length < 8) {
+													if (temp.length < memberCodeLength) {
 														Toast.info(t('luckDraw.pleaseInputTreeMemberCode'))
 														return
 													}
