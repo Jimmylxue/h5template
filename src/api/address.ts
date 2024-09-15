@@ -24,12 +24,12 @@ export const useUploadAddress = (
 ) => {
 	return useMutation<boolean, ClientError, addressParams>({
 		mutationFn: async data => {
-			const query = new URLSearchParams(location.hash)
+			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
 			const useSubSite = isSubSite && subSiteEnable === 'true'
-			const response: any = (await useSubSite)
-				? subPost('/address/add', data)
-				: post('/address/add', data)
+			const response: any = useSubSite
+				? await subPost('/address/add', data)
+				: await post('/address/add', data)
 			console.log('response', response)
 			return response
 		},
@@ -51,7 +51,15 @@ export const useSystemConfig = (
 		ClientError
 	>({
 		...config,
-		queryFn: () => post('/address/configList', config?.params),
+		queryFn: () => {
+			const query = new URLSearchParams(location.hash.split('?')?.[1])
+			const isSubSite = Number(query.get('subSite'))
+			const useSubSite = isSubSite && subSiteEnable === 'true'
+			console.log('isSubSite', location.hash, isSubSite, subSiteEnable)
+			return useSubSite
+				? subPost('/address/configList', config?.params)
+				: post('/address/configList', config?.params)
+		},
 		queryKey: config!.queryKey,
 	})
 }
