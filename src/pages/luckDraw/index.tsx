@@ -451,9 +451,14 @@ export function LuckDraw() {
 											}
 											Toast.info(t('luckDraw.bindMemberCodeSuccess'))
 											if (!isComingByShare) {
-												navigate(`/luck?shareMemberCode=${inputValue}`, {
-													replace: true,
-												})
+												navigate(
+													`/luck?shareMemberCode=${inputValue}&subSite=${
+														subSite || 0
+													}`,
+													{
+														replace: true,
+													}
+												)
 											}
 											setInviteCode(inputValue)
 											setHasUploadDownloadImage(true)
