@@ -10,19 +10,19 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useVideoModal } from '../../components/VideoModal'
 import { bgTop, drawBtn, modalTitle } from '@/assets/index'
 import classNames from 'classnames'
-import { ChatLineAbout } from './component/ChatLineAbout'
 import jiaocheng from '../../assets/img/jiaocheng.png'
 import { useBindDialog } from './component/useBindDialog'
 import music from '../../assets/video/music.mp3'
-import { addGlowEffect } from './core'
-import { useGainCouponNode } from './component/useGainCoupon'
 import jinbi from '@/assets/video/jinbi.mp3'
 import { useTranslation } from 'react-i18next'
 import { LuckDrawBlocks } from '../../lang/langOtherConfig'
 import inputBg from '@/assets/img/inputBg.png'
+import { RewardList } from './component/RewardList'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
 const memberCodeLength = Number(import.meta.env.VITE_APP_MEMBER_CODE_LENGTH)
+
+const bindMemberFirst = import.meta.env.VITE_APP_FIRST_BIND === 'true'
 
 const isNotZh = lang !== 'zh'
 
@@ -111,13 +111,7 @@ export function LuckDraw() {
 
 	const { bindDialogNode, showBindDialog } = useBindDialog()
 
-	const { node: gainCouponNode, showGain, closeGain } = useGainCouponNode()
-
-	const [hasRewardItem, setHasRewardItem] = useState([false, false])
-
-	const rewardList = useMemo(() => {
-		return PrizeList.filter(item => hasDrawPrizeIds?.includes(item.id)) || []
-	}, [hasDrawPrizeIds])
+	const [hasRewardItem, setHasRewardItem] = useState<any>([])
 
 	const drawPrizeIndex = () => {
 		const _hasDrawCount =
@@ -145,23 +139,26 @@ export function LuckDraw() {
 		}
 	}
 
-	const showLineAbout = useMemo(() => {
-		if (isComingByShare) {
-			return hasRewardItem[0] === true
-		}
-		return hasRewardItem[0] === true && hasRewardItem[1] === true
-	}, [hasRewardItem, isComingByShare])
-
 	useEffect(() => {
-		if (isComingByShare) {
-			const powerBankHasReward = !!localStorage.getItem(`snow-has-prize-${1}`)
-			setHasRewardItem([powerBankHasReward, false])
-		} else {
-			const powerBankHasReward = !!localStorage.getItem(`snow-has-prize-${2}`)
-			const iphoneHasReward = !!localStorage.getItem(`snow-has-prize-${6}`)
-			setHasRewardItem([powerBankHasReward, iphoneHasReward])
-		}
+		// if (isComingByShare) {
+		// 	setHasRewardItem([powerBankHasReward, false])
+		// } else {
+		// 	const powerBankHasReward = !!localStorage.getItem(`snow-has-prize-${1}`)
+		// 	const powerBankHasReward = !!localStorage.getItem(`snow-has-prize-${2}`)
+		// 	const iphoneHasReward = !!localStorage.getItem(`snow-has-prize-${6}`)
+		// 	setHasRewardItem([powerBankHasReward, iphoneHasReward])
+		// }
+		const couponHasReward = !!localStorage.getItem(`snow-has-prize-${1}`)
+		const powerBankHasReward = !!localStorage.getItem(`snow-has-prize-${2}`)
+		const iphoneHasReward = !!localStorage.getItem(`snow-has-prize-${6}`)
+		setHasRewardItem({
+			1: couponHasReward,
+			2: powerBankHasReward,
+			6: iphoneHasReward,
+		})
 	}, [isComingByShare])
+
+	console.log('snowHas', hasRewardItem)
 
 	const startDraw = () => {
 		if (drawingRef.current) {
@@ -210,17 +207,6 @@ export function LuckDraw() {
 					{t('luckDraw.drawCount_before')}（{drawCount}）
 					{t('luckDraw.drawCount_after')}
 				</div>
-				{/* <div
-					className=" text-center text-sm mb-2 text-blue-400 underline"
-					onClick={() => {
-						document
-							.getElementById('taskContainer')
-							?.scrollIntoView({ behavior: 'smooth' })
-					}}
-				>
-					下載NU NUapp並綁定會員碼領取
-				</div> */}
-
 				<div className=" flex justify-center items-center">
 					<LuckyGrid
 						ref={myLucky}
@@ -279,6 +265,17 @@ export function LuckDraw() {
 													scrollToTask()
 													setTimeout(() => {
 														showBindDialog()
+														console.log('ggzzz', bindMemberFirst)
+														if (!bindMemberFirst) {
+															navigate(
+																`/luck?shareMemberCode=15120dz&subSite=${
+																	subSite || 0
+																}`,
+																{
+																	replace: true,
+																}
+															)
+														}
 													}, 800)
 												}, 300)
 											} else {
@@ -296,110 +293,16 @@ export function LuckDraw() {
 						}}
 					></LuckyGrid>
 				</div>
-				<div className=" px-4 relative mt-6">
-					<div
-						className={`absolute px-3 rounded -top-2  z-[1] bg-contain bg-no-repeat text-white flex justify-center items-center text-xl left-1/2 -translate-x-1/2`}
-					>
-						<img src={modalTitle} className="w-[164px] h-[43px] " alt="" />
-						<div
-							className={classNames('absolute', {
-								'text-base': isNotZh,
-							})}
-						>
-							{t('luckDraw.prizeRecord')}
-						</div>
-					</div>
-					<div className=" bg-[#fff] mx-auto mt-4 relative pt-10 pb-4 border px-4 text-[#333] rounded-2xl">
-						<div className=" flex justify-between items-center py-2 mt-4 bg-[#F3F3F3] rounded-lg">
-							<div className=" w-2/5 text-center">{t('luckDraw.prize')}</div>
-							<div className=" w-[80px] text-center">
-								{t('luckDraw.operator')}
-							</div>
-						</div>
-						{rewardList.map((reward, index) => {
-							// 上传了会员码 && 苹果的去领取 && 充电宝未领取
-							/** noGain 表示不可领取 按钮置灰 */
-							let noGain = false
-							if (index === 1) {
-								noGain = !(hasRewardItem[0] && !hasRewardItem[1])
-							} else {
-								noGain = !!hasRewardItem[0]
-							}
 
-							return (
-								<div
-									key={index}
-									id={`reward-${index}`}
-									className=" flex justify-between items-center text-[#333] py-2 text-sm"
-								>
-									<div className=" w-3/4 text-xs flex justify-start items-center pl-2">
-										<img
-											src={reward.giftLogo}
-											className=" size-[50px]"
-											alt=""
-										/>
-										{reward.giftName}
-									</div>
-									<div
-										className={classNames(
-											'w-[80px] h-[35px] bg-contain flex justify-center items-center',
-											{
-												"bg-[url('assets/img/canGain.png')]": !noGain,
-												"bg-[url('assets/img/noGain.png')]": noGain,
-												'text-[#905224]': !noGain,
-												'text-[#B1B1B1]': noGain,
-											}
-										)}
-										onClick={() => {
-											if (!hasUploadDownloadImage) {
-												addGlowEffect('memberCodeInput')
-												Toast.info(t('luckDraw.pleaseInputTreeMemberCode'))
-												return
-											}
-											if (isComingByShare) {
-												localStorage.setItem(
-													`snow-has-prize-${reward.id}`,
-													'share_link_get_coupon'
-												)
-												showGain()
-												setTimeout(() => {
-													closeGain()
-													addGlowEffect('bindKf')
-													setHasRewardItem([true, false])
-												}, 2000)
-											} else {
-												if (!hasRewardItem[index]) {
-													fbq(
-														'trackCustom',
-														index === 0 ? 'gainPowerBank' : 'gainIphone'
-													)
-
-													if (index === 1 && !hasRewardItem[0]) {
-														addGlowEffect('reward-0')
-														// 领取苹果 但是充电宝还未领取
-														Toast.info(t('luckDraw.gainFirst'))
-														return
-													}
-													document.querySelector('html')!.scrollTop = 0 // document.getElementById('root')!.scrollTop = 0
-
-													navigate(
-														`/good?goodId=${reward.id}&subSite=${subSite || 0}`
-													)
-												}
-											}
-										}}
-									>
-										{!!hasRewardItem[index]
-											? t('luckDraw.hasGain')
-											: t('luckDraw.toGain')}
-									</div>
-								</div>
-							)
-						})}
-
-						{showLineAbout && <ChatLineAbout />}
-					</div>
-				</div>
+				<RewardList
+					hasDrawPrizeIds={hasDrawPrizeIds}
+					hasRewardItem={hasRewardItem}
+					hasUploadDownloadImage={hasUploadDownloadImage}
+					isComingByShare={isComingByShare}
+					updateRewardItems={params => {
+						setHasRewardItem(params)
+					}}
+				/>
 
 				<div className=" px-4 relative">
 					<div
@@ -450,7 +353,7 @@ export function LuckDraw() {
 												return
 											}
 											Toast.info(t('luckDraw.bindMemberCodeSuccess'))
-											if (!isComingByShare) {
+											if (!isComingByShare && bindMemberFirst) {
 												navigate(
 													`/luck?shareMemberCode=${inputValue}&subSite=${
 														subSite || 0
@@ -532,7 +435,6 @@ export function LuckDraw() {
 			{videoNode}
 			{winNode}
 			{bindDialogNode}
-			{gainCouponNode}
 			<audio
 				className=" absolute -left-[300px] -top-[1000px]"
 				src={music}

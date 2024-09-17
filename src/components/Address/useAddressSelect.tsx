@@ -70,7 +70,7 @@ export function useAddressSelect() {
 							...values,
 							province: lang === 'en' ? '马来西亚' : '台湾省',
 							area: '',
-							memberCode: inviteCode,
+							memberCode: inviteCode || '-',
 							productType: isIphone ? 2 : 1,
 						}
 						await mutateAsync(params)
