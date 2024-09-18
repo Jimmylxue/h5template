@@ -39,7 +39,7 @@ export const PrizeList = [
 				height: 100,
 			},
 		],
-		name: 'Nu Nu-折價卷NT$100',
+		name: i18n.t('prizeList.NuNuTicker.name'),
 		borderRadius: 10,
 		giftLogo: xsmr,
 		giftName: i18n.t('prizeList.NuNuTicker.giftName'),

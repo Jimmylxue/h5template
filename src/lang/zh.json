@@ -117,9 +117,10 @@
       "desc6":"A17Pro芯片，6核中央處理器，6核圖形處理器，16核網絡引擎",
       "desc7":"面容ID，SOS緊急聯絡車祸檢测，USB-C接口",
       "originPrice":39600,
-      "price":15
+      "price": 3960
     },
     "NuNuTicker":{
+      "name":"Nu Nu-折價卷NT$100",
       "giftName":"Nu Nu-折價卷NT$100"
     }
   },

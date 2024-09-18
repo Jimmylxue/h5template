@@ -123,13 +123,14 @@ export function RewardList({
 										}
 									)}
 									onClick={() => {
+										console.log('isComingByShare', isComingByShare, reward)
 										if (bindMemberFirst && !hasUploadDownloadImage) {
 											addGlowEffect('memberCodeInput')
 											Toast.info(t('luckDraw.pleaseInputTreeMemberCode'))
 											return
 										}
-										if (isComingByShare && reward.id === 1) {
-											// 1 是优惠券
+										if (reward.id === 1) {
+											// 1 是优惠券 说明就是来自 分享链接
 											localStorage.setItem(
 												`snow-has-prize-${reward.id}`,
 												'share_link_get_coupon'
