@@ -56,6 +56,7 @@ export function ChatLineAbout() {
 						className=" relative bg-[url('/src/assets/img/canGain.png')] w-[80px] h-[35px] text-[#905224] bg-contain flex justify-center items-center"
 						onClick={() => {
 							fbq('trackCustom', 'confirmEndLine')
+							fbq('track', 'Contact')
 							if (isRandomJump === 'true') {
 								const jumpList = data?.result?.[0]?.inviteCode?.split('@@')
 								const length = jumpList?.length

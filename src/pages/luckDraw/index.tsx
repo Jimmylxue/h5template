@@ -290,6 +290,13 @@ export function LuckDraw() {
 										: false
 								)
 							}, 800)
+
+							/**
+							 * fb事件绑定
+							 */
+							if (id === 6) {
+								fbq('track', 'AddToCart')
+							}
 						}}
 					></LuckyGrid>
 				</div>
