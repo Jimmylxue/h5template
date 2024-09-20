@@ -37,11 +37,11 @@
     "submitSuccess":"Submit successfully",
     "jumpText":"Redirecting",
     "arriveText":"Arrives within 7 working days",
-    "packageText":"Track package contact facebook",
+    "packageText":"Track package contact whatsapp",
     "confirmText":"Confirm"
   },
   "ChatLineAbout":{
-    "kefuLine":"facebook",
+    "kefuLine":"whatsapp",
     "findKf":"Take a screenshot of this page and contact customer service for verification",
     "hasCopyText":"Copied id",
     "quChat":"Link"
@@ -100,7 +100,7 @@
     },
     "oneZhe":{
       "name":"【Official authentic】Apple iPhone 15 brand new unopened",
-      "giftName":"RM560 COD",
+      "giftName":"RM390 COD",
       "colorAttrName":"Color",
       "colorAttrValue1":"Black",
       "colorAttrValue2":"Pink",
