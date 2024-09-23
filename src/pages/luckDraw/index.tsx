@@ -178,6 +178,8 @@ export function LuckDraw() {
 		setDrawCount(pre => Number(pre) - 1)
 		// 点击抽奖按钮会触发star回调
 		// @ts-ignore
+		audioRef.current.volume = 0.5
+		// @ts-ignore
 		audioRef?.current?.play?.()
 		myLucky.current.play()
 		const index = drawPrizeIndex()
