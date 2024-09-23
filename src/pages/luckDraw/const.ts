@@ -24,6 +24,70 @@ import siphone4 from '../../assets/img/swiper/iphone4.jpg'
 import siphone5 from '../../assets/img/swiper/iphone5.jpg'
 import siphone6 from '../../assets/img/swiper/iphone6.jpg'
 
+import blackPowerBank from '@/assets/img/swiper/blackPowrBank.jpg'
+import whitePowerBank from '@/assets/img/swiper/whitePowerBank.jpg'
+import bluePowerBank from '@/assets/img/swiper/bluePowerBank.jpg'
+import pinkPowerBank from '@/assets/img/swiper/pinkPowerBank.jpg'
+
+import iphoneComment1 from '@/assets/img/goodDetail/iphoneComment/1.jpg'
+import iphoneComment2 from '@/assets/img/goodDetail/iphoneComment/2.jpg'
+import iphoneComment3 from '@/assets/img/goodDetail/iphoneComment/3.jpg'
+import iphoneComment4 from '@/assets/img/goodDetail/iphoneComment/4.jpg'
+import iphoneComment5 from '@/assets/img/goodDetail/iphoneComment/5.jpg'
+import iphoneComment6 from '@/assets/img/goodDetail/iphoneComment/6.jpg'
+import iphoneComment7 from '@/assets/img/goodDetail/iphoneComment/7.jpg'
+import iphoneComment8 from '@/assets/img/goodDetail/iphoneComment/8.jpg'
+import iphoneComment9 from '@/assets/img/goodDetail/iphoneComment/9.jpg'
+import iphoneComment10 from '@/assets/img/goodDetail/iphoneComment/10.jpg'
+import iphoneComment11 from '@/assets/img/goodDetail/iphoneComment/11.jpg'
+import iphoneComment12 from '@/assets/img/goodDetail/iphoneComment/12.jpg'
+import iphoneComment13 from '@/assets/img/goodDetail/iphoneComment/13.jpg'
+import iphoneComment14 from '@/assets/img/goodDetail/iphoneComment/14.jpg'
+import iphoneComment15 from '@/assets/img/goodDetail/iphoneComment/15.jpg'
+import iphoneComment16 from '@/assets/img/goodDetail/iphoneComment/16.jpg'
+import iphoneComment17 from '@/assets/img/goodDetail/iphoneComment/17.jpg'
+import iphoneComment18 from '@/assets/img/goodDetail/iphoneComment/18.jpg'
+import iphoneComment19 from '@/assets/img/goodDetail/iphoneComment/19.jpg'
+import iphoneComment20 from '@/assets/img/goodDetail/iphoneComment/20.jpg'
+import iphoneComment21 from '@/assets/img/goodDetail/iphoneComment/21.jpg'
+import iphoneComment22 from '@/assets/img/goodDetail/iphoneComment/22.jpg'
+import iphoneComment23 from '@/assets/img/goodDetail/iphoneComment/23.jpg'
+import iphoneComment24 from '@/assets/img/goodDetail/iphoneComment/24.jpg'
+
+import {
+	pwpd1,
+	pwpd2,
+	pwpd3,
+	pwpd4,
+	pwpd5,
+	pwpd6,
+	pwpd7,
+	pwpd8,
+	pwpd9,
+	ippd1,
+	ippd2,
+	ippd3,
+	ippd4,
+	ippd5,
+	ippd6,
+	ippd7,
+	ippd8,
+	ippd9,
+	ippd10,
+} from '@/assets/goodDetail'
+
+import powerBankComment1_1 from '@/assets/img/goodDetail/powerBankComment/1-1.jpg'
+import powerBankComment1_2 from '@/assets/img/goodDetail/powerBankComment/1-2.jpg'
+
+import powerBankComment2_1 from '@/assets/img/goodDetail/powerBankComment/2-1.jpg'
+import powerBankComment2_2 from '@/assets/img/goodDetail/powerBankComment/2-2.jpg'
+
+import powerBankComment3_1 from '@/assets/img/goodDetail/powerBankComment/3-1.jpg'
+import powerBankComment3_2 from '@/assets/img/goodDetail/powerBankComment/3-2.jpg'
+
+import powerBankComment4_1 from '@/assets/img/goodDetail/powerBankComment/4-1.jpg'
+import powerBankComment4_2 from '@/assets/img/goodDetail/powerBankComment/4-2.jpg'
+
 import i18n from '../../lang/config'
 
 export const PrizeList = [
@@ -65,29 +129,145 @@ export const PrizeList = [
 		originPrice: i18n.t('prizeList.powerBank.originPrice'),
 		originImage: chongdianbao,
 		swiperImages: [spowerbank1, spowerbank2, spowerbank3, powerBankGift],
+		attrImages: [blackPowerBank, whitePowerBank, bluePowerBank, pinkPowerBank],
 		attrs: [
 			{
-				type: 'color',
+				type: 'img',
 				attr: i18n.t('prizeList.powerBank.colorAttrName'),
 				values: [
-					i18n.t('prizeList.powerBank.colorAttrValue'),
-					// '黑色-0^^disabled',
-					// '白色-0^^disabled',
-					// '蓝色-0^^disabled',
-					// '红色-0^^disabled',
+					{
+						chooseAble: true,
+						src: blackPowerBank,
+						name: i18n.t('prizeList.powerBank.colorAttrValue1'),
+					},
+					{
+						chooseAble: true,
+						src: whitePowerBank,
+						name: i18n.t('prizeList.powerBank.colorAttrValue2'),
+					},
+					{
+						chooseAble: true,
+						src: bluePowerBank,
+						name: i18n.t('prizeList.powerBank.colorAttrValue3'),
+					},
+					{
+						chooseAble: true,
+						src: pinkPowerBank,
+						name: i18n.t('prizeList.powerBank.colorAttrValue4'),
+					},
 				],
 			},
 			{
-				type: 'number',
+				type: 'text',
 				attr: i18n.t('prizeList.powerBank.capacityAttrName'),
 				// values: ['10000毫安', '20000毫安-0^^disabled'],
-				values: [i18n.t('prizeList.powerBank.capacityAttrValue')],
+				values: [
+					{
+						chooseAble: true,
+						name: i18n.t('prizeList.powerBank.storageAttrValue1'),
+					},
+					{
+						chooseAble: false,
+						name: i18n.t('prizeList.powerBank.storageAttrValue2'),
+					},
+				],
 			},
 		],
 		desc: [
 			i18n.t('prizeList.powerBank.desc1'),
 			i18n.t('prizeList.powerBank.desc2'),
 			i18n.t('prizeList.powerBank.desc3'),
+		],
+		attribute: [
+			{
+				name: i18n.t('prizeList.powerBank.sizeName'),
+				value: i18n.t('prizeList.powerBank.sizeValue'),
+			},
+			{
+				name: i18n.t('prizeList.powerBank.brandName'),
+				value: i18n.t('prizeList.powerBank.brandValue'),
+			},
+			{
+				name: i18n.t('prizeList.powerBank.xhName'),
+				value: i18n.t('prizeList.powerBank.xhValue'),
+			},
+			{
+				name: i18n.t('prizeList.powerBank.cdxyName'),
+				value: i18n.t('prizeList.powerBank.cdxyValue'),
+			},
+			{
+				name: i18n.t('prizeList.powerBank.powerName'),
+				value: i18n.t('prizeList.powerBank.powerValue'),
+			},
+			{
+				name: i18n.t('prizeList.powerBank.styleName'),
+				value: i18n.t('prizeList.powerBank.styleValue'),
+			},
+			{
+				name: i18n.t('prizeList.powerBank.powerSizeName'),
+				value: i18n.t('prizeList.powerBank.powerSizeValue'),
+			},
+			{
+				name: i18n.t('prizeList.powerBank.ksName'),
+				value: i18n.t('prizeList.powerBank.ksValue'),
+			},
+			{
+				name: i18n.t('prizeList.powerBank.functionName'),
+				value: i18n.t('prizeList.powerBank.functionValue'),
+			},
+			{
+				name: i18n.t('prizeList.powerBank.chargeName'),
+				value: i18n.t('prizeList.powerBank.chargeValue'),
+			},
+			{
+				name: i18n.t('prizeList.powerBank.rlName'),
+				value: i18n.t('prizeList.powerBank.rlValue'),
+			},
+			{
+				name: i18n.t('prizeList.powerBank.powerTypeName'),
+				value: i18n.t('prizeList.powerBank.powerTypeValue'),
+			},
+			{
+				name: i18n.t('prizeList.powerBank.colorTypeName'),
+				value: i18n.t('prizeList.powerBank.colorTypeValue'),
+			},
+		],
+		productDetailImgs: [
+			pwpd1,
+			pwpd2,
+			pwpd3,
+			pwpd4,
+			pwpd5,
+			pwpd6,
+			pwpd7,
+			pwpd8,
+			pwpd9,
+		],
+		comments: [
+			{
+				commentId: 1,
+				imgs: [powerBankComment1_1, powerBankComment1_2],
+				text: i18n.t('prizeList.powerBank.commentText1'),
+				userName: 'H***',
+			},
+			{
+				commentId: 2,
+				imgs: [powerBankComment2_1, powerBankComment2_2],
+				text: i18n.t('prizeList.powerBank.commentText2'),
+				userName: 'i***',
+			},
+			{
+				commentId: 3,
+				imgs: [powerBankComment3_1, powerBankComment3_2],
+				text: i18n.t('prizeList.powerBank.commentText3'),
+				userName: 'p***',
+			},
+			{
+				commentId: 4,
+				imgs: [powerBankComment4_1, powerBankComment4_2],
+				text: i18n.t('prizeList.powerBank.commentText4'),
+				userName: 'j***',
+			},
 		],
 	},
 	{
@@ -202,24 +382,58 @@ export const PrizeList = [
 		price: i18n.t('prizeList.oneZhe.price'),
 		originImage: iphone,
 		swiperImages: [siphone1, siphone2, siphone3, siphone4, siphone5, siphone6],
+		attrImages: [siphone2, siphone3, siphone4, siphone5, siphone6],
 		discount: 1,
 		attrs: [
 			{
-				type: 'color',
+				type: 'img',
 				attr: i18n.t('prizeList.oneZhe.colorAttrName'),
 				values: [
-					i18n.t('prizeList.oneZhe.colorAttrValue1'),
-					i18n.t('prizeList.oneZhe.colorAttrValue2'),
-					i18n.t('prizeList.oneZhe.colorAttrValue3'),
-					i18n.t('prizeList.oneZhe.colorAttrValue4'),
-					i18n.t('prizeList.oneZhe.colorAttrValue5'),
+					{
+						chooseAble: true,
+						src: siphone2,
+						name: i18n.t('prizeList.oneZhe.colorAttrValue1'),
+					},
+					{
+						chooseAble: true,
+						src: siphone3,
+						name: i18n.t('prizeList.oneZhe.colorAttrValue2'),
+					},
+					{
+						chooseAble: true,
+						src: siphone4,
+						name: i18n.t('prizeList.oneZhe.colorAttrValue3'),
+					},
+					{
+						chooseAble: true,
+						src: siphone5,
+						name: i18n.t('prizeList.oneZhe.colorAttrValue4'),
+					},
+					{
+						chooseAble: true,
+						src: siphone6,
+						name: i18n.t('prizeList.oneZhe.colorAttrValue5'),
+					},
 				],
 			},
 			{
-				type: 'price',
+				type: 'text',
 				attr: i18n.t('prizeList.oneZhe.storageAttrName'),
 				// values: ['256G-48000', '512G-52000^^disabled', '1T-58900^^disabled'],
-				values: [i18n.t('prizeList.oneZhe.storageAttrValue')],
+				values: [
+					{
+						chooseAble: false,
+						name: i18n.t('prizeList.oneZhe.storageAttrValue1'),
+					},
+					{
+						chooseAble: true,
+						name: i18n.t('prizeList.oneZhe.storageAttrValue2'),
+					},
+					{
+						chooseAble: false,
+						name: i18n.t('prizeList.oneZhe.storageAttrValue3'),
+					},
+				],
 			},
 		],
 		desc: [
@@ -230,6 +444,142 @@ export const PrizeList = [
 			i18n.t('prizeList.oneZhe.desc5'),
 			i18n.t('prizeList.oneZhe.desc6'),
 			i18n.t('prizeList.oneZhe.desc7'),
+		],
+		attribute: [
+			{
+				name: i18n.t('prizeList.oneZhe.brandName'),
+				value: i18n.t('prizeList.oneZhe.brandValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.systemName'),
+				value: i18n.t('prizeList.oneZhe.systemValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.cpuName'),
+				value: i18n.t('prizeList.oneZhe.cpuValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.syName'),
+				value: i18n.t('prizeList.oneZhe.syValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.pxName'),
+				value: i18n.t('prizeList.oneZhe.pxValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.powerName'),
+				value: i18n.t('prizeList.oneZhe.powerValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.powerTypeName'),
+				value: i18n.t('prizeList.oneZhe.powerTypeValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.screenSizeName'),
+				value: i18n.t('prizeList.oneZhe.screenSizeValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.screenUpdateName'),
+				value: i18n.t('prizeList.oneZhe.screenUpdateValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.backPxName'),
+				value: i18n.t('prizeList.oneZhe.backPxValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.prePxName'),
+				value: i18n.t('prizeList.oneZhe.prePxValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.statusName'),
+				value: i18n.t('prizeList.oneZhe.statusValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.saveTimeName'),
+				value: i18n.t('prizeList.oneZhe.saveTimeValue'),
+			},
+			{
+				name: i18n.t('prizeList.oneZhe.saveTimeTypeName'),
+				value: i18n.t('prizeList.oneZhe.saveTimeTypeValue'),
+			},
+		],
+		productDetailImgs: [
+			ippd1,
+			ippd2,
+			ippd3,
+			ippd4,
+			ippd5,
+			ippd6,
+			ippd7,
+			ippd8,
+			ippd9,
+			ippd10,
+		],
+		comments: [
+			{
+				commentId: 1,
+				imgs: [iphoneComment1, iphoneComment2, iphoneComment3],
+				text: i18n.t('prizeList.oneZhe.commentText1'),
+				userName: 'H***',
+			},
+			{
+				commentId: 2,
+				imgs: [iphoneComment4, iphoneComment5],
+				text: i18n.t('prizeList.oneZhe.commentText2'),
+				userName: 'i***',
+			},
+			{
+				commentId: 3,
+				imgs: [iphoneComment6, iphoneComment7],
+				text: i18n.t('prizeList.oneZhe.commentText3'),
+				userName: 'p***',
+			},
+			{
+				commentId: 4,
+				imgs: [iphoneComment8, iphoneComment9],
+				text: i18n.t('prizeList.oneZhe.commentText4'),
+				userName: 'j***',
+			},
+			{
+				commentId: 5,
+				imgs: [iphoneComment10, iphoneComment11],
+				text: i18n.t('prizeList.oneZhe.commentText5'),
+				userName: 'a***',
+			},
+			{
+				commentId: 6,
+				imgs: [iphoneComment12, iphoneComment13, iphoneComment14],
+				text: i18n.t('prizeList.oneZhe.commentText6'),
+				userName: 'w***',
+			},
+			{
+				commentId: 7,
+				imgs: [
+					iphoneComment15,
+					iphoneComment16,
+					iphoneComment17,
+					iphoneComment18,
+				],
+				text: i18n.t('prizeList.oneZhe.commentText7'),
+				userName: 'q***',
+			},
+			{
+				commentId: 8,
+				imgs: [iphoneComment19, iphoneComment20],
+				text: i18n.t('prizeList.oneZhe.commentText8'),
+				userName: 'v***',
+			},
+			{
+				commentId: 9,
+				imgs: [
+					iphoneComment21,
+					iphoneComment22,
+					iphoneComment23,
+					iphoneComment24,
+				],
+				text: i18n.t('prizeList.oneZhe.commentText9'),
+				userName: 'k***',
+			},
 		],
 	},
 	{
