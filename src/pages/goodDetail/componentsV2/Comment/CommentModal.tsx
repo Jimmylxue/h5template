@@ -1,6 +1,6 @@
 import { Divider, Popup } from 'react-vant'
 import safe2Icon from '@/assets/img/goodDetail/safe2Icon.png'
-import userAvatar from '@/assets/img/goodDetail/userAvatar.png'
+import userAvatar from '@/assets/img/header.png'
 import saveIcon from '@/assets/img/goodDetail/saveIcon.png'
 import imgIcon from '@/assets/img/goodDetail/imgIcon.png'
 import { useTranslation } from 'react-i18next'
@@ -57,7 +57,10 @@ export function CommentModal({ visible, onCLose }: TProps) {
 									<div className=" text-[#333333] font-bold text-[13px]">
 										{item.userName}
 									</div>
-									<div className=" text-[11px] text-[#999999]">{`2024 07 14    黑色    內存 256GB`}</div>
+									<div className=" text-[11px] text-[#999999]">
+										{/* @ts-ignore */}
+										{item.descText}
+									</div>
 								</div>
 							</div>
 							<div className="text-[#333333] text-[13px]">{item.text}</div>

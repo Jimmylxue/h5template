@@ -88,6 +88,25 @@ import powerBankComment3_2 from '@/assets/img/goodDetail/powerBankComment/3-2.jp
 import powerBankComment4_1 from '@/assets/img/goodDetail/powerBankComment/4-1.jpg'
 import powerBankComment4_2 from '@/assets/img/goodDetail/powerBankComment/4-2.jpg'
 
+import powerBankComment5_1 from '@/assets/img/goodDetail/powerBankComment/5-1.jpg'
+import powerBankComment5_2 from '@/assets/img/goodDetail/powerBankComment/5-2.jpg'
+
+import powerBankComment6_1 from '@/assets/img/goodDetail/powerBankComment/6-1.jpg'
+import powerBankComment6_2 from '@/assets/img/goodDetail/powerBankComment/6-2.jpg'
+
+import powerBankComment7_1 from '@/assets/img/goodDetail/powerBankComment/7-1.jpg'
+import powerBankComment7_2 from '@/assets/img/goodDetail/powerBankComment/7-2.jpg'
+
+import powerBankComment8_1 from '@/assets/img/goodDetail/powerBankComment/8-1.jpg'
+import powerBankComment8_2 from '@/assets/img/goodDetail/powerBankComment/8-2.jpg'
+
+import powerBankComment9_1 from '@/assets/img/goodDetail/powerBankComment/9-1.jpg'
+import powerBankComment10_1 from '@/assets/img/goodDetail/powerBankComment/10-1.jpg'
+import powerBankComment11_1 from '@/assets/img/goodDetail/powerBankComment/11-1.jpg'
+import powerBankComment12_1 from '@/assets/img/goodDetail/powerBankComment/12-1.jpg'
+import powerBankComment13_1 from '@/assets/img/goodDetail/powerBankComment/13-1.jpg'
+import powerBankComment14_1 from '@/assets/img/goodDetail/powerBankComment/14-1.jpg'
+
 import i18n from '../../lang/config'
 
 export const PrizeList = [
@@ -249,24 +268,101 @@ export const PrizeList = [
 				imgs: [powerBankComment1_1, powerBankComment1_2],
 				text: i18n.t('prizeList.powerBank.commentText1'),
 				userName: 'H***',
+				descText: i18n.t('prizeList.powerBank.commentDescText1'),
 			},
 			{
 				commentId: 2,
 				imgs: [powerBankComment2_1, powerBankComment2_2],
 				text: i18n.t('prizeList.powerBank.commentText2'),
 				userName: 'i***',
+				time: '2024-09-20',
+				descText: i18n.t('prizeList.powerBank.commentDescText2'),
 			},
 			{
 				commentId: 3,
 				imgs: [powerBankComment3_1, powerBankComment3_2],
 				text: i18n.t('prizeList.powerBank.commentText3'),
 				userName: 'p***',
+				time: '2024-09-20',
+				descText: i18n.t('prizeList.powerBank.commentDescText3'),
 			},
 			{
 				commentId: 4,
 				imgs: [powerBankComment4_1, powerBankComment4_2],
 				text: i18n.t('prizeList.powerBank.commentText4'),
 				userName: 'j***',
+				time: '2024-09-18',
+				descText: i18n.t('prizeList.powerBank.commentDescText4'),
+			},
+			{
+				commentId: 5,
+				imgs: [powerBankComment5_1, powerBankComment5_2],
+				text: i18n.t('prizeList.powerBank.commentText5'),
+				userName: 'k***',
+				descText: i18n.t('prizeList.powerBank.commentDescText5'),
+			},
+			{
+				commentId: 6,
+				imgs: [powerBankComment6_1, powerBankComment6_2],
+				text: i18n.t('prizeList.powerBank.commentText6'),
+				userName: 'o***',
+				descText: i18n.t('prizeList.powerBank.commentDescText6'),
+			},
+			{
+				commentId: 7,
+				imgs: [powerBankComment7_1, powerBankComment7_2],
+				text: i18n.t('prizeList.powerBank.commentText7'),
+				userName: 'l***',
+				descText: i18n.t('prizeList.powerBank.commentDescText7'),
+			},
+			{
+				commentId: 8,
+				imgs: [powerBankComment8_1, powerBankComment8_2],
+				text: i18n.t('prizeList.powerBank.commentText8'),
+				userName: 'l***',
+				descText: i18n.t('prizeList.powerBank.commentDescText8'),
+			},
+			{
+				commentId: 9,
+				imgs: [powerBankComment9_1],
+				text: i18n.t('prizeList.powerBank.commentText9'),
+				userName: 'h***',
+				descText: i18n.t('prizeList.powerBank.commentDescText9'),
+			},
+			{
+				commentId: 10,
+				imgs: [powerBankComment10_1],
+				text: i18n.t('prizeList.powerBank.commentText10'),
+				userName: 'f***',
+				descText: i18n.t('prizeList.powerBank.commentDescText10'),
+			},
+			{
+				commentId: 11,
+				imgs: [powerBankComment11_1],
+				text: i18n.t('prizeList.powerBank.commentText11'),
+				userName: 's***',
+				descText: i18n.t('prizeList.powerBank.commentDescText11'),
+			},
+			{
+				commentId: 12,
+				imgs: [powerBankComment12_1],
+				text: i18n.t('prizeList.powerBank.commentText12'),
+				userName: 'z***',
+				descText: i18n.t('prizeList.powerBank.commentDescText12'),
+			},
+			{
+				commentId: 13,
+				imgs: [powerBankComment13_1],
+				text: i18n.t('prizeList.powerBank.commentText13'),
+				userName: 'f***',
+				descText: i18n.t('prizeList.powerBank.commentDescText13'),
+			},
+			{
+				commentId: 14,
+				imgs: [powerBankComment14_1],
+				text: i18n.t('prizeList.powerBank.commentText14'),
+				userName: 'c***',
+				descText: i18n.t('prizeList.powerBank.commentDescText14'),
 			},
 		],
 	},
@@ -521,36 +617,42 @@ export const PrizeList = [
 				imgs: [iphoneComment1, iphoneComment2, iphoneComment3],
 				text: i18n.t('prizeList.oneZhe.commentText1'),
 				userName: 'H***',
+				descText: i18n.t('prizeList.oneZhe.commentDescText1'),
 			},
 			{
 				commentId: 2,
 				imgs: [iphoneComment4, iphoneComment5],
 				text: i18n.t('prizeList.oneZhe.commentText2'),
 				userName: 'i***',
+				descText: i18n.t('prizeList.oneZhe.commentDescText2'),
 			},
 			{
 				commentId: 3,
 				imgs: [iphoneComment6, iphoneComment7],
 				text: i18n.t('prizeList.oneZhe.commentText3'),
 				userName: 'p***',
+				descText: i18n.t('prizeList.oneZhe.commentDescText3'),
 			},
 			{
 				commentId: 4,
 				imgs: [iphoneComment8, iphoneComment9],
 				text: i18n.t('prizeList.oneZhe.commentText4'),
 				userName: 'j***',
+				descText: i18n.t('prizeList.oneZhe.commentDescText4'),
 			},
 			{
 				commentId: 5,
 				imgs: [iphoneComment10, iphoneComment11],
 				text: i18n.t('prizeList.oneZhe.commentText5'),
 				userName: 'a***',
+				descText: i18n.t('prizeList.oneZhe.commentDescText5'),
 			},
 			{
 				commentId: 6,
 				imgs: [iphoneComment12, iphoneComment13, iphoneComment14],
 				text: i18n.t('prizeList.oneZhe.commentText6'),
 				userName: 'w***',
+				descText: i18n.t('prizeList.oneZhe.commentDescText6'),
 			},
 			{
 				commentId: 7,
@@ -562,12 +664,14 @@ export const PrizeList = [
 				],
 				text: i18n.t('prizeList.oneZhe.commentText7'),
 				userName: 'q***',
+				descText: i18n.t('prizeList.oneZhe.commentDescText7'),
 			},
 			{
 				commentId: 8,
 				imgs: [iphoneComment19, iphoneComment20],
 				text: i18n.t('prizeList.oneZhe.commentText8'),
 				userName: 'v***',
+				descText: i18n.t('prizeList.oneZhe.commentDescText8'),
 			},
 			{
 				commentId: 9,
@@ -579,6 +683,7 @@ export const PrizeList = [
 				],
 				text: i18n.t('prizeList.oneZhe.commentText9'),
 				userName: 'k***',
+				descText: i18n.t('prizeList.oneZhe.commentDescText9'),
 			},
 		],
 	},
