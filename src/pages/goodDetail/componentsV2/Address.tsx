@@ -1,11 +1,12 @@
 import homeIcon from '@/assets/img/goodDetail/homeIcon.png'
 import { AddressForm } from './AddressForm'
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useSku } from '../SkuContext'
 
 export function Address() {
-	const [visible, setVisible] = useState<boolean>(false)
+	const { addressInputShow, updateAddressInputShow } = useSku()
+	// const [visible, setVisible] = useState<boolean>(false)
 	const navigate = useNavigate()
 	const { t } = useTranslation()
 
@@ -28,7 +29,7 @@ export function Address() {
 				<div
 					className=" w-[287px] h-[52px] bg-[#FF4125] text-[#fff] flex justify-center items-center rounded-lg"
 					onClick={() => {
-						setVisible(true)
+						updateAddressInputShow?.(true)
 					}}
 				>
 					{t('goodDetail.inputAddressBtn')}
@@ -36,9 +37,9 @@ export function Address() {
 			</div>
 
 			<AddressForm
-				visible={visible}
+				visible={addressInputShow}
 				onClose={() => {
-					setVisible(false)
+					updateAddressInputShow?.(false)
 				}}
 			/>
 		</>

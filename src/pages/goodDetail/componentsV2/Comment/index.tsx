@@ -15,19 +15,19 @@ export function Comment() {
 	return (
 		<>
 			<div className=" mt-2 bg-white py-3 px-2">
-				<div className=" flex w-full justify-between items-center ">
+				<div
+					className=" flex w-full justify-between items-center "
+					onClick={() => {
+						setVisible(true)
+					}}
+				>
 					<div className=" flex items-center">
 						<div className=" w-[4px] h-[14px] bg-[#FE4025] rounded"></div>
 						<div className=" text-sm font-bold ml-2">
 							{t('goodDetail.commentText')}
 						</div>
 					</div>
-					<div
-						className=" flex items-center"
-						onClick={() => {
-							setVisible(true)
-						}}
-					>
+					<div className=" flex items-center">
 						<div className=" text-sm text-[#333333]">5</div>
 						<img src={saveIcon} className=" w-[13px] h-[11px] ml-1" alt="" />
 						<img src={saveIcon} className=" w-[13px] h-[11px] ml-1" alt="" />

@@ -43,8 +43,8 @@
     "productData":"Product parameters",
     "commentText":"Review(71)",
     "phoneTextDesc":"Pictures/Videos(18)",
-    "realCommentText":"Platform is committed to providing real reviews"
-
+    "realCommentText":"Platform is committed to providing real reviews",
+    "commentMoreText":"For more comments, please check the App"
   },
   "lineModal":{
     "waiting":"Please wait",

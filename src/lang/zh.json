@@ -43,7 +43,8 @@
     "productData":"產品參數",
     "commentText":"評價(71)",
     "phoneTextDesc":"圖片/視頻(18)",
-    "realCommentText":"平台致力於提供真實評價"
+    "realCommentText":"平台致力於提供真實評價",
+    "commentMoreText":"更多評論資訊請到App查看"
   },
   "lineModal":{
     "waiting":"請稍後",

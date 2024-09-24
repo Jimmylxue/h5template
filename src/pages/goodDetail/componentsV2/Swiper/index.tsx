@@ -16,6 +16,7 @@ export function Swipers() {
 		<div className=" w-full h-[380px] relative">
 			<Swiper
 				ref={swipperRef}
+				enabled={false}
 				indicator={(_, current) => {
 					setCurrentIndex(current)
 					document
@@ -42,6 +43,9 @@ export function Swipers() {
 											}
 										)}
 										key={index}
+										onClick={() => {
+											swipperRef.current?.swipeTo(index)
+										}}
 									>
 										<img src={item} alt="" />
 									</div>

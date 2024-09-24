@@ -12,7 +12,12 @@ export function Attribute() {
 
 	return (
 		<>
-			<div className=" mt-2 bg-white  py-3">
+			<div
+				className=" mt-2 bg-white  py-3"
+				onClick={() => {
+					setVisible(true)
+				}}
+			>
 				<div className=" flex w-full justify-between items-center px-2">
 					<div className=" flex items-center">
 						<div className=" w-[4px] h-[14px] bg-[#FE4025] rounded"></div>
@@ -20,11 +25,7 @@ export function Attribute() {
 							{t('goodDetail.productData')}
 						</div>
 					</div>
-					<div
-						onClick={() => {
-							setVisible(true)
-						}}
-					>
+					<div>
 						<img className=" w-[6px] h-[10px]" src={right} alt="" />
 					</div>
 				</div>

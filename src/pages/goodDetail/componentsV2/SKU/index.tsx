@@ -17,7 +17,12 @@ export function SKU() {
 
 	return (
 		<div>
-			<div className=" py-1 text-[13px] flex items-center w-full justify-between px-2">
+			<div
+				className=" py-1 text-[13px] flex items-center w-full justify-between px-2"
+				onClick={() => {
+					setVisible(true)
+				}}
+			>
 				<div className=" flex items-center">
 					<img src={menuIcon} className=" size-[10px] mr-1" alt="" />
 					{good?.attrImages?.map((item, index) => (
@@ -31,12 +36,7 @@ export function SKU() {
 						</div>
 					))}
 				</div>
-				<div
-					className=" text-[13px] flex items-center"
-					onClick={() => {
-						setVisible(true)
-					}}
-				>
+				<div className=" text-[13px] flex items-center">
 					<div className=" text-[#444444]">
 						{t('goodDetail.hasSelectText')}
 						{selectText}

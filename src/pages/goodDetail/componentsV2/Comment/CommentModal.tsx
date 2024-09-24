@@ -1,4 +1,4 @@
-import { Popup } from 'react-vant'
+import { Divider, Popup } from 'react-vant'
 import safe2Icon from '@/assets/img/goodDetail/safe2Icon.png'
 import userAvatar from '@/assets/img/goodDetail/userAvatar.png'
 import saveIcon from '@/assets/img/goodDetail/saveIcon.png'
@@ -22,7 +22,7 @@ export function CommentModal({ visible, onCLose }: TProps) {
 			closeable
 			title="评价"
 			description={
-				<div className=" pb-4 h-[700px] overflow-y-auto">
+				<div className=" pb-4 h-[740px] overflow-y-auto no-scrollbar">
 					<div className=" bg-[#F6F2FF] w-full flex items-center px-1 rounded">
 						<div>
 							<img className=" w-[11px] h-[13px]" src={safe2Icon} alt="" />
@@ -103,12 +103,13 @@ export function CommentModal({ visible, onCLose }: TProps) {
 							</div>
 						</div>
 					))}
+					<Divider>更多评论信息请到App中查看</Divider>
 				</div>
 			}
 			position="bottom"
 			round
 			style={{
-				height: '90%',
+				height: '800px',
 			}}
 			onClose={onCLose}
 		/>

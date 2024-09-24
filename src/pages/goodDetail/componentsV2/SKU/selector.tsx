@@ -14,8 +14,14 @@ type TProps = {
 export function Selector({ visible, onClose }: TProps) {
 	const { t } = useTranslation()
 	const { good } = useCurrentGood()
-	const { imgIndex, updateImgIndex, updateTextIndex, selectText, textIndex } =
-		useSku()
+	const {
+		imgIndex,
+		updateImgIndex,
+		updateTextIndex,
+		selectText,
+		textIndex,
+		updateAddressInputShow,
+	} = useSku()
 
 	const [tempChooseImg, setTempChooseImg] = useState<number>(0)
 	const [tempChooseText, setTempChooseText] = useState<number>(0)
@@ -142,6 +148,7 @@ export function Selector({ visible, onClose }: TProps) {
 						onClick={() => {
 							updateImgIndex?.(tempChooseImg)
 							updateTextIndex?.(tempChooseText)
+							updateAddressInputShow?.(true)
 							onClose()
 						}}
 					>
