@@ -22,7 +22,7 @@ export function CommentModal({ visible, onCLose }: TProps) {
 			closeable
 			title="评价"
 			description={
-				<div className=" pb-4 h-[740px] overflow-y-auto no-scrollbar">
+				<div className=" pb-4 h-[540px] overflow-y-auto no-scrollbar">
 					<div className=" bg-[#F6F2FF] w-full flex items-center px-1 rounded">
 						<div>
 							<img className=" w-[11px] h-[13px]" src={safe2Icon} alt="" />
@@ -112,7 +112,7 @@ export function CommentModal({ visible, onCLose }: TProps) {
 			position="bottom"
 			round
 			style={{
-				height: '800px',
+				height: '600px',
 			}}
 			onClose={onCLose}
 		/>

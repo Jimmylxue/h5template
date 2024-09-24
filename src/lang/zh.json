@@ -3,7 +3,7 @@
     "drawCount_before": "你還有",
     "drawCount_after": "次抽獎機會",
     "prizeRecord":"中獎记录",
-    "prize":"奖品",
+    "prize":"獎品",
     "operator":"操作",
     "toGain":"去领取",
     "gainFirst":"請先領取上一個獎品",
@@ -44,7 +44,7 @@
     "commentText":"評價(71)",
     "phoneTextDesc":"圖片/視頻(18)",
     "realCommentText":"平台致力於提供真實評價",
-    "commentMoreText":"更多評論資訊請到App查看"
+    "commentMoreText":"更多點評信息請到App中查看"
   },
   "lineModal":{
     "waiting":"請稍後",
@@ -93,7 +93,7 @@
     "detailLabel":"詳細地址",
     "detailRule":"請填寫詳細地址",
     "shopLabel":"超商門市",
-    "shopRule":"請填寫超商門市",
+    "shopRule":"請輸入7-11或全家超市門市",
     "cityLabel":"區 域",
     "cityRule":"請選擇區域",
     "cancelText":"取消",
