@@ -106,7 +106,7 @@ export function CommentModal({ visible, onCLose }: TProps) {
 							</div>
 						</div>
 					))}
-					<Divider>更多评论信息请到App中查看</Divider>
+					<Divider>{t('goodDetail.commentMoreText')}</Divider>
 				</div>
 			}
 			position="bottom"
