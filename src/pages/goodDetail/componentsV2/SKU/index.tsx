@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import menuIcon from '@/assets/img/goodDetail/menuIcon.png'
 import right from '@/assets/img/goodDetail/right.png'
 import { useCurrentGood } from '../../core/useCurrentGood'
@@ -11,7 +10,7 @@ export function SKU() {
 	const { good } = useCurrentGood()
 	const { t } = useTranslation()
 
-	const [visible, setVisible] = useState<boolean>(false)
+	const { skuSelectShow, updateSkuSelectShow } = useSku()
 
 	const { imgIndex, selectText } = useSku()
 
@@ -20,7 +19,7 @@ export function SKU() {
 			<div
 				className=" py-1 text-[13px] flex items-center w-full justify-between px-2"
 				onClick={() => {
-					setVisible(true)
+					updateSkuSelectShow?.(true)
 				}}
 			>
 				<div className=" flex items-center">
@@ -45,9 +44,9 @@ export function SKU() {
 				</div>
 			</div>
 			<Selector
-				visible={visible}
+				visible={skuSelectShow}
 				onClose={() => {
-					setVisible(false)
+					updateSkuSelectShow?.(false)
 				}}
 			/>
 		</div>

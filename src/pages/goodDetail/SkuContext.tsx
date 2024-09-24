@@ -15,6 +15,8 @@ type TSKUContext = {
 	updateTextIndex?: (index: number) => void
 	selectText: string
 	selectImage: string
+	skuSelectShow: boolean
+	updateSkuSelectShow?: (status: boolean) => void
 	addressInputShow: boolean
 	updateAddressInputShow?: (status: boolean) => void
 }
@@ -25,6 +27,7 @@ const SKUContext = createContext<TSKUContext>({
 	selectText: '',
 	selectImage: '',
 	addressInputShow: false,
+	skuSelectShow: false,
 })
 
 export const SKUContextProvider = function ({
@@ -38,6 +41,7 @@ export const SKUContextProvider = function ({
 	const [textIndex, setTextIndex] = useState<number>(0)
 
 	const [addressInputShow, setAddressInputShow] = useState<boolean>(false)
+	const [skuSelectShow, setSkuSelectShow] = useState<boolean>(false)
 
 	const selectText = useMemo(() => {
 		const textAttrs = good?.attrs?.find(item => item.type === 'text')?.values
@@ -61,6 +65,10 @@ export const SKUContextProvider = function ({
 
 	const updateAddressInputShow = (status: boolean) => {
 		setAddressInputShow(status)
+	}
+
+	const updateSkuSelectShow = (status: boolean) => {
+		setSkuSelectShow(status)
 	}
 
 	useEffect(() => {
@@ -89,6 +97,8 @@ export const SKUContextProvider = function ({
 				selectImage,
 				addressInputShow,
 				updateAddressInputShow,
+				skuSelectShow,
+				updateSkuSelectShow,
 			}}
 		>
 			{children}

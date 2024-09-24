@@ -5,7 +5,8 @@ import { useTranslation } from 'react-i18next'
 import { useSku } from '../SkuContext'
 
 export function Address() {
-	const { addressInputShow, updateAddressInputShow } = useSku()
+	const { addressInputShow, updateAddressInputShow, updateSkuSelectShow } =
+		useSku()
 	// const [visible, setVisible] = useState<boolean>(false)
 	const navigate = useNavigate()
 	const { t } = useTranslation()
@@ -29,7 +30,8 @@ export function Address() {
 				<div
 					className=" w-[287px] h-[52px] bg-[#FF4125] text-[#fff] flex justify-center items-center rounded-lg"
 					onClick={() => {
-						updateAddressInputShow?.(true)
+						updateSkuSelectShow?.(true)
+						// updateAddressInputShow?.(true)
 					}}
 				>
 					{t('goodDetail.inputAddressBtn')}

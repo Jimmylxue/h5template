@@ -14,13 +14,13 @@ export function Comment() {
 
 	return (
 		<>
-			<div className=" mt-2 bg-white py-3 px-2">
-				<div
-					className=" flex w-full justify-between items-center "
-					onClick={() => {
-						setVisible(true)
-					}}
-				>
+			<div
+				className=" mt-2 bg-white py-3 px-2"
+				onClick={() => {
+					setVisible(true)
+				}}
+			>
+				<div className=" flex w-full justify-between items-center ">
 					<div className=" flex items-center">
 						<div className=" w-[4px] h-[14px] bg-[#FE4025] rounded"></div>
 						<div className=" text-sm font-bold ml-2">
