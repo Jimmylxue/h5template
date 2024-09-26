@@ -51,8 +51,8 @@ export function AddressForm({ visible, onClose }: TProps) {
 		if (visible && storageAddress && JSON.parse(storageAddress)) {
 			Dialog.confirm({
 				message: t('addressSelect.usePreAddressText'),
-				confirmButtonText: t('addressSelect.confirmText'),
-				cancelButtonText: t('addressSelect.cancelText'),
+				confirmButtonText: t('addressSelect.usePreConfirm'),
+				cancelButtonText: t('addressSelect.usePreCancel'),
 				onConfirm: () => {
 					const { phone, city, name, detail, shop } = JSON.parse(
 						storageAddress

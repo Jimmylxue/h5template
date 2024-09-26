@@ -123,7 +123,7 @@ export function Selector({ visible, onClose }: TProps) {
 										<div
 											key={idx}
 											className={classNames(
-												'text-[13px] text-[#333333] border border-[#E7E7E7] w-fit px-2 rounded relative mr-2',
+												'text-[13px] text-[#333333] border border-[#E7E7E7] w-fit px-4 rounded relative mr-2',
 												{
 													'border-[#FE4025]': tempChooseText === idx,
 													'text-[#FE4025]': tempChooseText === idx,

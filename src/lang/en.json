@@ -97,7 +97,10 @@
     "cityLabel":"City",
     "cityRule":"Please choose city",
     "cancelText":"Cancel",
-    "placeHolderText":"Choose"
+    "placeHolderText":"Choose",
+    "usePreAddressText":"Use of previous address",
+    "usePreConfirm":"Yes",
+    "usePreCancel":"No"
   },
   "prizeList":{
     "powerBank":{
@@ -183,9 +186,9 @@
       "colorAttrValue4":"Blue",
       "colorAttrValue5":"Green",
       "storageAttrName":"Storage",
-      "storageAttrValue1":"128G",
-      "storageAttrValue2":"256G",
-      "storageAttrValue3":"512G",
+      "storageAttrValue1":"128 GB",
+      "storageAttrValue2":"256 GB",
+      "storageAttrValue3":"512 GB",
       "desc1":"6.7-inch Super Retina XDR display, ProMotion adaptive refresh rate technology",
       "desc2":"New ways to interact with the Ludo Island feature and iPhone",
       "desc3":"Water-resistant, can stay underwater for up to 30 minutes at a depth of 6 meters",

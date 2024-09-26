@@ -98,7 +98,9 @@
     "cityRule":"請選擇區域",
     "cancelText":"取消",
     "placeHolderText":"請選擇",
-    "usePreAddressText":"是否使用上一份地址資訊"
+    "usePreAddressText":"是否使用上一份地址資訊",
+    "usePreConfirm":"確定",
+    "usePreCancel":"取消"
   },
   "prizeList":{
     "powerBank":{
