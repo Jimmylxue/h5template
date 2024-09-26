@@ -5,6 +5,9 @@ import { useCurrentGood } from '../../core/useCurrentGood'
 import classNames from 'classnames'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+
+const isEn = lang === 'en'
 
 type TProps = {
 	visible: boolean
@@ -57,7 +60,7 @@ export function Selector({ visible, onClose }: TProps) {
 								<div className=" text-[24px] leading-5">{good?.price}</div>
 							</div>
 							<div className=" flex items-center">
-								<div className=" text-[#CDCDCD]">
+								<div className=" text-[#CDCDCD] line-through">
 									{t('goodDetail.originPriceText')}
 									{good?.originPrice}
 								</div>
@@ -70,13 +73,19 @@ export function Selector({ visible, onClose }: TProps) {
 						</div>
 					</div>
 
-					<div className=" flex items-center text-[13px] my-2">
+					<div className=" flex items-center text-[13px] my-2 truncate">
 						<img src={safeIcon} className=" w-[11px] h-[13px]" alt="" />
-						<div className=" ml-1 flex items-center">
-							<div className=" text-[#9E8EC2]">
+						<div className=" ml-1 flex items-center truncate">
+							<div
+								className={classNames(' text-[#9E8EC2]', {
+									'w-[120px]': isEn,
+								})}
+							>
 								{t('goodDetail.getPackagePay')}
 							</div>
-							<div className="text-[#333333]">{t('goodDetail.safeText')}</div>
+							<div className="text-[#333333] truncate">
+								{t('goodDetail.safeText')}
+							</div>
 						</div>
 					</div>
 

@@ -63,7 +63,7 @@ export function GoodDetailV2() {
 								<div className=" text-[24px]">{good?.price}</div>
 							</div>
 							<div className=" flex items-center text-[11px]">
-								<div className="  opacity-50">
+								<div className="  opacity-50 line-through">
 									{t('goodDetail.originPriceText')}
 									{good?.originPrice}
 								</div>
@@ -107,13 +107,15 @@ export function GoodDetailV2() {
 						</div>
 					</div>
 					<div className=" py-1 flex items-center w-full justify-between px-2 text-[13px]">
-						<div className=" flex items-center">
+						<div className=" flex items-center truncate">
 							<img src={safeIcon} className=" w-[11px] h-[13px]" alt="" />
-							<div className=" ml-1 flex items-center">
+							<div className=" ml-1 flex items-center truncate">
 								<div className=" text-[#9E8EC2]">
 									{t('goodDetail.getPackagePay')}
 								</div>
-								<div className="text-[#333333]">{t('goodDetail.safeText')}</div>
+								<div className="text-[#333333] truncate">
+									{t('goodDetail.safeText')}
+								</div>
 							</div>
 						</div>
 						<div>
