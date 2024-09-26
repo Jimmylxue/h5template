@@ -25,6 +25,7 @@ const memberCodeLength = Number(import.meta.env.VITE_APP_MEMBER_CODE_LENGTH)
 const bindMemberFirst = import.meta.env.VITE_APP_FIRST_BIND === 'true'
 
 const isNotZh = lang !== 'zh'
+const isEn = lang === 'en'
 
 export function LuckDraw() {
 	const myLucky = useRef<any>()
@@ -140,14 +141,6 @@ export function LuckDraw() {
 	}
 
 	useEffect(() => {
-		// if (isComingByShare) {
-		// 	setHasRewardItem([powerBankHasReward, false])
-		// } else {
-		// 	const powerBankHasReward = !!localStorage.getItem(`snow-has-prize-${1}`)
-		// 	const powerBankHasReward = !!localStorage.getItem(`snow-has-prize-${2}`)
-		// 	const iphoneHasReward = !!localStorage.getItem(`snow-has-prize-${6}`)
-		// 	setHasRewardItem([powerBankHasReward, iphoneHasReward])
-		// }
 		const couponHasReward = !!localStorage.getItem(`snow-has-prize-${1}`)
 		const powerBankHasReward = !!localStorage.getItem(`snow-has-prize-${2}`)
 		const iphoneHasReward = !!localStorage.getItem(`snow-has-prize-${6}`)
@@ -202,13 +195,30 @@ export function LuckDraw() {
 	}
 
 	return (
-		<div className=" w-screen bg-[#efe3ce]">
-			<img src={bgTop} className=" h-[250px] w-full" alt="" />
-			<div className=" py-6 -mt-6 ">
-				<div className=" text-center text-[#cb4664] text-md font-semibold mb-3">
+		<div
+			className={classNames(' w-screen ', {
+				'bg-[#efe3ce]': isEn,
+				'bg-[#DFCBFD]': !isEn,
+			})}
+		>
+			{/* <img src={bgTop} className=" h-[250px] w-full" alt="" /> */}
+			<div className=" relative">
+				<img src={bgTop} className=" h-[338px] w-full" alt="" />
+				<div
+					className={classNames(
+						' text-center  text-md font-semibold mb-3 absolute bottom-3 w-full left-0',
+						{
+							'text-[#cb4664]': isEn,
+							'text-white': !isEn,
+						}
+					)}
+				>
 					{t('luckDraw.drawCount_before')}（{drawCount}）
 					{t('luckDraw.drawCount_after')}
 				</div>
+			</div>
+
+			<div className=" py-6 -mt-6 ">
 				<div className=" flex justify-center items-center">
 					<LuckyGrid
 						ref={myLucky}
