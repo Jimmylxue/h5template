@@ -109,6 +109,8 @@ import powerBankComment14_1 from '@/assets/img/goodDetail/powerBankComment/14-1.
 
 import i18n from '../../lang/config'
 
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+
 export const PrizeList = [
 	{
 		id: 1,
@@ -599,18 +601,21 @@ export const PrizeList = [
 				value: i18n.t('prizeList.oneZhe.saveTimeTypeValue'),
 			},
 		],
-		productDetailImgs: [
-			ippd1,
-			ippd2,
-			ippd3,
-			ippd4,
-			ippd5,
-			ippd6,
-			ippd7,
-			ippd8,
-			ippd9,
-			ippd10,
-		],
+		productDetailImgs:
+			lang === 'en'
+				? [ippd1, ippd2, ippd3, ippd4, ippd5, ippd6]
+				: [
+						ippd1,
+						ippd2,
+						ippd3,
+						ippd4,
+						ippd5,
+						ippd6,
+						ippd7,
+						ippd8,
+						ippd9,
+						ippd10,
+				  ],
 		comments: [
 			{
 				commentId: 1,

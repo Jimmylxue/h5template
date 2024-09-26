@@ -72,7 +72,7 @@ export function GoodDetailV2() {
 						</div>
 						<div className=" flex flex-col justify-center items-center">
 							<img src={priceIcon} alt="" className="w-[22px] h-[18px]" />
-							<div className="text-white text-[11px] mt-1">
+							<div className="text-white text-[11px] mt-1 w-[50px] leading-3 text-center">
 								{t('goodDetail.getPackagePay')}
 							</div>
 						</div>
