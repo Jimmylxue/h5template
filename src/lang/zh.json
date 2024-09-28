@@ -11,11 +11,11 @@
     "bindMember":"绑定會員",
     "inputMemberCodeText":"輸入會員碼",
     "pleaseInputText":"請輸入會員碼",
-    "pleaseBindMemberCode":"綁定NU NU會員碼領取",
+    "pleaseBindMemberCode":"關聯pandabuy會員編碼",
     "pleaseInputTreeMemberCode":"請輸入正確的會員碼",
-    "inputMemberPlaceholder":"輸入NU NU會員碼",
+    "inputMemberPlaceholder":"關聯pandabuy會員編碼",
     "bindMemberCodeSuccess":"會員碼綁定成功",
-    "bindModalTitle":"正確輸入NU NU app會員碼",
+    "bindModalTitle":"正確關聯pandabuy會員編碼",
     "editText":"修改",
     "bindText":"绑定",
     "changeSuccessText":"修改成功",
@@ -77,7 +77,7 @@
     "toGain":"去领取",
     "onceAgain":"再抽一次 - 剩餘",
     "count":"次",
-    "bindAppText":"绑定NU NU app會員碼領取",
+    "bindAppText":"關聯pandabuy會員編碼",
     "sorryText":"感謝參與"
   },
   "addressSelect":{
@@ -246,8 +246,8 @@
       "commentDescText9":"2024-09-18 256GB 藍色"
     },
     "NuNuTicker":{
-      "name":"Nu Nu-折價卷NT$100",
-      "giftName":"Nu Nu-折價卷NT$100"
+      "name":"pandabuy-折價卷NT$100",
+      "giftName":"pandabuy-折價卷NT$100"
     }
   },
   "footer": {
