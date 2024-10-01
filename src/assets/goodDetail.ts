@@ -1,4 +1,4 @@
-const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp'
 
 import zhpwpd1 from '@/assets/img/goodDetail/powerBankDetail/1.jpg'
 import enpwpd1 from '@/assets/enImg/goodDetail/powerBankDetail/1.jpg'
@@ -6,6 +6,7 @@ import enpwpd1 from '@/assets/enImg/goodDetail/powerBankDetail/1.jpg'
 const pwpd1Map = {
 	zh: zhpwpd1,
 	en: enpwpd1,
+	xjp: enpwpd1,
 }
 
 export const pwpd1 = pwpd1Map[lang]
@@ -16,6 +17,7 @@ import enpwpd2 from '@/assets/enImg/goodDetail/powerBankDetail/2.jpg'
 const pwpd2Map = {
 	zh: zhpwpd2,
 	en: enpwpd2,
+	xjp: enpwpd2,
 }
 
 export const pwpd2 = pwpd2Map[lang]
@@ -26,6 +28,7 @@ import enpwpd3 from '@/assets/enImg/goodDetail/powerBankDetail/3.jpg'
 const pwpd3Map = {
 	zh: zhpwpd3,
 	en: enpwpd3,
+	xjp: enpwpd3,
 }
 
 export const pwpd3 = pwpd3Map[lang]
@@ -36,6 +39,7 @@ import enpwpd4 from '@/assets/enImg/goodDetail/powerBankDetail/4.jpg'
 const pwpd4Map = {
 	zh: zhpwpd4,
 	en: enpwpd4,
+	xjp: enpwpd4,
 }
 
 export const pwpd4 = pwpd4Map[lang]
@@ -46,6 +50,7 @@ import enpwpd5 from '@/assets/enImg/goodDetail/powerBankDetail/5.jpg'
 const pwpd5Map = {
 	zh: zhpwpd5,
 	en: enpwpd5,
+	xjp: enpwpd5,
 }
 
 export const pwpd5 = pwpd5Map[lang]
@@ -56,6 +61,7 @@ import enpwpd6 from '@/assets/enImg/goodDetail/powerBankDetail/6.jpg'
 const pwpd6Map = {
 	zh: zhpwpd6,
 	en: enpwpd6,
+	xjp: enpwpd6,
 }
 
 export const pwpd6 = pwpd6Map[lang]
@@ -66,6 +72,7 @@ import enpwpd7 from '@/assets/enImg/goodDetail/powerBankDetail/7.jpg'
 const pwpd7Map = {
 	zh: zhpwpd7,
 	en: enpwpd7,
+	xjp: enpwpd7,
 }
 
 export const pwpd7 = pwpd7Map[lang]
@@ -76,6 +83,7 @@ import enpwpd8 from '@/assets/enImg/goodDetail/powerBankDetail/8.jpg'
 const pwpd8Map = {
 	zh: zhpwpd8,
 	en: enpwpd8,
+	xjp: enpwpd8,
 }
 
 export const pwpd8 = pwpd8Map[lang]
@@ -86,6 +94,7 @@ import enpwpd9 from '@/assets/enImg/goodDetail/powerBankDetail/9.jpg'
 const pwpd9Map = {
 	zh: zhpwpd9,
 	en: enpwpd9,
+	xjp: enpwpd9,
 }
 
 export const pwpd9 = pwpd9Map[lang]
@@ -98,6 +107,7 @@ import enippd1 from '@/assets/enImg/goodDetail/iphoneDetail/1.jpg'
 const ippd1Map = {
 	zh: zhippd1,
 	en: enippd1,
+	xjp: enippd1,
 }
 
 export const ippd1 = ippd1Map[lang]
@@ -108,6 +118,7 @@ import enippd2 from '@/assets/enImg/goodDetail/iphoneDetail/2.jpg'
 const ippd2Map = {
 	zh: zhippd2,
 	en: enippd2,
+	xjp: enippd2,
 }
 
 export const ippd2 = ippd2Map[lang]
@@ -118,6 +129,7 @@ import enippd3 from '@/assets/enImg/goodDetail/iphoneDetail/3.jpg'
 const ippd3Map = {
 	zh: zhippd3,
 	en: enippd3,
+	xjp: enippd3,
 }
 
 export const ippd3 = ippd3Map[lang]
@@ -128,6 +140,7 @@ import enippd4 from '@/assets/enImg/goodDetail/iphoneDetail/4.jpg'
 const ippd4Map = {
 	zh: zhippd4,
 	en: enippd4,
+	xjp: enippd4,
 }
 
 export const ippd4 = ippd4Map[lang]
@@ -138,6 +151,7 @@ import enippd5 from '@/assets/enImg/goodDetail/iphoneDetail/5.jpg'
 const ippd5Map = {
 	zh: zhippd5,
 	en: enippd5,
+	xjp: enippd5,
 }
 
 export const ippd5 = ippd5Map[lang]
@@ -148,6 +162,7 @@ import enippd6 from '@/assets/enImg/goodDetail/iphoneDetail/6.jpg'
 const ippd6Map = {
 	zh: zhippd6,
 	en: enippd6,
+	xjp: enippd6,
 }
 
 export const ippd6 = ippd6Map[lang]
@@ -158,6 +173,7 @@ import enippd7 from '@/assets/enImg/goodDetail/iphoneDetail/7.jpg'
 const ippd7Map = {
 	zh: zhippd7,
 	en: enippd7,
+	xjp: enippd7,
 }
 
 export const ippd7 = ippd7Map[lang]
@@ -168,6 +184,7 @@ import enippd8 from '@/assets/enImg/goodDetail/iphoneDetail/8.jpg'
 const ippd8Map = {
 	zh: zhippd8,
 	en: enippd8,
+	xjp: enippd8,
 }
 
 export const ippd8 = ippd8Map[lang]
@@ -178,6 +195,7 @@ import enippd9 from '@/assets/enImg/goodDetail/iphoneDetail/9.jpg'
 const ippd9Map = {
 	zh: zhippd9,
 	en: enippd9,
+	xjp: enippd9,
 }
 
 export const ippd9 = ippd9Map[lang]
@@ -188,6 +206,7 @@ import enippd10 from '@/assets/enImg/goodDetail/iphoneDetail/10.jpg'
 const ippd10Map = {
 	zh: zhippd10,
 	en: enippd10,
+	xjp: enippd10,
 }
 
 export const ippd10 = ippd10Map[lang]

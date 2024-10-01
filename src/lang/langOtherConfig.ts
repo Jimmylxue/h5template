@@ -15,6 +15,7 @@ const enLuckDrawBgConfig = [
 const LuckDrawBlocksMap = {
 	zh: zhLuckDrawBgConfig,
 	en: enLuckDrawBgConfig,
+	xjp: enLuckDrawBgConfig,
 }
 
 export const LuckDrawBlocks = LuckDrawBlocksMap[lang]

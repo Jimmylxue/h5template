@@ -10,6 +10,11 @@ import { useSku } from '../../SkuContext'
 import { lineBox } from '../../components/lineModalShow'
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
 
+/**
+ * 是否展示 选择城市
+ */
+const showCityChoose = import.meta.env.VITE_APP_CITY_CHOOSE === 'true'
+
 type TProps = {
 	visible: boolean
 	onClose: () => void
@@ -133,37 +138,40 @@ export function AddressForm({ visible, onClose }: TProps) {
 								</div>
 							</div>
 						</div>
-						<div
-							className=" py-4 px-2 rounded-lg mt-2"
-							style={{
-								boxShadow: ' 0px 0px 4px 0px #D0D0D0',
-							}}
-						>
-							<div className=" flex items-center">
-								<div className=" flex items-center w-[70px]">
-									<div className="text-[#FF4125]">*</div>
-									<div>{t('addressSelect.cityLabel')}</div>
-								</div>
-								<div
-									className=" flex items-center flex-grow"
-									onClick={() => {
-										setCityChooseShow(true)
-									}}
-								>
-									<div className=" flex-grow">
-										<input
-											value={city}
-											type="text"
-											placeholder={t('addressSelect.cityRule')}
-											readOnly
-										/>
+						{showCityChoose && (
+							<div
+								className=" py-4 px-2 rounded-lg mt-2"
+								style={{
+									boxShadow: ' 0px 0px 4px 0px #D0D0D0',
+								}}
+							>
+								<div className=" flex items-center">
+									<div className=" flex items-center w-[70px]">
+										<div className="text-[#FF4125]">*</div>
+										<div>{t('addressSelect.cityLabel')}</div>
 									</div>
-									<div>
-										<img src={bottom} className=" w-[11px] h-[6px]" alt="" />
+									<div
+										className=" flex items-center flex-grow"
+										onClick={() => {
+											setCityChooseShow(true)
+										}}
+									>
+										<div className=" flex-grow">
+											<input
+												value={city}
+												type="text"
+												placeholder={t('addressSelect.cityRule')}
+												readOnly
+											/>
+										</div>
+										<div>
+											<img src={bottom} className=" w-[11px] h-[6px]" alt="" />
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						)}
+
 						<div
 							className=" py-4 px-2 rounded-lg mt-2"
 							style={{

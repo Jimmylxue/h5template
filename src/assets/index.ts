@@ -1,4 +1,4 @@
-const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp'
 
 // const langImgBasePath = {
 // 	zh: 'img',
@@ -13,6 +13,7 @@ import enBgTop from '@/assets/enImg/bg-top.png'
 const bgTopMap = {
 	zh: zhBgTop,
 	en: enBgTop,
+	xjp: enBgTop,
 }
 
 export const bgTop = bgTopMap[lang]
@@ -23,6 +24,7 @@ import enDrawBtn from '@/assets/enImg/drawBtn.png'
 const drawBtnMap = {
 	zh: zhDrawBtn,
 	en: enDrawBtn,
+	xjp: enDrawBtn,
 }
 
 export const drawBtn = drawBtnMap[lang]
@@ -33,6 +35,7 @@ import enXsmr from '@/assets/enImg/xsmr.png'
 const xsmrMap = {
 	zh: zhXsmr,
 	en: enXsmr,
+	xjp: enXsmr,
 }
 
 export const xsmr = xsmrMap[lang]
@@ -43,6 +46,7 @@ import enPowerBank from '@/assets/enImg/powerBank.png'
 const powerBankMap = {
 	zh: zhPowerBank,
 	en: enPowerBank,
+	xjp: enPowerBank,
 }
 
 export const powerBank = powerBankMap[lang]
@@ -53,6 +57,7 @@ import enFiveZhe from '@/assets/enImg/5zhe.png'
 const fiveZheMap = {
 	zh: zhFiveZhe,
 	en: enFiveZhe,
+	xjp: enFiveZhe,
 }
 
 export const fiveZhe = fiveZheMap[lang]
@@ -63,6 +68,7 @@ import enThreeZhe from '@/assets/enImg/3zhe.png'
 const threeZheMap = {
 	zh: zhThreeZhe,
 	en: enThreeZhe,
+	xjp: enThreeZhe,
 }
 
 export const threeZhe = threeZheMap[lang]
@@ -73,6 +79,7 @@ import enSorry from '@/assets/enImg/sorry.png'
 const sorryMap = {
 	zh: zhSorry,
 	en: enSorry,
+	xjp: enSorry,
 }
 
 export const sorry = sorryMap[lang]
@@ -83,6 +90,7 @@ import enOneZhe from '@/assets/enImg/1zhe.png'
 const oneZheMap = {
 	zh: zhOneZhe,
 	en: enOneZhe,
+	xjp: enOneZhe,
 }
 
 export const oneZhe = oneZheMap[lang]
@@ -93,6 +101,7 @@ import enJiuJiu from '@/assets/enImg/jiujiu.png'
 const jiujiuMap = {
 	zh: zhJiuJiu,
 	en: enJiuJiu,
+	xjp: enJiuJiu,
 }
 
 export const jiujiu = jiujiuMap[lang]
@@ -103,6 +112,7 @@ import enKfLogo from '@/assets/enImg/kflogo.png'
 const kflogoMap = {
 	zh: zhKfLogo,
 	en: enKfLogo,
+	xjp: enKfLogo,
 }
 
 export const kflogo = kflogoMap[lang]
@@ -113,6 +123,7 @@ import enModalTitle from '@/assets/enImg/modalTitle.png'
 const modalTitleMap = {
 	zh: zhModalTitle,
 	en: enModalTitle,
+	xjp: enModalTitle,
 }
 
 export const modalTitle = modalTitleMap[lang]
@@ -123,6 +134,7 @@ import enXiajiText from '@/assets/enImg/xiajiText.png'
 const xiajiTextMap = {
 	zh: zhXiajiText,
 	en: enXiajiText,
+	xjp: enXiajiText,
 }
 
 export const xiajiText = xiajiTextMap[lang]
@@ -133,6 +145,7 @@ import enBindLogo from '@/assets/enImg/bindLogo.png'
 const bindLogoMap = {
 	zh: zhBindLogo,
 	en: enBindLogo,
+	xjp: enBindLogo,
 }
 
 export const bindLogo = bindLogoMap[lang]
@@ -143,6 +156,7 @@ import enSmallText from '@/assets/enImg/smallText.png'
 const smallTextMap = {
 	zh: zhSmallText,
 	en: enSmallText,
+	xjp: enSmallText,
 }
 
 export const smallText = smallTextMap[lang]
@@ -153,6 +167,7 @@ import enPowerbank1 from '@/assets/enImg/swiper/powerbank1.jpg'
 const powerbank1Map = {
 	zh: zhPowerbank1,
 	en: enPowerbank1,
+	xjp: enPowerbank1,
 }
 
 export const spowerbank1 = powerbank1Map[lang]
@@ -163,6 +178,7 @@ import enPowerbank2 from '@/assets/enImg/swiper/powerbank2.jpg'
 const powerbank2Map = {
 	zh: zhPowerbank2,
 	en: enPowerbank2,
+	xjp: enPowerbank2,
 }
 
 export const spowerbank2 = powerbank2Map[lang]
@@ -173,6 +189,7 @@ import enPowerbank3 from '@/assets/enImg/swiper/powerbank3.jpg'
 const powerbank3Map = {
 	zh: zhPowerbank3,
 	en: enPowerbank3,
+	xjp: enPowerbank3,
 }
 
 export const spowerbank3 = powerbank3Map[lang]
@@ -183,6 +200,7 @@ import en2Icon from '@/assets/enImg/2Icon.png'
 const _2IconMap = {
 	zh: zh2Icon,
 	en: en2Icon,
+	xjp: en2Icon,
 }
 
 import zh6Icon from '@/assets/img/6Icon.png'
@@ -191,6 +209,7 @@ import en6Icon from '@/assets/enImg/6Icon.png'
 const _6IconMap = {
 	zh: zh6Icon,
 	en: en6Icon,
+	xjp: en6Icon,
 }
 
 export const iconMap = {
@@ -204,6 +223,7 @@ import enVideo3 from '@/assets/enVideo/video3.mp4'
 const video3Map = {
 	zh: zhVideo3,
 	en: enVideo3,
+	xjp: enVideo3,
 }
 
 export const video3 = video3Map[lang]

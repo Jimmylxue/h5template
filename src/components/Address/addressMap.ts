@@ -1,4 +1,4 @@
-const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp'
 
 const city_list = {
 	'710100': '台北市',
@@ -44,6 +44,7 @@ const en_list = [
 const cityMap = {
 	zh: Object.values(city_list),
 	en: en_list,
+	xjp: en_list,
 }
 
 export const cityArr = cityMap[lang]
