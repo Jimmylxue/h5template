@@ -240,7 +240,7 @@ export function AddressForm({ visible, onClose }: TProps) {
 									Toast.info(t('addressSelect.detailRule'))
 									return
 								}
-								if (!city) {
+								if (!city && showCityChoose) {
 									Toast.info(t('addressSelect.cityRule'))
 									return
 								}
@@ -261,7 +261,7 @@ export function AddressForm({ visible, onClose }: TProps) {
 									username,
 									phone,
 									detail,
-									city,
+									city: city || '--',
 									shop,
 									name: username,
 								}

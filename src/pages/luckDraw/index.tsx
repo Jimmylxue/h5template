@@ -25,7 +25,6 @@ const memberCodeLength = Number(import.meta.env.VITE_APP_MEMBER_CODE_LENGTH)
 const bindMemberFirst = import.meta.env.VITE_APP_FIRST_BIND === 'true'
 
 const isNotZh = lang !== 'zh'
-const isEn = lang === 'en'
 
 export function LuckDraw() {
 	const myLucky = useRef<any>()
@@ -197,8 +196,8 @@ export function LuckDraw() {
 	return (
 		<div
 			className={classNames(' w-screen ', {
-				'bg-[#efe3ce]': isEn,
-				'bg-[#DFCBFD]': !isEn,
+				'bg-[#efe3ce]': ['zh', 'xjp'].includes(lang),
+				'bg-[#DFCBFD]': lang === 'en',
 			})}
 		>
 			{/* <img src={bgTop} className=" h-[250px] w-full" alt="" /> */}
@@ -208,8 +207,8 @@ export function LuckDraw() {
 					className={classNames(
 						' text-center  text-md font-semibold mb-3 absolute bottom-3 w-full left-0',
 						{
-							'text-[#cb4664]': isEn,
-							'text-white': !isEn,
+							'text-[#cb4664]': ['zh', 'xjp'].includes(lang),
+							'text-white': lang === 'en',
 						}
 					)}
 				>

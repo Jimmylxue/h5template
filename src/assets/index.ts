@@ -20,88 +20,96 @@ export const bgTop = bgTopMap[lang]
 
 import zhDrawBtn from '@/assets/img/drawBtn.png'
 import enDrawBtn from '@/assets/enImg/drawBtn.png'
+import xjpDrawBtn from '@/assets/xjpImg/drawBtn.png'
 
 const drawBtnMap = {
 	zh: zhDrawBtn,
 	en: enDrawBtn,
-	xjp: enDrawBtn,
+	xjp: xjpDrawBtn,
 }
 
 export const drawBtn = drawBtnMap[lang]
 
 import zhXsmr from '@/assets/img/xsmr.png'
 import enXsmr from '@/assets/enImg/xsmr.png'
+import xjpXsmr from '@/assets/xjpImg/xsmr.png'
 
 const xsmrMap = {
 	zh: zhXsmr,
 	en: enXsmr,
-	xjp: enXsmr,
+	xjp: xjpXsmr,
 }
 
 export const xsmr = xsmrMap[lang]
 
 import zhPowerBank from '@/assets/img/powerBank.png'
 import enPowerBank from '@/assets/enImg/powerBank.png'
+import xjpPowerBank from '@/assets/xjpImg/powerBank.png'
 
 const powerBankMap = {
 	zh: zhPowerBank,
 	en: enPowerBank,
-	xjp: enPowerBank,
+	xjp: xjpPowerBank,
 }
 
 export const powerBank = powerBankMap[lang]
 
 import zhFiveZhe from '@/assets/img/5zhe.png'
 import enFiveZhe from '@/assets/enImg/5zhe.png'
+import xjpFiveZhe from '@/assets/xjpImg/5zhe.png'
 
 const fiveZheMap = {
 	zh: zhFiveZhe,
 	en: enFiveZhe,
-	xjp: enFiveZhe,
+	xjp: xjpFiveZhe,
 }
 
 export const fiveZhe = fiveZheMap[lang]
 
 import zhThreeZhe from '@/assets/img/3zhe.png'
 import enThreeZhe from '@/assets/enImg/3zhe.png'
+import xjpThreeZhe from '@/assets/xjpImg/3zhe.png'
 
 const threeZheMap = {
 	zh: zhThreeZhe,
 	en: enThreeZhe,
-	xjp: enThreeZhe,
+	xjp: xjpThreeZhe,
 }
 
 export const threeZhe = threeZheMap[lang]
 
 import zhSorry from '@/assets/img/sorry.png'
 import enSorry from '@/assets/enImg/sorry.png'
+import xjpSorry from '@/assets/xjpImg/sorry.png'
 
 const sorryMap = {
 	zh: zhSorry,
 	en: enSorry,
-	xjp: enSorry,
+	xjp: xjpSorry,
 }
 
 export const sorry = sorryMap[lang]
 
 import zhOneZhe from '@/assets/img/1zhe.png'
 import enOneZhe from '@/assets/enImg/1zhe.png'
+import xjpOneZhe from '@/assets/xjpImg/1zhe.png'
 
 const oneZheMap = {
 	zh: zhOneZhe,
 	en: enOneZhe,
-	xjp: enOneZhe,
+	xjp: xjpOneZhe,
 }
 
 export const oneZhe = oneZheMap[lang]
 
 import zhJiuJiu from '@/assets/img/jiujiu.png'
 import enJiuJiu from '@/assets/enImg/jiujiu.png'
+import xjpJiuJiu from '@/assets/xjpImg/jiujiu.png'
 
 const jiujiuMap = {
 	zh: zhJiuJiu,
 	en: enJiuJiu,
-	xjp: enJiuJiu,
+	xjp: xjpJiuJiu,
 }
 
 export const jiujiu = jiujiuMap[lang]
@@ -196,20 +204,22 @@ export const spowerbank3 = powerbank3Map[lang]
 
 import zh2Icon from '@/assets/img/2Icon.png'
 import en2Icon from '@/assets/enImg/2Icon.png'
+import xjp2Icon from '@/assets/xjpImg/2Icon.png'
 
 const _2IconMap = {
 	zh: zh2Icon,
 	en: en2Icon,
-	xjp: en2Icon,
+	xjp: xjp2Icon,
 }
 
 import zh6Icon from '@/assets/img/6Icon.png'
 import en6Icon from '@/assets/enImg/6Icon.png'
+import xjp6Icon from '@/assets/xjpImg/6Icon.png'
 
 const _6IconMap = {
 	zh: zh6Icon,
 	en: en6Icon,
-	xjp: en6Icon,
+	xjp: xjp6Icon,
 }
 
 export const iconMap = {
