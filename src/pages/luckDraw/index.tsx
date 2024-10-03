@@ -196,8 +196,8 @@ export function LuckDraw() {
 	return (
 		<div
 			className={classNames(' w-screen ', {
-				'bg-[#efe3ce]': ['zh', 'xjp', 'tai'].includes(lang),
-				'bg-[#DFCBFD]': lang === 'en',
+				'bg-[#efe3ce]': ['en', 'xjp', 'tai'].includes(lang),
+				'bg-[#DFCBFD]': lang === 'zh',
 			})}
 		>
 			{/* <img src={bgTop} className=" h-[250px] w-full" alt="" /> */}
@@ -207,8 +207,8 @@ export function LuckDraw() {
 					className={classNames(
 						' text-center  text-md font-semibold mb-3 absolute bottom-3 w-full left-0',
 						{
-							'text-[#cb4664]': ['zh', 'xjp', 'tai'].includes(lang),
-							'text-white': lang === 'en',
+							'text-[#cb4664]': ['en', 'xjp', 'tai'].includes(lang),
+							'text-white': lang === 'zh',
 						}
 					)}
 				>
