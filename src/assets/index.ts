@@ -1,4 +1,4 @@
-const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp'
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 
 // const langImgBasePath = {
 // 	zh: 'img',
@@ -14,6 +14,7 @@ const bgTopMap = {
 	zh: zhBgTop,
 	en: enBgTop,
 	xjp: enBgTop,
+	tai: enBgTop,
 }
 
 export const bgTop = bgTopMap[lang]
@@ -26,6 +27,7 @@ const drawBtnMap = {
 	zh: zhDrawBtn,
 	en: enDrawBtn,
 	xjp: xjpDrawBtn,
+	tai: xjpDrawBtn,
 }
 
 export const drawBtn = drawBtnMap[lang]
@@ -38,6 +40,7 @@ const xsmrMap = {
 	zh: zhXsmr,
 	en: enXsmr,
 	xjp: xjpXsmr,
+	tai: xjpXsmr,
 }
 
 export const xsmr = xsmrMap[lang]
@@ -50,6 +53,7 @@ const powerBankMap = {
 	zh: zhPowerBank,
 	en: enPowerBank,
 	xjp: xjpPowerBank,
+	tai: xjpPowerBank,
 }
 
 export const powerBank = powerBankMap[lang]
@@ -62,6 +66,7 @@ const fiveZheMap = {
 	zh: zhFiveZhe,
 	en: enFiveZhe,
 	xjp: xjpFiveZhe,
+	tai: xjpFiveZhe,
 }
 
 export const fiveZhe = fiveZheMap[lang]
@@ -74,6 +79,7 @@ const threeZheMap = {
 	zh: zhThreeZhe,
 	en: enThreeZhe,
 	xjp: xjpThreeZhe,
+	tai: xjpThreeZhe,
 }
 
 export const threeZhe = threeZheMap[lang]
@@ -86,6 +92,7 @@ const sorryMap = {
 	zh: zhSorry,
 	en: enSorry,
 	xjp: xjpSorry,
+	tai: xjpSorry,
 }
 
 export const sorry = sorryMap[lang]
@@ -98,6 +105,7 @@ const oneZheMap = {
 	zh: zhOneZhe,
 	en: enOneZhe,
 	xjp: xjpOneZhe,
+	tai: xjpOneZhe,
 }
 
 export const oneZhe = oneZheMap[lang]
@@ -110,6 +118,7 @@ const jiujiuMap = {
 	zh: zhJiuJiu,
 	en: enJiuJiu,
 	xjp: xjpJiuJiu,
+	tai: xjpJiuJiu,
 }
 
 export const jiujiu = jiujiuMap[lang]
@@ -121,6 +130,7 @@ const kflogoMap = {
 	zh: zhKfLogo,
 	en: enKfLogo,
 	xjp: enKfLogo,
+	tai: enKfLogo,
 }
 
 export const kflogo = kflogoMap[lang]
@@ -132,6 +142,7 @@ const modalTitleMap = {
 	zh: zhModalTitle,
 	en: enModalTitle,
 	xjp: enModalTitle,
+	tai: enModalTitle,
 }
 
 export const modalTitle = modalTitleMap[lang]
@@ -143,6 +154,7 @@ const xiajiTextMap = {
 	zh: zhXiajiText,
 	en: enXiajiText,
 	xjp: enXiajiText,
+	tai: enXiajiText,
 }
 
 export const xiajiText = xiajiTextMap[lang]
@@ -154,6 +166,7 @@ const bindLogoMap = {
 	zh: zhBindLogo,
 	en: enBindLogo,
 	xjp: enBindLogo,
+	tai: enBindLogo,
 }
 
 export const bindLogo = bindLogoMap[lang]
@@ -165,6 +178,7 @@ const smallTextMap = {
 	zh: zhSmallText,
 	en: enSmallText,
 	xjp: enSmallText,
+	tai: enSmallText,
 }
 
 export const smallText = smallTextMap[lang]
@@ -176,6 +190,7 @@ const powerbank1Map = {
 	zh: zhPowerbank1,
 	en: enPowerbank1,
 	xjp: enPowerbank1,
+	tai: enPowerbank1,
 }
 
 export const spowerbank1 = powerbank1Map[lang]
@@ -187,6 +202,7 @@ const powerbank2Map = {
 	zh: zhPowerbank2,
 	en: enPowerbank2,
 	xjp: enPowerbank2,
+	tai: enPowerbank2,
 }
 
 export const spowerbank2 = powerbank2Map[lang]
@@ -198,6 +214,7 @@ const powerbank3Map = {
 	zh: zhPowerbank3,
 	en: enPowerbank3,
 	xjp: enPowerbank3,
+	tai: enPowerbank3,
 }
 
 export const spowerbank3 = powerbank3Map[lang]
@@ -210,6 +227,7 @@ const _2IconMap = {
 	zh: zh2Icon,
 	en: en2Icon,
 	xjp: xjp2Icon,
+	tai: xjp2Icon,
 }
 
 import zh6Icon from '@/assets/img/6Icon.png'
@@ -220,6 +238,7 @@ const _6IconMap = {
 	zh: zh6Icon,
 	en: en6Icon,
 	xjp: xjp6Icon,
+	tai: xjp6Icon,
 }
 
 export const iconMap = {
@@ -234,6 +253,7 @@ const video3Map = {
 	zh: zhVideo3,
 	en: enVideo3,
 	xjp: enVideo3,
+	tai: enVideo3,
 }
 
 export const video3 = video3Map[lang]

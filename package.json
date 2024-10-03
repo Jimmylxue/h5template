@@ -7,6 +7,7 @@
     "dev": "vite --mode production",
     "dev:en": "vite --mode en",
     "dev:xjp": "vite --mode xjp",
+    "dev:tai": "vite --mode tai",
     "build": "tsc -b && vite --mode production build",
     "build-jiujiu": "tsc -b && vite --mode jiujiu build",
     "build-en": "tsc -b && vite --mode en build",

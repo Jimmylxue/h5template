@@ -8,6 +8,10 @@ import en from './en.json'
  * 新加坡
  */
 import xjp from './xjp.json'
+/**
+ * 泰语
+ */
+import tai from './tai.json'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE
 
@@ -20,6 +24,9 @@ const resources = {
 	},
 	xjp: {
 		translation: xjp,
+	},
+	tai: {
+		translation: tai,
 	},
 }
 

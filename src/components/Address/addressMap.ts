@@ -45,6 +45,7 @@ const cityMap = {
 	zh: Object.values(city_list),
 	en: en_list,
 	xjp: en_list,
+	tai: en_list,
 }
 
 export const cityArr = cityMap[lang]

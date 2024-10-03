@@ -19,7 +19,7 @@ import { LuckDrawBlocks } from '../../lang/langOtherConfig'
 import inputBg from '@/assets/img/inputBg.png'
 import { RewardList } from './component/RewardList'
 
-const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 const memberCodeLength = Number(import.meta.env.VITE_APP_MEMBER_CODE_LENGTH)
 
 const bindMemberFirst = import.meta.env.VITE_APP_FIRST_BIND === 'true'
@@ -196,7 +196,7 @@ export function LuckDraw() {
 	return (
 		<div
 			className={classNames(' w-screen ', {
-				'bg-[#efe3ce]': ['zh', 'xjp'].includes(lang),
+				'bg-[#efe3ce]': ['zh', 'xjp', 'tai'].includes(lang),
 				'bg-[#DFCBFD]': lang === 'en',
 			})}
 		>
@@ -207,7 +207,7 @@ export function LuckDraw() {
 					className={classNames(
 						' text-center  text-md font-semibold mb-3 absolute bottom-3 w-full left-0',
 						{
-							'text-[#cb4664]': ['zh', 'xjp'].includes(lang),
+							'text-[#cb4664]': ['zh', 'xjp', 'tai'].includes(lang),
 							'text-white': lang === 'en',
 						}
 					)}
