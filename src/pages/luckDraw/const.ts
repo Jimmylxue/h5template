@@ -601,21 +601,9 @@ export const PrizeList = [
 				value: i18n.t('prizeList.oneZhe.saveTimeTypeValue'),
 			},
 		],
-		productDetailImgs:
-			lang === 'en'
-				? [ippd1, ippd2, ippd3, ippd4, ippd5, ippd6]
-				: [
-						ippd1,
-						ippd2,
-						ippd3,
-						ippd4,
-						ippd5,
-						ippd6,
-						ippd7,
-						ippd8,
-						ippd9,
-						ippd10,
-				  ],
+		productDetailImgs: ['en', 'xjp'].includes(lang)
+			? [ippd1, ippd2, ippd3, ippd4, ippd5, ippd6]
+			: [ippd1, ippd2, ippd3, ippd4, ippd5, ippd6, ippd7, ippd8, ippd9, ippd10],
 		comments: [
 			{
 				commentId: 1,

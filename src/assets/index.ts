@@ -125,11 +125,12 @@ export const jiujiu = jiujiuMap[lang]
 
 import zhKfLogo from '@/assets/img/kflogo.png'
 import enKfLogo from '@/assets/enImg/kflogo.png'
+import xjpKfLogo from '@/assets/xjpImg/kflogo.png'
 
 const kflogoMap = {
 	zh: zhKfLogo,
 	en: enKfLogo,
-	xjp: enKfLogo,
+	xjp: xjpKfLogo,
 	tai: enKfLogo,
 }
 
