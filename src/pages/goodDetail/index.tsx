@@ -97,6 +97,7 @@ export function GoodDetail() {
 						<div className=" flex mt-2">
 							{attr.values.map((item, _idx) => {
 								const hasSelect = _idx === selectAttrs[index]
+								// @ts-ignore
 								const isDisabled = item.split('^^')?.[1] === 'disabled'
 								return (
 									<div
@@ -120,6 +121,7 @@ export function GoodDetail() {
 											setSelectAttrs(newArr as any)
 										}}
 									>
+										{/* @ts-ignore */}
 										{item.split('-')?.[0]}
 									</div>
 								)

@@ -17,6 +17,8 @@ export type addressParams = {
 	name: string
 	phone: string
 	memberCode: string
+	shop: string
+	sku: string
 }
 
 export const useUploadAddress = (

@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "vite --mode production",
     "dev:en": "vite --mode en",
+    "dev:xjp": "vite --mode xjp",
+    "dev:tai": "vite --mode tai",
     "build": "tsc -b && vite --mode production build",
     "build-jiujiu": "tsc -b && vite --mode jiujiu build",
     "build-en": "tsc -b && vite --mode en build",
+    "build-xjp": "tsc -b && vite --mode xjp build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

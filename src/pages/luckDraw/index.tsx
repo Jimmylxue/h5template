@@ -19,7 +19,7 @@ import { LuckDrawBlocks } from '../../lang/langOtherConfig'
 import inputBg from '@/assets/img/inputBg.png'
 import { RewardList } from './component/RewardList'
 
-const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 const memberCodeLength = Number(import.meta.env.VITE_APP_MEMBER_CODE_LENGTH)
 
 const bindMemberFirst = import.meta.env.VITE_APP_FIRST_BIND === 'true'
@@ -140,14 +140,6 @@ export function LuckDraw() {
 	}
 
 	useEffect(() => {
-		// if (isComingByShare) {
-		// 	setHasRewardItem([powerBankHasReward, false])
-		// } else {
-		// 	const powerBankHasReward = !!localStorage.getItem(`snow-has-prize-${1}`)
-		// 	const powerBankHasReward = !!localStorage.getItem(`snow-has-prize-${2}`)
-		// 	const iphoneHasReward = !!localStorage.getItem(`snow-has-prize-${6}`)
-		// 	setHasRewardItem([powerBankHasReward, iphoneHasReward])
-		// }
 		const couponHasReward = !!localStorage.getItem(`snow-has-prize-${1}`)
 		const powerBankHasReward = !!localStorage.getItem(`snow-has-prize-${2}`)
 		const iphoneHasReward = !!localStorage.getItem(`snow-has-prize-${6}`)
@@ -178,6 +170,8 @@ export function LuckDraw() {
 		setDrawCount(pre => Number(pre) - 1)
 		// 点击抽奖按钮会触发star回调
 		// @ts-ignore
+		audioRef.current.volume = 0.3
+		// @ts-ignore
 		audioRef?.current?.play?.()
 		myLucky.current.play()
 		const index = drawPrizeIndex()
@@ -200,13 +194,30 @@ export function LuckDraw() {
 	}
 
 	return (
-		<div className=" w-screen bg-[#efe3ce]">
-			<img src={bgTop} className=" h-[250px] w-full" alt="" />
-			<div className=" py-6 -mt-6 ">
-				<div className=" text-center text-[#cb4664] text-md font-semibold mb-3">
+		<div
+			className={classNames(' w-screen ', {
+				'bg-[#efe3ce]': ['en', 'xjp', 'tai'].includes(lang),
+				'bg-[#DFCBFD]': lang === 'zh',
+			})}
+		>
+			{/* <img src={bgTop} className=" h-[250px] w-full" alt="" /> */}
+			<div className=" relative">
+				<img src={bgTop} className=" h-[338px] w-full" alt="" />
+				<div
+					className={classNames(
+						' text-center  text-md font-semibold mb-3 absolute bottom-3 w-full left-0',
+						{
+							'text-[#cb4664]': ['en', 'xjp', 'tai'].includes(lang),
+							'text-white': lang === 'zh',
+						}
+					)}
+				>
 					{t('luckDraw.drawCount_before')}（{drawCount}）
 					{t('luckDraw.drawCount_after')}
 				</div>
+			</div>
+
+			<div className=" py-6 -mt-6 ">
 				<div className=" flex justify-center items-center">
 					<LuckyGrid
 						ref={myLucky}
