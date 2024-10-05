@@ -267,12 +267,12 @@ export function AddressForm({ visible, onClose }: TProps) {
 								}
 								await mutateAsync(params)
 								fbq('trackCustom', 'confirmAddress')
-								if (isIphone) {
-									// @ts-ignore
-									fbq('track', 'Purchase', { value: 0.0, currency: 'USD' })
-								} else {
-									fbq('track', 'AddPaymentInfo')
-								}
+								// if (isIphone) {
+								// 	// @ts-ignore
+								// 	fbq('track', 'Purchase', { value: 0.0, currency: 'USD' })
+								// } else {
+								// 	fbq('track', 'AddPaymentInfo')
+								// }
 								Toast.success(t('addressSelect.subSuccess'))
 								setGoodAddress(params)
 								localStorage.setItem('storageAddress', JSON.stringify(params))

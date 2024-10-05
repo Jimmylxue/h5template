@@ -46,9 +46,20 @@ export const LineModal = observer(() => {
 							round
 							className=" px-8 mt-2"
 							onClick={() => {
+								console.log('lineBox.show', lineBox.show)
+								if (lineBox.show === true) {
+									/**
+									 * show = true 表示是iphone
+									 */
+									// @ts-ignore
+									fbq('track', 'Purchase', { value: 0.0, currency: 'USD' })
+								} else {
+									fbq('track', 'AddPaymentInfo')
+								}
 								lineBox.closeModal()
 								navigate(-1)
 								fbq('trackCustom', 'confirmEnd')
+
 								setTimeout(() => {
 									document
 										.getElementById('taskContainer')
