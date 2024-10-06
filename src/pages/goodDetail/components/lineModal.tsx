@@ -46,10 +46,10 @@ export const LineModal = observer(() => {
 							round
 							className=" px-8 mt-2"
 							onClick={() => {
-								console.log('lineBox.show', lineBox.show)
-								if (lineBox.show === true) {
+								console.log('lineBox.canNavigate', lineBox.canNavigate)
+								if (lineBox.canNavigate === true) {
 									/**
-									 * show = true 表示是iphone
+									 * canNavigate = true 表示是iphone
 									 */
 									// @ts-ignore
 									fbq('track', 'Purchase', { value: 0.0, currency: 'USD' })

@@ -1,9 +1,9 @@
 {
   "luckDraw": {
     "drawCount_before": "",
-    "drawCount_after": "Residual opportunities",
-    "prizeRecord":"Winning record",
-    "prize":"Prize",
+    "drawCount_after": "Remaining opportunities",
+    "prizeRecord":"Product List",
+    "prize":"commodity",
     "operator":"operation",
     "toGain":"Get it",
     "gainFirst":"Please claim the previous prize first",
@@ -72,10 +72,10 @@
     "chatKf":"Please contact customer service"
   },
   "winPrize":{
-    "gongxiText":"You received a discounted prize",
-    "noGoalText":"Sorry, didn't win",
+    "gongxiText":"You have acquired a product",
+    "noGoalText":"It's a pity",
     "toGain":"Go and collect it",
-    "onceAgain":"Raffle again",
+    "onceAgain":"One more time",
     "count":"",
     "bindAppText":"App member ID code bound to bites",
     "sorryText":"Thank you for participating"
@@ -177,7 +177,7 @@
       "commentDescText14":"2024-09-16 10000mAh White"
     },
     "oneZhe":{
-      "name":"【Official authentic】Apple iPhone 15 brand new unopened",
+      "name":"【PANDA】Apple 15 brand new and unopened",
       "giftName":"S$180 COD",
       "colorAttrName":"Color",
       "colorAttrValue1":"Black",
