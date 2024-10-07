@@ -5,6 +5,7 @@ import box from '@/assets/img/box.gif'
 import flower from '@/assets/img/flower.gif'
 import { useTranslation } from 'react-i18next'
 import { iconMap } from '@/assets/index'
+import priceDisBg from '@/assets/xjpImg/priceDisBg.png'
 
 export function useWinPrize() {
 	const [show, setShow] = useState<boolean>(false)
@@ -101,6 +102,17 @@ export function useWinPrize() {
 									alt=""
 									className=" size-[70px] absolute right-[45px] top-[100px]"
 								/>
+							)}
+							{showIcon && (
+								<div className=" absolute z-10  w-[80px] h-[28px] left-1/2 top-1/2 text-white text-xs flex justify-center items-center -translate-x-1/2">
+									<img
+										// @ts-ignore
+										src={priceDisBg}
+										alt="ccc"
+										className=" w-[80px] h-[28px] absolute"
+									/>
+									<div className=" relative z-10">90% off</div>
+								</div>
 							)}
 							<div className=" text-[#d2555c] text-center text-[22px] font-semibold mt-8 mb-2">
 								{isGoalPrize

@@ -229,7 +229,7 @@ export function LuckDraw() {
 							{
 								x: 1,
 								y: 1,
-								background: '#eedb91',
+								background: '#C42CA3',
 								imgs: [
 									{
 										src: drawBtn,
