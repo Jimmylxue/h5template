@@ -47,15 +47,15 @@ export const LineModal = observer(() => {
 							className=" px-8 mt-2"
 							onClick={() => {
 								console.log('lineBox.canNavigate', lineBox.canNavigate)
-								if (lineBox.canNavigate === true) {
-									/**
-									 * canNavigate = true 表示是iphone
-									 */
-									// @ts-ignore
-									fbq('track', 'Purchase', { value: 0.0, currency: 'USD' })
-								} else {
-									fbq('track', 'AddPaymentInfo')
-								}
+								// if (lineBox.canNavigate === true) {
+								// 	/**
+								// 	 * canNavigate = true 表示是iphone
+								// 	 */
+								// 	// @ts-ignore
+								// 	fbq('track', 'Purchase', { value: 0.0, currency: 'USD' })
+								// } else {
+								// 	fbq('track', 'AddPaymentInfo')
+								// }
 								lineBox.closeModal()
 								navigate(-1)
 								fbq('trackCustom', 'confirmEnd')

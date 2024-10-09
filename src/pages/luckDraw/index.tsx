@@ -18,11 +18,17 @@ import { useTranslation } from 'react-i18next'
 import { LuckDrawBlocks } from '../../lang/langOtherConfig'
 import inputBg from '@/assets/img/inputBg.png'
 import { RewardList } from './component/RewardList'
+import { useUploadAddToCart } from '@/api/address'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 const memberCodeLength = Number(import.meta.env.VITE_APP_MEMBER_CODE_LENGTH)
 
 const bindMemberFirst = import.meta.env.VITE_APP_FIRST_BIND === 'true'
+
+/**
+ * 是否是使用后端上传 pix 像素点
+ */
+const useBackUploadPix = import.meta.env.VITE_APP_USE_BACK_UPLOAD_PIX === 'true'
 
 const isNotZh = lang !== 'zh'
 
@@ -112,6 +118,8 @@ export function LuckDraw() {
 	const { bindDialogNode, showBindDialog } = useBindDialog()
 
 	const [hasRewardItem, setHasRewardItem] = useState<any>([])
+
+	const { mutateAsync: uploadAddToCart } = useUploadAddToCart()
 
 	const drawPrizeIndex = () => {
 		const _hasDrawCount =
@@ -248,7 +256,7 @@ export function LuckDraw() {
 							background: '#ffefb3',
 						}}
 						onStart={startDraw}
-						onEnd={(prize: any) => {
+						onEnd={async (prize: any) => {
 							const id = prize.id
 							setHasDrawCount(pre => (pre || 0) + 1)
 							/** id为5 是谢谢惠顾 */
@@ -306,7 +314,11 @@ export function LuckDraw() {
 							 * fb事件绑定
 							 */
 							if (id === 6) {
-								fbq('track', 'AddToCart')
+								if (useBackUploadPix) {
+									await uploadAddToCart({})
+								} else {
+									fbq('track', 'AddToCart')
+								}
 							}
 						}}
 					></LuckyGrid>

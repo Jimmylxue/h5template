@@ -1,4 +1,4 @@
-import { useSystemConfig } from '../../../api/address'
+import { useSystemConfig, useUploadChat } from '../../../api/address'
 import { useWaitingNode } from './WaitingNode'
 import { useEffect } from 'react'
 import { addGlowEffect } from '../core'
@@ -9,6 +9,10 @@ import { kflogo } from '@/assets/index'
 import bindKfBg from '@/assets/img/bindKfBg.png'
 
 const isRandomJump = import.meta.env.VITE_APP_RANDOM_JUMP
+/**
+ * 是否是使用后端上传 pix 像素点
+ */
+const useBackUploadPix = import.meta.env.VITE_APP_USE_BACK_UPLOAD_PIX === 'true'
 
 console.log('isJump~~~', isRandomJump)
 
@@ -20,6 +24,8 @@ export function ChatLineAbout() {
 	const { t } = useTranslation()
 
 	const { node: waitingNode, showWait, closeWait } = useWaitingNode()
+
+	const { mutateAsync: uploadChat } = useUploadChat()
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -56,7 +62,13 @@ export function ChatLineAbout() {
 						className=" relative bg-[url('/src/assets/img/canGain.png')] w-[80px] h-[35px] text-[#905224] bg-contain flex justify-center items-center"
 						onClick={() => {
 							fbq('trackCustom', 'confirmEndLine')
-							fbq('track', 'Contact')
+							if (useBackUploadPix) {
+								uploadChat({}).then(res => {
+									console.log('上报成功', res)
+								})
+							} else {
+								fbq('track', 'Contact')
+							}
 							if (isRandomJump === 'true') {
 								const jumpList = data?.result?.[0]?.inviteCode?.split('@@')
 								const length = jumpList?.length
