@@ -5,9 +5,9 @@
     "prizeRecord":"รายงานถุกรางวัล",
     "prize":"รางวัล",
     "operator":"ปฏิบัติการ",
-    "toGain":"รับ",
+    "toGain":"เก็บสินค้า",
     "gainFirst":"กรุณารับรางวัลก่อนหน้าก่อน",
-    "hasGain":"ได้รับ",
+    "hasGain":"เก็บแล้ว",
     "bindMember":"ผูกสมาชิก",
     "inputMemberCodeText":"กรอกรหัสสมาชิก",
     "pleaseInputText":"กรุณากรอกรหัสสมาชิก",
@@ -65,7 +65,7 @@
     "jumpText":"กำลังเปลี่ยนไปLine"
   },
   "bindDialog":{
-    "toBind":"去綁定領取"
+    "toBind":"รับสินค้า"
   },
   "gainCoupon":{
     "gainSuccess":"領取成功",
@@ -104,7 +104,7 @@
   },
   "prizeList":{
     "powerBank":{
-      "giftName":"NT$15貨到付款",
+      "giftName":"฿50 ชำระเงินปลายทาง",
       "name":"พาวเวอรแบงค1000mAhทKCพยานแลว",
       "colorAttrName":"颜色",
       "colorAttrValue":"随机颜色",
@@ -177,7 +177,7 @@
       "commentDescText14":"2024-09-16 10000毫安 簡約白"
     },
     "oneZhe":{
-      "giftName":"NT$3960貨到付款 ",
+      "giftName":"฿3900 ชำระเงินปลายทาง",
       "name":"【ของแท้อย่างเป็นทางการ】Apple iPhone 15 ใหม่และยังไม่ได้เปิด",
       "colorAttrName":"สี",
       "colorAttrValue1":"สีดำ",

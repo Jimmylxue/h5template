@@ -53,7 +53,7 @@ export function ChatLineAbout() {
 							alt=""
 						/>
 						<div className=" whitespace-nowrap ml-2">
-							<div className=" text-[#FF681D] text-xs font-bold mb-1">
+							<div className=" text-[#FF681D] text-xs font-bold mb-1 w-[150px] whitespace-normal">
 								{t('ChatLineAbout.kefuLine')}：{data?.result?.[0]?.lineCode}
 							</div>
 							<div className=" text-[#A2846E] text-[10px] w-[150px] whitespace-normal">

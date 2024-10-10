@@ -9,13 +9,13 @@ import {
 	spowerbank1,
 	spowerbank2,
 	spowerbank3,
+	sorryLogo,
 } from '@/assets/index'
 
 import iphone from '../../assets/img/iphone2.jpg'
 import chongdianbao from '../../assets/img/chongdianbao.jpg'
 import iphoneGift from '../../assets/img/iphoneGift.png'
 import powerBankGift from '../../assets/img/powerBankGift.png'
-import sorryLogo from '../../assets/img/sorryLogo.png'
 // 轮播图
 import siphone1 from '../../assets/img/swiper/iphone1.jpg'
 import siphone2 from '../../assets/img/swiper/iphone2.jpg'
