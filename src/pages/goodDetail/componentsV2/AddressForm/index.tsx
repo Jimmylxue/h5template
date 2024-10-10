@@ -8,6 +8,7 @@ import { useLocalStorageState } from 'ahooks'
 import { addressParams, useUploadAddress } from '@/api/address'
 import { useSku } from '../../SkuContext'
 import { lineBox } from '../../components/lineModalShow'
+import { useFbData } from '@/hooks/useFb'
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
 
 /**
@@ -31,6 +32,8 @@ export function AddressForm({ visible, onClose }: TProps) {
 	const [username, setusername] = useState<string>('')
 	const [detail, setDetail] = useState<string>('')
 	const [shop, setShop] = useState<string>('')
+
+	const { fbc, fbp } = useFbData()
 
 	const [_, setGoodAddress] = useLocalStorageState<addressParams>(
 		`snow-has-prize-${goodId}`,
@@ -265,7 +268,7 @@ export function AddressForm({ visible, onClose }: TProps) {
 									shop,
 									name: username,
 								}
-								await mutateAsync(params)
+								await mutateAsync({ ...params, fbc, fbp })
 								fbq('trackCustom', 'confirmAddress')
 								// if (isIphone) {
 								// 	// @ts-ignore

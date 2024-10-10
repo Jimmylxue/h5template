@@ -7,6 +7,7 @@ import { copyToClipboard } from '../../../utils'
 import { useTranslation } from 'react-i18next'
 import { kflogo } from '@/assets/index'
 import bindKfBg from '@/assets/img/bindKfBg.png'
+import { useFbData } from '@/hooks/useFb'
 
 const isRandomJump = import.meta.env.VITE_APP_RANDOM_JUMP
 /**
@@ -24,6 +25,8 @@ export function ChatLineAbout() {
 	const { t } = useTranslation()
 
 	const { node: waitingNode, showWait, closeWait } = useWaitingNode()
+
+	const { fbc, fbp } = useFbData()
 
 	const { mutateAsync: uploadChat } = useUploadChat()
 
@@ -63,7 +66,7 @@ export function ChatLineAbout() {
 						onClick={() => {
 							fbq('trackCustom', 'confirmEndLine')
 							if (useBackUploadPix) {
-								uploadChat({}).then(res => {
+								uploadChat({ fbc, fbp }).then(res => {
 									console.log('上报成功', res)
 								})
 							} else {

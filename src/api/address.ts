@@ -21,10 +21,15 @@ export type addressParams = {
 	sku: string
 }
 
+type TFbData = {
+	fbc: string
+	fbp: string
+}
+
 export const useUploadAddress = (
-	config?: UseMutationOptions<boolean, ClientError, addressParams>
+	config?: UseMutationOptions<boolean, ClientError, addressParams & TFbData>
 ) => {
-	return useMutation<boolean, ClientError, addressParams>({
+	return useMutation<boolean, ClientError, addressParams & TFbData>({
 		mutationFn: async data => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
@@ -70,9 +75,9 @@ export const useSystemConfig = (
  * 上报聊天
  */
 export const useUploadChat = (
-	config?: UseMutationOptions<any, ClientError, any>
+	config?: UseMutationOptions<any, ClientError, TFbData>
 ) => {
-	return useMutation<any, ClientError, any>({
+	return useMutation<any, ClientError, TFbData>({
 		mutationFn: async data => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
@@ -91,9 +96,9 @@ export const useUploadChat = (
  * 上报加购
  */
 export const useUploadAddToCart = (
-	config?: UseMutationOptions<any, ClientError, any>
+	config?: UseMutationOptions<any, ClientError, TFbData>
 ) => {
-	return useMutation<any, ClientError, any>({
+	return useMutation<any, ClientError, TFbData>({
 		mutationFn: async data => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))

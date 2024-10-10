@@ -19,6 +19,7 @@ import { LuckDrawBlocks } from '../../lang/langOtherConfig'
 import inputBg from '@/assets/img/inputBg.png'
 import { RewardList } from './component/RewardList'
 import { useUploadAddToCart } from '@/api/address'
+import { useFbData } from '@/hooks/useFb'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 const memberCodeLength = Number(import.meta.env.VITE_APP_MEMBER_CODE_LENGTH)
@@ -38,6 +39,8 @@ export function LuckDraw() {
 	const location = useLocation()
 
 	const { t } = useTranslation()
+
+	const { fbc, fbp } = useFbData()
 
 	const query = new URLSearchParams(location.search)
 	/**
@@ -315,7 +318,7 @@ export function LuckDraw() {
 							 */
 							if (id === 6) {
 								if (useBackUploadPix) {
-									await uploadAddToCart({})
+									await uploadAddToCart({ fbc, fbp })
 								} else {
 									fbq('track', 'AddToCart')
 								}
