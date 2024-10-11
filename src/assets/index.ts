@@ -10,12 +10,13 @@ const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 import zhBgTop from '@/assets/img/bg-top.png'
 import enBgTop from '@/assets/enImg/bg-top.png'
 import xjpBgTop from '@/assets/xjpImg/bg-top.png'
+import taiBgTop from '@/assets/taiImg/bg-top.png'
 
 const bgTopMap = {
 	zh: zhBgTop,
 	en: enBgTop,
 	xjp: xjpBgTop,
-	tai: enBgTop,
+	tai: taiBgTop,
 }
 
 export const bgTop = bgTopMap[lang]
