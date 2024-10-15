@@ -148,12 +148,13 @@ export const sorryLogo = sorryLogoMap[lang]
 import zhKfLogo from '@/assets/img/kflogo.png'
 import enKfLogo from '@/assets/enImg/kflogo.png'
 import xjpKfLogo from '@/assets/xjpImg/kflogo.png'
+import taiKfLogo from '@/assets/taiImg/kflogo.png'
 
 const kflogoMap = {
 	zh: zhKfLogo,
 	en: enKfLogo,
 	xjp: xjpKfLogo,
-	tai: enKfLogo,
+	tai: taiKfLogo,
 }
 
 export const kflogo = kflogoMap[lang]

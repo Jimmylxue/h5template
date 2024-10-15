@@ -1,9 +1,9 @@
 {
   "luckDraw": {
     "drawCount_before": "你還有",
-    "drawCount_after": "次抽獎機會",
-    "prizeRecord":"中獎记录",
-    "prize":"獎品",
+    "drawCount_after": "次機會",
+    "prizeRecord":"商品列表",
+    "prize":"商品",
     "operator":"操作",
     "toGain":"去领取",
     "gainFirst":"請先領取上一個獎品",
@@ -72,10 +72,10 @@
     "chatKf":"請聯絡客服"
   },
   "winPrize":{
-    "gongxiText":"恭喜您中獎啦",
-    "noGoalText":"很遺憾未中獎",
+    "gongxiText":"您獲得了一個商品",
+    "noGoalText":"很遺憾",
     "toGain":"去领取",
-    "onceAgain":"再抽一次 - 剩餘",
+    "onceAgain":"再来一次 - 剩餘",
     "count":"次",
     "bindAppText":"關聯pandabuy會員編碼",
     "sorryText":"感謝參與"
@@ -178,7 +178,7 @@
     },
     "oneZhe":{
       "giftName":"NT$3960貨到付款",
-      "name":"【官方正品】Apple/蘋果 iPhone 15 全新未拆封",
+      "name":"【panda】蘋果15全新未拆封",
       "colorAttrName":"颜色",
       "colorAttrValue1":"黑色",
       "colorAttrValue2":"粉色",

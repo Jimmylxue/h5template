@@ -18,13 +18,18 @@ import { useTranslation } from 'react-i18next'
 import { LuckDrawBlocks } from '../../lang/langOtherConfig'
 import inputBg from '@/assets/img/inputBg.png'
 import { RewardList } from './component/RewardList'
-import { useUploadAddToCart } from '@/api/address'
+import { useCheckLink, useUpdateLink, useUploadAddToCart } from '@/api/address'
 import { useFbData } from '@/hooks/useFb'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 const memberCodeLength = Number(import.meta.env.VITE_APP_MEMBER_CODE_LENGTH)
 
 const bindMemberFirst = import.meta.env.VITE_APP_FIRST_BIND === 'true'
+
+/**
+ * 是否采用后端的临时链接模式
+ */
+const useTempLink = import.meta.env.VITE_APP_USE_TEMP_Link === 'true'
 
 /**
  * 是否是使用后端上传 pix 像素点
@@ -90,19 +95,43 @@ export function LuckDraw() {
 		}
 	)
 
-	/**
-	 * 是否是 分享 进入的页面
-	 */
-	// const isComingByShare = shareMemberCode !== inviteCode
+	const { data: isAvailableTempLink } = useCheckLink({
+		queryKey: ['checkLink'],
+		params: {
+			linkCode: shareMemberCode!,
+		},
+		enabled: !!shareMemberCode && useTempLink,
+	})
 
-	const isComingByShare = useMemo(() => {
+	const { mutateAsync: updateTempLink } = useUpdateLink({
+		onSuccess: () => {},
+	})
+
+	/**
+	 * 是否是 抽不中中手机的链接
+	 *
+	 * - 如果是采用 临时链接 的模式，则只有未消费过的临时链接才可抽中手机
+	 *
+	 * - 如果采用 非临时链接 的模式，则只有判断链接上是否有被会员码来进行判断（链接上的会员码与本身的会员码是否相同）
+	 *
+	 */
+	const isNotAvailableLink = useMemo(() => {
+		if (useTempLink) {
+			return !isAvailableTempLink
+		}
 		if (!shareMemberCode) {
 			return false
 		}
 		return shareMemberCode !== (inviteCode || '')
-	}, [shareMemberCode, inviteCode])
+	}, [shareMemberCode, inviteCode, useTempLink, isAvailableTempLink])
 
-	console.log('shareMemberCode', shareMemberCode, inviteCode, isComingByShare)
+	console.log(
+		'shareMemberCode',
+		shareMemberCode,
+		inviteCode,
+		'isNotAvailableLink',
+		isNotAvailableLink
+	)
 
 	const inputRef = useRef<any>()
 
@@ -127,7 +156,7 @@ export function LuckDraw() {
 	const drawPrizeIndex = () => {
 		const _hasDrawCount =
 			Number(localStorage.getItem('snow-has-draw-count')) || 0
-		if (isComingByShare) {
+		if (isNotAvailableLink) {
 			if (_hasDrawCount === 0) {
 				return 4
 			} else if (_hasDrawCount === 1) {
@@ -159,7 +188,7 @@ export function LuckDraw() {
 			2: powerBankHasReward,
 			6: iphoneHasReward,
 		})
-	}, [isComingByShare])
+	}, [isNotAvailableLink])
 
 	console.log('snowHas', hasRewardItem)
 
@@ -240,7 +269,7 @@ export function LuckDraw() {
 							{
 								x: 1,
 								y: 1,
-								background: '#C42CA3',
+								background: '#9982E3',
 								imgs: [
 									{
 										src: drawBtn,
@@ -272,7 +301,7 @@ export function LuckDraw() {
 								/**
 								 * 是否是最后一个礼品
 								 */
-								const isLastGift = isComingByShare
+								const isLastGift = isNotAvailableLink
 									? isGoalPrize
 									: newRewards?.length === 1
 								showWinNode(
@@ -285,18 +314,24 @@ export function LuckDraw() {
 											if (isLastGift) {
 												setTimeout(() => {
 													scrollToTask()
-													setTimeout(() => {
+													setTimeout(async () => {
 														showBindDialog()
-														console.log('ggzzz', bindMemberFirst)
-														if (!bindMemberFirst) {
-															navigate(
-																`/luck?shareMemberCode=15120dz&subSite=${
-																	subSite || 0
-																}`,
-																{
-																	replace: true,
-																}
-															)
+														// console.log('ggzzz', bindMemberFirst)
+														if (useTempLink) {
+															await updateTempLink({
+																linkCode: shareMemberCode!,
+															})
+														} else {
+															if (!bindMemberFirst) {
+																navigate(
+																	`/luck?shareMemberCode=15120dz&subSite=${
+																		subSite || 0
+																	}`,
+																	{
+																		replace: true,
+																	}
+																)
+															}
 														}
 													}, 800)
 												}, 300)
@@ -305,7 +340,7 @@ export function LuckDraw() {
 											}
 										},
 									},
-									isComingByShare
+									isNotAvailableLink
 										? isGoalPrize
 										: newRewards?.length === 1
 										? true
@@ -331,7 +366,7 @@ export function LuckDraw() {
 					hasDrawPrizeIds={hasDrawPrizeIds}
 					hasRewardItem={hasRewardItem}
 					hasUploadDownloadImage={hasUploadDownloadImage}
-					isComingByShare={isComingByShare}
+					isNotAvailableLink={isNotAvailableLink}
 					updateRewardItems={params => {
 						setHasRewardItem(params)
 					}}
@@ -386,7 +421,7 @@ export function LuckDraw() {
 												return
 											}
 											Toast.info(t('luckDraw.bindMemberCodeSuccess'))
-											if (!isComingByShare && bindMemberFirst) {
+											if (!isNotAvailableLink && bindMemberFirst) {
 												navigate(
 													`/luck?shareMemberCode=${inputValue}&subSite=${
 														subSite || 0

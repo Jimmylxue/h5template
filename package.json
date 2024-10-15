@@ -12,6 +12,7 @@
     "build-jiujiu": "tsc -b && vite --mode jiujiu build",
     "build-en": "tsc -b && vite --mode en build",
     "build-xjp": "tsc -b && vite --mode xjp build",
+    "build-tai": "tsc -b && vite --mode tai build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

@@ -27,7 +27,7 @@ type TProps = {
 	hasDrawPrizeIds?: number[]
 	hasRewardItem: any
 	hasUploadDownloadImage?: boolean
-	isComingByShare: boolean
+	isNotAvailableLink: boolean
 	updateRewardItems: (params: any) => void
 }
 
@@ -35,7 +35,7 @@ export function RewardList({
 	hasDrawPrizeIds,
 	hasRewardItem,
 	hasUploadDownloadImage,
-	isComingByShare,
+	isNotAvailableLink,
 	updateRewardItems,
 }: TProps) {
 	const { t } = useTranslation()
@@ -92,7 +92,7 @@ export function RewardList({
 						// if (index === 1) {
 						// 	noGain = !(hasRewardItem[1] && !hasRewardItem[2])
 						// } else {
-						// 	noGain = isComingByShare !!hasRewardItem[0]
+						// 	noGain = isNotAvailableLink !!hasRewardItem[0]
 						// }
 						if (index === 0) {
 							noGain = !!hasRewardItem[reward.id]
@@ -123,7 +123,11 @@ export function RewardList({
 										}
 									)}
 									onClick={() => {
-										console.log('isComingByShare', isComingByShare, reward)
+										console.log(
+											'isNotAvailableLink',
+											isNotAvailableLink,
+											reward
+										)
 										if (bindMemberFirst && !hasUploadDownloadImage) {
 											addGlowEffect('memberCodeInput')
 											Toast.info(t('luckDraw.pleaseInputTreeMemberCode'))
@@ -164,7 +168,7 @@ export function RewardList({
 										}
 									}}
 								>
-									{!!hasRewardItem[index]
+									{!!hasRewardItem[reward.id]
 										? t('luckDraw.hasGain')
 										: t('luckDraw.toGain')}
 								</div>

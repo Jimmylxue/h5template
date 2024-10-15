@@ -109,7 +109,7 @@ import powerBankComment14_1 from '@/assets/img/goodDetail/powerBankComment/14-1.
 
 import i18n from '../../lang/config'
 
-const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'tai'
 
 export const PrizeList = [
 	{
@@ -253,17 +253,10 @@ export const PrizeList = [
 				value: i18n.t('prizeList.powerBank.colorTypeValue'),
 			},
 		],
-		productDetailImgs: [
-			pwpd1,
-			pwpd2,
-			pwpd3,
-			pwpd4,
-			pwpd5,
-			pwpd6,
-			pwpd7,
-			pwpd8,
-			pwpd9,
-		],
+		productDetailImgs:
+			lang === 'tai'
+				? [pwpd1, pwpd2, pwpd3, pwpd4, pwpd5, pwpd6]
+				: [pwpd1, pwpd2, pwpd3, pwpd4, pwpd5, pwpd6, pwpd7, pwpd8, pwpd9],
 		comments: [
 			{
 				commentId: 1,
@@ -603,6 +596,8 @@ export const PrizeList = [
 		],
 		productDetailImgs: ['en', 'xjp'].includes(lang)
 			? [ippd1, ippd2, ippd3, ippd4, ippd5, ippd6]
+			: ['tai'].includes(lang)
+			? [ippd1, ippd2, ippd3, ippd4]
 			: [ippd1, ippd2, ippd3, ippd4, ippd5, ippd6, ippd7, ippd8, ippd9, ippd10],
 		comments: [
 			{

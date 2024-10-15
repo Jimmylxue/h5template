@@ -8,6 +8,11 @@ import { useTranslation } from 'react-i18next'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE
 
+/**
+ * 是否是使用后端上传 pix 像素点
+ */
+const useBackUploadPix = import.meta.env.VITE_APP_USE_BACK_UPLOAD_PIX === 'true'
+
 export const LineModal = observer(() => {
 	const navigate = useNavigate()
 	const { t } = useTranslation()
@@ -47,15 +52,17 @@ export const LineModal = observer(() => {
 							className=" px-8 mt-2"
 							onClick={() => {
 								console.log('lineBox.canNavigate', lineBox.canNavigate)
-								// if (lineBox.canNavigate === true) {
-								// 	/**
-								// 	 * canNavigate = true 表示是iphone
-								// 	 */
-								// 	// @ts-ignore
-								// 	fbq('track', 'Purchase', { value: 0.0, currency: 'USD' })
-								// } else {
-								// 	fbq('track', 'AddPaymentInfo')
-								// }
+								if (!useBackUploadPix) {
+									if (lineBox.canNavigate === true) {
+										/**
+										 * canNavigate = true 表示是iphone
+										 */
+										// @ts-ignore
+										fbq('track', 'Purchase', { value: 0.0, currency: 'USD' })
+									} else {
+										fbq('track', 'AddPaymentInfo')
+									}
+								}
 								lineBox.closeModal()
 								navigate(-1)
 								fbq('trackCustom', 'confirmEnd')

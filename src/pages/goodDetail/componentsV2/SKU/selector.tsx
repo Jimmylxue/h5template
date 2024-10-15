@@ -5,7 +5,7 @@ import { useCurrentGood } from '../../core/useCurrentGood'
 import classNames from 'classnames'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'tai'
 
 const isEn = lang === 'en'
 
@@ -127,6 +127,7 @@ export function Selector({ visible, onClose }: TProps) {
 												{
 													'border-[#FE4025]': tempChooseText === idx,
 													'text-[#FE4025]': tempChooseText === idx,
+													'px-6': lang === 'tai',
 												}
 											)}
 											onClick={() => {

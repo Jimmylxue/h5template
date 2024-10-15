@@ -112,3 +112,60 @@ export const useUploadAddToCart = (
 		...config,
 	})
 }
+
+export const useCheckLink = (
+	config?: Omit<
+		UndefinedInitialDataOptions<{ result: boolean }, ClientError>,
+		'queryFn'
+	> & {
+		params: {
+			linkCode: string
+		}
+	}
+) => {
+	return useQuery<{ result: boolean }, ClientError>({
+		...config,
+		queryFn: () => {
+			const query = new URLSearchParams(location.hash.split('?')?.[1])
+			const isSubSite = Number(query.get('subSite'))
+			const useSubSite = isSubSite && subSiteEnable === 'true'
+			return useSubSite
+				? subPost('/address/checkLink', config?.params)
+				: post('/address/checkLink', config?.params)
+		},
+		queryKey: config!.queryKey,
+	})
+}
+
+/**
+ * 更新链接
+ */
+export const useUpdateLink = (
+	config?: UseMutationOptions<
+		any,
+		ClientError,
+		{
+			linkCode: string
+		}
+	>
+) => {
+	return useMutation<
+		any,
+		ClientError,
+		{
+			linkCode: string
+		}
+	>({
+		mutationFn: async data => {
+			const query = new URLSearchParams(location.hash.split('?')?.[1])
+			const isSubSite = Number(query.get('subSite'))
+			const useSubSite = isSubSite && subSiteEnable === 'true'
+			const response: any = useSubSite
+				? await subPost('/address/updateLink', data)
+				: await post('/address/updateLink', data)
+			console.log('response', response)
+			return response
+		},
+		...config,
+	})
+}

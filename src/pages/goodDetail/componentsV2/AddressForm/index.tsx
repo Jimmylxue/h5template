@@ -9,7 +9,9 @@ import { addressParams, useUploadAddress } from '@/api/address'
 import { useSku } from '../../SkuContext'
 import { lineBox } from '../../components/lineModalShow'
 import { useFbData } from '@/hooks/useFb'
-const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'tai'
+
+const showFormPreText = lang !== 'tai'
 
 /**
  * 是否展示 选择城市
@@ -86,61 +88,136 @@ export function AddressForm({ visible, onClose }: TProps) {
 				position="bottom"
 				description={
 					<div className=" pb-4">
-						<div
-							className=" py-4 px-2 rounded-lg mt-2"
-							style={{
-								boxShadow: ' 0px 0px 4px 0px #D0D0D0',
-							}}
-						>
-							<div className=" flex items-center">
-								<div className=" flex items-center w-[70px]">
-									<div className="text-[#FF4125]">*</div>
-									<div>{t('addressSelect.phoneLabel')}</div>
-								</div>
-								<div className=" flex items-center">
+						{lang === 'tai' ? (
+							<>
+								<div
+									className=" py-4 px-2 rounded-lg mt-2"
+									style={{
+										boxShadow: ' 0px 0px 4px 0px #D0D0D0',
+									}}
+								>
 									<div className=" flex items-center">
-										<div className=" mr-2">
-											{t('addressSelect.phonePreCode')}
+										{showFormPreText && (
+											<div className=" flex items-center w-[70px]">
+												<div className="text-[#FF4125]">*</div>
+												<div>{t('addressSelect.userNameLabel')}</div>
+											</div>
+										)}
+										<div className=" flex items-center">
+											<div>
+												<input
+													type="text"
+													placeholder={t('addressSelect.userNameRule')}
+													value={username}
+													onChange={e => {
+														setusername(e.target.value)
+													}}
+												/>
+											</div>
+											<div></div>
 										</div>
-										<input
-											type="text"
-											placeholder={t('addressSelect.phoneRule')}
-											value={phone}
-											onChange={e => {
-												setPhone(e.target.value)
-											}}
-										/>
 									</div>
-									<div></div>
 								</div>
-							</div>
-						</div>
-						<div
-							className=" py-4 px-2 rounded-lg mt-2"
-							style={{
-								boxShadow: ' 0px 0px 4px 0px #D0D0D0',
-							}}
-						>
-							<div className=" flex items-center">
-								<div className=" flex items-center w-[70px]">
-									<div className="text-[#FF4125]">*</div>
-									<div>{t('addressSelect.userNameLabel')}</div>
-								</div>
-								<div className=" flex items-center">
-									<div>
-										<input
-											type="text"
-											placeholder={t('addressSelect.userNameRule')}
-											value={username}
-											onChange={e => {
-												setusername(e.target.value)
-											}}
-										/>
+								<div
+									className=" py-4 px-2 rounded-lg mt-2"
+									style={{
+										boxShadow: ' 0px 0px 4px 0px #D0D0D0',
+									}}
+								>
+									<div className=" flex items-center">
+										{showFormPreText && (
+											<div className=" flex items-center w-[70px]">
+												<div className="text-[#FF4125]">*</div>
+												<div>{t('addressSelect.phoneLabel')}</div>
+											</div>
+										)}
+										<div className=" flex items-center">
+											<div className=" flex items-center">
+												{showFormPreText && (
+													<div className=" mr-2">
+														{t('addressSelect.phonePreCode')}
+													</div>
+												)}
+												<input
+													type="text"
+													placeholder={t('addressSelect.phoneRule')}
+													value={phone}
+													onChange={e => {
+														setPhone(e.target.value)
+													}}
+												/>
+											</div>
+											<div></div>
+										</div>
 									</div>
-									<div></div>
 								</div>
-							</div>
-						</div>
+							</>
+						) : (
+							<>
+								<div
+									className=" py-4 px-2 rounded-lg mt-2"
+									style={{
+										boxShadow: ' 0px 0px 4px 0px #D0D0D0',
+									}}
+								>
+									<div className=" flex items-center">
+										{showFormPreText && (
+											<div className=" flex items-center w-[70px]">
+												<div className="text-[#FF4125]">*</div>
+												<div>{t('addressSelect.phoneLabel')}</div>
+											</div>
+										)}
+										<div className=" flex items-center">
+											<div className=" flex items-center">
+												{showFormPreText && (
+													<div className=" mr-2">
+														{t('addressSelect.phonePreCode')}
+													</div>
+												)}
+												<input
+													type="text"
+													placeholder={t('addressSelect.phoneRule')}
+													value={phone}
+													onChange={e => {
+														setPhone(e.target.value)
+													}}
+												/>
+											</div>
+											<div></div>
+										</div>
+									</div>
+								</div>
+								<div
+									className=" py-4 px-2 rounded-lg mt-2"
+									style={{
+										boxShadow: ' 0px 0px 4px 0px #D0D0D0',
+									}}
+								>
+									<div className=" flex items-center">
+										{showFormPreText && (
+											<div className=" flex items-center w-[70px]">
+												<div className="text-[#FF4125]">*</div>
+												<div>{t('addressSelect.userNameLabel')}</div>
+											</div>
+										)}
+										<div className=" flex items-center">
+											<div>
+												<input
+													type="text"
+													placeholder={t('addressSelect.userNameRule')}
+													value={username}
+													onChange={e => {
+														setusername(e.target.value)
+													}}
+												/>
+											</div>
+											<div></div>
+										</div>
+									</div>
+								</div>
+							</>
+						)}
+
 						{showCityChoose && (
 							<div
 								className=" py-4 px-2 rounded-lg mt-2"
@@ -149,10 +226,12 @@ export function AddressForm({ visible, onClose }: TProps) {
 								}}
 							>
 								<div className=" flex items-center">
-									<div className=" flex items-center w-[70px]">
-										<div className="text-[#FF4125]">*</div>
-										<div>{t('addressSelect.cityLabel')}</div>
-									</div>
+									{showFormPreText && (
+										<div className=" flex items-center w-[70px]">
+											<div className="text-[#FF4125]">*</div>
+											<div>{t('addressSelect.cityLabel')}</div>
+										</div>
+									)}
 									<div
 										className=" flex items-center flex-grow"
 										onClick={() => {
@@ -182,14 +261,17 @@ export function AddressForm({ visible, onClose }: TProps) {
 							}}
 						>
 							<div className=" flex items-center">
-								<div className=" flex items-center w-[70px]">
-									<div className="text-[#FF4125]">*</div>
-									<div>{t('addressSelect.detailLabel')}</div>
-								</div>
-								<div className=" flex items-center">
-									<div>
+								{showFormPreText && (
+									<div className=" flex items-center w-[70px]">
+										<div className="text-[#FF4125]">*</div>
+										<div>{t('addressSelect.detailLabel')}</div>
+									</div>
+								)}
+								<div className=" flex items-center w-full">
+									<div className=" w-full">
 										<input
 											type="text"
+											className=" w-full"
 											placeholder={t('addressSelect.detailRule')}
 											value={detail}
 											onChange={e => {
@@ -208,10 +290,13 @@ export function AddressForm({ visible, onClose }: TProps) {
 							}}
 						>
 							<div className=" flex items-center">
-								<div className=" flex items-center w-[70px]">
-									<div className="text-[#FF4125]">*</div>
-									<div>{t('addressSelect.shopLabel')}</div>
-								</div>
+								{showFormPreText && (
+									<div className=" flex items-center w-[70px]">
+										<div className="text-[#FF4125]">*</div>
+										<div>{t('addressSelect.shopLabel')}</div>
+									</div>
+								)}
+
 								<div className=" flex items-center">
 									<div>
 										<input
