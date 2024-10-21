@@ -29,6 +29,7 @@ export function useConfirmInput() {
 						<button
 							className=" bg-[url('/src/assets/img/canGain.png')] mx-2 w-[80px] h-[35px]  bg-contain text-[#905224]"
 							onClick={() => {
+								fbq('track', 'ViewContent')
 								confirmFn.current?.()
 								setVisible(false)
 							}}

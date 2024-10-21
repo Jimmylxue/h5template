@@ -34,7 +34,6 @@ export function requestBySub(sub: number) {
 		1: subPost,
 		2: threePost,
 	}
-	console.log('dddsssaaa', _sub)
 	// @ts-ignore
 	return subRequestMap[_sub]
 }
@@ -46,12 +45,7 @@ export const useUploadAddress = (
 		mutationFn: async data => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
-			const useSubSite = isSubSite && subSiteEnable
-			const response: any = useSubSite
-				? await subPost('/address/add', data)
-				: await post('/address/add', data)
-			console.log('response', response)
-			return response
+			return await requestBySub(isSubSite || 0)('/address/add', data)
 		},
 		...config,
 	})
@@ -72,7 +66,6 @@ export const useSystemConfig = (
 	>({
 		...config,
 		queryFn: async () => {
-			console.log('ddzzzaaa')
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
 			return await requestBySub(isSubSite || 0)(
@@ -94,12 +87,7 @@ export const useUploadChat = (
 		mutationFn: async data => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
-			const useSubSite = isSubSite && subSiteEnable
-			const response: any = useSubSite
-				? await subPost('/address/chat', data)
-				: await post('/address/chat', data)
-			console.log('response', response)
-			return response
+			return await requestBySub(isSubSite || 0)('/address/chat', data)
 		},
 		...config,
 	})
@@ -115,12 +103,7 @@ export const useUploadAddToCart = (
 		mutationFn: async data => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
-			const useSubSite = isSubSite && subSiteEnable
-			const response: any = useSubSite
-				? await subPost('/address/addToCart', data)
-				: await post('/address/addToCart', data)
-			console.log('response', response)
-			return response
+			return await requestBySub(isSubSite || 0)('/address/addToCart', data)
 		},
 		...config,
 	})
@@ -138,13 +121,13 @@ export const useCheckLink = (
 ) => {
 	return useQuery<{ result: boolean }, ClientError>({
 		...config,
-		queryFn: () => {
+		queryFn: async () => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
-			const useSubSite = isSubSite && subSiteEnable
-			return useSubSite
-				? subPost('/address/checkLink', config?.params)
-				: post('/address/checkLink', config?.params)
+			return await requestBySub(isSubSite || 0)(
+				'/address/checkLink',
+				config?.params
+			)
 		},
 		queryKey: config!.queryKey,
 	})
@@ -172,12 +155,7 @@ export const useUpdateLink = (
 		mutationFn: async data => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
-			const useSubSite = isSubSite && subSiteEnable
-			const response: any = useSubSite
-				? await subPost('/address/updateLink', data)
-				: await post('/address/updateLink', data)
-			console.log('response', response)
-			return response
+			return await requestBySub(isSubSite || 0)('/address/updateLink', data)
 		},
 		...config,
 	})
