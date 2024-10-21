@@ -6,8 +6,9 @@ import {
 } from '@tanstack/react-query'
 import { ClientError, post } from '.'
 import { subPost } from './subIndex'
+import { threePost } from './threeIndex'
 
-const subSiteEnable = import.meta.env.VITE_APP_USE_SUB_SITE_ENABLED
+const subSiteEnable = import.meta.env.VITE_APP_USE_SUB_SITE_ENABLED === 'true'
 
 export type addressParams = {
 	province: string
@@ -26,6 +27,18 @@ type TFbData = {
 	fbp: string
 }
 
+export function requestBySub(sub: number) {
+	let _sub = subSiteEnable ? sub : 0
+	const subRequestMap = {
+		0: post,
+		1: subPost,
+		2: threePost,
+	}
+	console.log('dddsssaaa', _sub)
+	// @ts-ignore
+	return subRequestMap[_sub]
+}
+
 export const useUploadAddress = (
 	config?: UseMutationOptions<boolean, ClientError, addressParams & TFbData>
 ) => {
@@ -33,7 +46,7 @@ export const useUploadAddress = (
 		mutationFn: async data => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
-			const useSubSite = isSubSite && subSiteEnable === 'true'
+			const useSubSite = isSubSite && subSiteEnable
 			const response: any = useSubSite
 				? await subPost('/address/add', data)
 				: await post('/address/add', data)
@@ -58,14 +71,14 @@ export const useSystemConfig = (
 		ClientError
 	>({
 		...config,
-		queryFn: () => {
+		queryFn: async () => {
+			console.log('ddzzzaaa')
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
-			const useSubSite = isSubSite && subSiteEnable === 'true'
-			console.log('isSubSite', location.hash, isSubSite, subSiteEnable)
-			return useSubSite
-				? subPost('/address/configList', config?.params)
-				: post('/address/configList', config?.params)
+			return await requestBySub(isSubSite || 0)(
+				'/address/configList',
+				config?.params
+			)
 		},
 		queryKey: config!.queryKey,
 	})
@@ -81,7 +94,7 @@ export const useUploadChat = (
 		mutationFn: async data => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
-			const useSubSite = isSubSite && subSiteEnable === 'true'
+			const useSubSite = isSubSite && subSiteEnable
 			const response: any = useSubSite
 				? await subPost('/address/chat', data)
 				: await post('/address/chat', data)
@@ -102,7 +115,7 @@ export const useUploadAddToCart = (
 		mutationFn: async data => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
-			const useSubSite = isSubSite && subSiteEnable === 'true'
+			const useSubSite = isSubSite && subSiteEnable
 			const response: any = useSubSite
 				? await subPost('/address/addToCart', data)
 				: await post('/address/addToCart', data)
@@ -128,7 +141,7 @@ export const useCheckLink = (
 		queryFn: () => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
-			const useSubSite = isSubSite && subSiteEnable === 'true'
+			const useSubSite = isSubSite && subSiteEnable
 			return useSubSite
 				? subPost('/address/checkLink', config?.params)
 				: post('/address/checkLink', config?.params)
@@ -159,7 +172,7 @@ export const useUpdateLink = (
 		mutationFn: async data => {
 			const query = new URLSearchParams(location.hash.split('?')?.[1])
 			const isSubSite = Number(query.get('subSite'))
-			const useSubSite = isSubSite && subSiteEnable === 'true'
+			const useSubSite = isSubSite && subSiteEnable
 			const response: any = useSubSite
 				? await subPost('/address/updateLink', data)
 				: await post('/address/updateLink', data)

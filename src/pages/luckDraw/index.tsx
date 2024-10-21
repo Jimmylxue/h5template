@@ -20,6 +20,7 @@ import inputBg from '@/assets/img/inputBg.png'
 import { RewardList } from './component/RewardList'
 import { useCheckLink, useUpdateLink, useUploadAddToCart } from '@/api/address'
 import { useFbData } from '@/hooks/useFb'
+import { useConfirmInput } from './component/ConfirmInput'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 const memberCodeLength = Number(import.meta.env.VITE_APP_MEMBER_CODE_LENGTH)
@@ -36,6 +37,12 @@ const useTempLink = import.meta.env.VITE_APP_USE_TEMP_Link === 'true'
  */
 const useBackUploadPix = import.meta.env.VITE_APP_USE_BACK_UPLOAD_PIX === 'true'
 
+/**
+ * 绑定会员码是否需要确认弹窗
+ */
+const useBindMemberConfirm =
+	import.meta.env.VITE_APP_USE_BIND_MEMBER_CONFIRM === 'true'
+
 const isNotZh = lang !== 'zh'
 
 export function LuckDraw() {
@@ -46,6 +53,8 @@ export function LuckDraw() {
 	const { t } = useTranslation()
 
 	const { fbc, fbp } = useFbData()
+
+	const { node: confirmInput, showConfirm } = useConfirmInput()
 
 	const query = new URLSearchParams(location.search)
 	/**
@@ -95,6 +104,9 @@ export function LuckDraw() {
 		}
 	)
 
+	/**
+	 * 是否是未被消费过的链接
+	 */
 	const { data: isAvailableTempLink } = useCheckLink({
 		queryKey: ['checkLink'],
 		params: {
@@ -117,7 +129,7 @@ export function LuckDraw() {
 	 */
 	const isNotAvailableLink = useMemo(() => {
 		if (useTempLink) {
-			return !isAvailableTempLink
+			return !!(shareMemberCode && !isAvailableTempLink)
 		}
 		if (!shareMemberCode) {
 			return false
@@ -316,11 +328,12 @@ export function LuckDraw() {
 													scrollToTask()
 													setTimeout(async () => {
 														showBindDialog()
-														// console.log('ggzzz', bindMemberFirst)
 														if (useTempLink) {
-															await updateTempLink({
-																linkCode: shareMemberCode!,
-															})
+															if (!!shareMemberCode) {
+																await updateTempLink({
+																	linkCode: shareMemberCode!,
+																})
+															}
 														} else {
 															if (!bindMemberFirst) {
 																navigate(
@@ -420,19 +433,54 @@ export function LuckDraw() {
 												Toast.info(t('luckDraw.pleaseInputTreeMemberCode'))
 												return
 											}
-											Toast.info(t('luckDraw.bindMemberCodeSuccess'))
-											if (!isNotAvailableLink && bindMemberFirst) {
-												navigate(
-													`/luck?shareMemberCode=${inputValue}&subSite=${
-														subSite || 0
-													}`,
-													{
-														replace: true,
+											if (useBindMemberConfirm) {
+												showConfirm({
+													memberCode: inputValue,
+													onConfirm: () => {
+														Toast.info(t('luckDraw.bindMemberCodeSuccess'))
+
+														if (!isNotAvailableLink && bindMemberFirst) {
+															if (useTempLink) {
+																navigate(`/luck?subSite=${subSite || 0}`, {
+																	replace: true,
+																})
+															} else {
+																navigate(
+																	`/luck?shareMemberCode=${inputValue}&subSite=${
+																		subSite || 0
+																	}`,
+																	{
+																		replace: true,
+																	}
+																)
+															}
+														}
+
+														setInviteCode(inputValue)
+														setHasUploadDownloadImage(true)
+													},
+												})
+											} else {
+												Toast.info(t('luckDraw.bindMemberCodeSuccess'))
+												if (!isNotAvailableLink && bindMemberFirst) {
+													if (useTempLink) {
+														navigate(`/luck?subSite=${subSite || 0}`, {
+															replace: true,
+														})
+													} else {
+														navigate(
+															`/luck?shareMemberCode=${inputValue}&subSite=${
+																subSite || 0
+															}`,
+															{
+																replace: true,
+															}
+														)
 													}
-												)
+												}
+												setInviteCode(inputValue)
+												setHasUploadDownloadImage(true)
 											}
-											setInviteCode(inputValue)
-											setHasUploadDownloadImage(true)
 										} else {
 											// 修改逻辑
 											let temp = inviteCode || ''
@@ -503,6 +551,7 @@ export function LuckDraw() {
 			{videoNode}
 			{winNode}
 			{bindDialogNode}
+			{useBindMemberConfirm && confirmInput}
 			<audio
 				className=" absolute -left-[300px] -top-[1000px]"
 				src={music}

@@ -55,7 +55,7 @@
     "confirmText":"ยืนยัน"
   },
   "ChatLineAbout":{
-    "kefuLine":"LINEของบริการลูกค้า",
+    "kefuLine":"LINE",
     "findKf":"โปรดหาบริการลูกค้าเพื่อเช็คซึ่งใช้รูปประกอบหน้านี้",
     "hasCopyText":"คัดลอกIDแล้ว",
     "quChat":"แชท"
@@ -68,8 +68,8 @@
     "toBind":"รับสินค้า"
   },
   "gainCoupon":{
-    "gainSuccess":"領取成功",
-    "chatKf":"請聯絡客服"
+    "gainSuccess":"เก็บสำเร็จแล้ว",
+    "chatKf":"กรุณาติดต่อบริการลูกค้า"
   },
   "winPrize":{
     "gongxiText":"คุณได้รับสินค้าหนึ่งชิ้น",
@@ -246,8 +246,8 @@
       "commentDescText9":"2024-09-18 256GB 藍色"
     },
     "NuNuTicker":{
-      "name":"pandabuy-折價卷NT$100",
-      "giftName":"pandabuy-折價卷NT$100"
+      "name":"คูปอง฿100",
+      "giftName":"คูปอง฿100"
     }
   },
   "footer": {

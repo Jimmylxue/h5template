@@ -4,5 +4,5 @@ export function addGlowEffect(inputId: string) {
 
 	setTimeout(() => {
 		inputField?.classList.remove('glow')
-	}, 2000)
+	}, 4000)
 }

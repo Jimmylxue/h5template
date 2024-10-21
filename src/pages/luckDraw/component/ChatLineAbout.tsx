@@ -33,6 +33,7 @@ export function ChatLineAbout() {
 	useEffect(() => {
 		setTimeout(() => {
 			addGlowEffect('bindKf')
+			addGlowEffect('seeJiaoCheng')
 		}, 800)
 	}, [])
 

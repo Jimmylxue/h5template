@@ -130,6 +130,7 @@ export function RewardList({
 										)
 										if (bindMemberFirst && !hasUploadDownloadImage) {
 											addGlowEffect('memberCodeInput')
+											addGlowEffect('seeJiaoCheng')
 											Toast.info(t('luckDraw.pleaseInputTreeMemberCode'))
 											return
 										}

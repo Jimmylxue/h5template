@@ -42,9 +42,6 @@ export function useWinPrize() {
 		<>
 			<Overlay
 				visible={show}
-				onClick={() => {
-					setShow(false)
-				}}
 				style={{
 					height: '100%',
 					display: 'flex',
