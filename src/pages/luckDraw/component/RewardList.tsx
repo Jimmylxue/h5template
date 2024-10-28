@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { useMemo } from 'react'
 import { PrizeList } from '../const'
 import { useTranslation } from 'react-i18next'
-import { addGlowEffect } from '../core'
+import { addGlowEffect, useTempCode } from '../core'
 import { Toast } from 'react-vant'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { ChatLineAbout } from './ChatLineAbout'
@@ -44,6 +44,8 @@ export function RewardList({
 	const location = useLocation()
 
 	const { node: gainCouponNode, showGain, closeGain } = useGainCouponNode()
+
+	const { isTempLink, shareMemberCode } = useTempCode()
 
 	const rewardList = useMemo(() => {
 		return PrizeList.filter(item => hasDrawPrizeIds?.includes(item.id)) || []
@@ -163,7 +165,11 @@ export function RewardList({
 												document.querySelector('html')!.scrollTop = 0 // document.getElementById('root')!.scrollTop = 0
 
 												navigate(
-													`/good?goodId=${reward.id}&subSite=${subSite || 0}`
+													`/good?goodId=${reward.id}&subSite=${subSite || 0}${
+														isTempLink
+															? '&shareMemberCode=' + shareMemberCode
+															: ''
+													}`
 												)
 											}
 										}

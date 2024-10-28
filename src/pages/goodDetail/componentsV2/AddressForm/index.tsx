@@ -9,6 +9,7 @@ import { addressParams, useUploadAddress } from '@/api/address'
 import { useSku } from '../../SkuContext'
 import { lineBox } from '../../components/lineModalShow'
 import { useFbData } from '@/hooks/useFb'
+import { useTempCode } from '@/pages/luckDraw/core'
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'tai'
 
 const showFormPreText = lang !== 'tai'
@@ -27,6 +28,8 @@ export function AddressForm({ visible, onClose }: TProps) {
 	const { t } = useTranslation()
 
 	const { good, goodId } = useCurrentGood()
+
+	const { isTempLink } = useTempCode()
 
 	const [city, setCity] = useState<string>('')
 	const [cityChooseShow, setCityChooseShow] = useState<boolean>(false)
@@ -352,8 +355,13 @@ export function AddressForm({ visible, onClose }: TProps) {
 									city: city || '--',
 									shop,
 									name: username,
+									isTempLink: isTempLink ? 1 : 2,
 								}
-								await mutateAsync({ ...params, fbc, fbp })
+								await mutateAsync({
+									...params,
+									fbc,
+									fbp,
+								})
 								fbq('trackCustom', 'confirmAddress')
 								// if (isIphone) {
 								// 	// @ts-ignore
