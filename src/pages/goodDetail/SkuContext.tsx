@@ -80,7 +80,6 @@ export const SKUContextProvider = function ({
 			} else if (item.type === 'text') {
 				// @ts-ignore
 				const _index = item.values.findIndex(it => it.chooseAble)
-				console.log('___index', _index)
 				setTextIndex(_index)
 			}
 		})

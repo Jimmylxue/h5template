@@ -1,24 +1,29 @@
 import { makeAutoObservable } from 'mobx'
 
 export class LineModalBox {
-	show: boolean = false
+	powerBankModalShow: boolean = false
+	iphoneModalShow: boolean = false
 
-	/**
-	 * 是否是领取的iphone
-	 */
-	canNavigate: boolean = false
+	// /**
+	//  * 是否是领取的iphone
+	//  */
+	// canNavigate: boolean = false
 
 	constructor() {
 		makeAutoObservable(this)
 	}
 
-	showModal(status: boolean) {
-		this.show = true
-		this.canNavigate = status
+	showPowerBankModal() {
+		this.powerBankModalShow = true
+	}
+
+	showIphoneModal() {
+		this.iphoneModalShow = true
 	}
 
 	closeModal() {
-		this.show = false
+		this.powerBankModalShow = false
+		this.iphoneModalShow = false
 	}
 }
 

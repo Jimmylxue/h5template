@@ -265,7 +265,7 @@ export function AddressForm({ visible, onClose }: TProps) {
 						>
 							<div className=" flex items-center">
 								{showFormPreText && (
-									<div className=" flex items-center w-[70px]">
+									<div className=" flex items-center w-[70px] flex-shrink-0">
 										<div className="text-[#FF4125]">*</div>
 										<div>{t('addressSelect.detailLabel')}</div>
 									</div>
@@ -286,35 +286,37 @@ export function AddressForm({ visible, onClose }: TProps) {
 								</div>
 							</div>
 						</div>
-						<div
-							className=" py-4 px-2 rounded-lg mt-2"
-							style={{
-								boxShadow: ' 0px 0px 4px 0px #D0D0D0',
-							}}
-						>
-							<div className=" flex items-center">
-								{showFormPreText && (
-									<div className=" flex items-center w-[70px]">
-										<div className="text-[#FF4125]">*</div>
-										<div>{t('addressSelect.shopLabel')}</div>
-									</div>
-								)}
-
+						{lang !== 'zh' && (
+							<div
+								className=" py-4 px-2 rounded-lg mt-2"
+								style={{
+									boxShadow: ' 0px 0px 4px 0px #D0D0D0',
+								}}
+							>
 								<div className=" flex items-center">
-									<div>
-										<input
-											type="text"
-											placeholder={t('addressSelect.shopRule')}
-											value={shop}
-											onChange={e => {
-												setShop(e.target.value)
-											}}
-										/>
+									{showFormPreText && (
+										<div className=" flex items-center w-[70px]">
+											<div className="text-[#FF4125]">*</div>
+											<div>{t('addressSelect.shopLabel')}</div>
+										</div>
+									)}
+
+									<div className=" flex items-center">
+										<div>
+											<input
+												type="text"
+												placeholder={t('addressSelect.shopRule')}
+												value={shop}
+												onChange={e => {
+													setShop(e.target.value)
+												}}
+											/>
+										</div>
+										<div></div>
 									</div>
-									<div></div>
 								</div>
 							</div>
-						</div>
+						)}
 
 						<div
 							className=" w-full bg-[#FF4125] flex justify-center items-center text-white text-[13px] rounded-lg h-[50px] mt-6"
@@ -335,7 +337,7 @@ export function AddressForm({ visible, onClose }: TProps) {
 									Toast.info(t('addressSelect.cityRule'))
 									return
 								}
-								if (!shop) {
+								if (!shop && lang !== 'zh') {
 									Toast.info(t('addressSelect.shopRule'))
 									return
 								}
@@ -353,9 +355,9 @@ export function AddressForm({ visible, onClose }: TProps) {
 									phone,
 									detail,
 									city: city || '--',
-									shop,
+									shop: shop || '--',
 									name: username,
-									isTempLink: isTempLink ? 1 : 2,
+									productLinkType: isTempLink ? 1 : 2,
 								}
 								await mutateAsync({
 									...params,
@@ -369,13 +371,17 @@ export function AddressForm({ visible, onClose }: TProps) {
 								// } else {
 								// 	fbq('track', 'AddPaymentInfo')
 								// }
-								Toast.success(t('addressSelect.subSuccess'))
+								// Toast.success(t('addressSelect.subSuccess'))
 								setGoodAddress(params)
 								localStorage.setItem('storageAddress', JSON.stringify(params))
 								// setStorageAddress(params)
 								onClose()
 								setTimeout(() => {
-									lineBox.showModal(isIphone)
+									if (isIphone) {
+										lineBox.showIphoneModal()
+									} else {
+										lineBox.showPowerBankModal()
+									}
 									isSubmitting.current = false
 								}, 200)
 							}}

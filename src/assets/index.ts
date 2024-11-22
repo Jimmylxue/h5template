@@ -1,5 +1,6 @@
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 
+console.log('lang', lang)
 // const langImgBasePath = {
 // 	zh: 'img',
 // 	en: 'enImg',
@@ -249,23 +250,25 @@ export const spowerbank3 = powerbank3Map[lang]
 import zh2Icon from '@/assets/img/2Icon.png'
 import en2Icon from '@/assets/enImg/2Icon.png'
 import xjp2Icon from '@/assets/xjpImg/2Icon.png'
+import tai2Icon from '@/assets/taiImg/2Icon.png'
 
 const _2IconMap = {
 	zh: zh2Icon,
 	en: en2Icon,
 	xjp: xjp2Icon,
-	tai: xjp2Icon,
+	tai: tai2Icon,
 }
 
 import zh6Icon from '@/assets/img/6Icon.png'
 import en6Icon from '@/assets/enImg/6Icon.png'
 import xjp6Icon from '@/assets/xjpImg/6Icon.png'
+import tai6Icon from '@/assets/taiImg/6Icon.png'
 
 const _6IconMap = {
 	zh: zh6Icon,
 	en: en6Icon,
 	xjp: xjp6Icon,
-	tai: xjp6Icon,
+	tai: tai6Icon,
 }
 
 export const iconMap = {
@@ -285,3 +288,31 @@ const video3Map = {
 }
 
 export const video3 = video3Map[lang]
+
+import zhChatLine from '@/assets/img/chatLine.png'
+import enChatLine from '@/assets/enImg/chatLine.png'
+import xjpChatLine from '@/assets/xjpImg/chatLine.png'
+import taiChatLine from '@/assets/taiImg/chatLine.png'
+
+const chatLineMap = {
+	zh: zhChatLine,
+	en: enChatLine,
+	xjp: xjpChatLine,
+	tai: taiChatLine,
+}
+
+export const chatLine = chatLineMap[lang]
+
+// import zhChatBtn from '@/assets/img/chatBtn.png'
+// import enChatBtn from '@/assets/enImg/chatBtn.png'
+// import xjpChatBtn from '@/assets/xjpImg/chatBtn.png'
+// import taiChatBtn from '@/assets/taiImg/chatBtn.png'
+
+// const chatBtnMap = {
+// 	zh: zhChatBtn,
+// 	en: enChatBtn,
+// 	xjp: xjpChatBtn,
+// 	tai: taiChatBtn,
+// }
+
+// export const chatBtn = chatBtnMap[lang]

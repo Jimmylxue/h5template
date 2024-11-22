@@ -12,7 +12,7 @@ import { cityArr } from './addressMap'
 import { addressParams, useUploadAddress } from '../../api/address'
 import { useLocalStorageState } from 'ahooks'
 import { useLocation } from 'react-router-dom'
-import { lineBox } from '../../pages/goodDetail/components/lineModalShow'
+// import { lineBox } from '../../pages/goodDetail/components/lineModalShow'
 import { useTranslation } from 'react-i18next'
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en'
 
@@ -85,7 +85,7 @@ export function useAddressSelect() {
 						setGoodAddress(params)
 						setShow(false)
 						setTimeout(() => {
-							lineBox.showModal(isIphone)
+							// lineBox.showModal(isIphone)
 							isSubmitting.current = false
 						}, 200)
 					}}
@@ -109,7 +109,7 @@ export function useAddressSelect() {
 										setShow(false)
 										// const canNavigate = (hasUploadAddressCount || 0) + 1 >= 3
 										// lineBox.showModal(canNavigate)
-										lineBox.showModal(false)
+										// lineBox.showModal(false)
 									}}
 								>
 									{t('addressSelect.confirmText')}

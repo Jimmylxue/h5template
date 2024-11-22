@@ -28,6 +28,7 @@ type TProps = {
 	hasRewardItem: any
 	hasUploadDownloadImage?: boolean
 	isNotAvailableLink: boolean
+	isDrawing: boolean
 	updateRewardItems: (params: any) => void
 }
 
@@ -36,6 +37,7 @@ export function RewardList({
 	hasRewardItem,
 	hasUploadDownloadImage,
 	isNotAvailableLink,
+	isDrawing,
 	updateRewardItems,
 }: TProps) {
 	const { t } = useTranslation()
@@ -51,16 +53,29 @@ export function RewardList({
 		return PrizeList.filter(item => hasDrawPrizeIds?.includes(item.id)) || []
 	}, [hasDrawPrizeIds])
 
+	// const showLineAbout = useMemo(() => {
+	// 	/**
+	// 	 * id 为1 的券  说明是使用分享链接中的奖
+	// 	 */
+	// 	const isCouponShare = rewardList.find(reward => reward.id === 1)
+	// 	if (isCouponShare) {
+	// 		return hasRewardItem['1'] === true
+	// 	}
+	// 	return hasRewardItem['2'] === true && hasRewardItem['6'] === true
+	// }, [hasRewardItem, rewardList])
+
 	const showLineAbout = useMemo(() => {
-		/**
-		 * id 为1 的券  说明是使用分享链接中的奖
-		 */
-		const isCouponShare = rewardList.find(reward => reward.id === 1)
-		if (isCouponShare) {
-			return hasRewardItem['1'] === true
+		if (hasDrawPrizeIds?.includes(1)) {
+			return true
 		}
-		return hasRewardItem['2'] === true && hasRewardItem['6'] === true
-	}, [hasRewardItem, rewardList])
+		return hasDrawPrizeIds?.length === 2
+	}, [hasDrawPrizeIds])
+
+	/**
+	 * 是否解锁跳转条件 -> 抽中手机 或 分页页面抽中券
+	 */
+	const hasUnLockJump =
+		hasRewardItem?.[6] === true || hasRewardItem?.['1'] === true
 
 	const query = new URLSearchParams(location.search)
 	const subSite = query.get('subSite')
@@ -125,6 +140,9 @@ export function RewardList({
 										}
 									)}
 									onClick={() => {
+										if (isDrawing) {
+											return
+										}
 										console.log(
 											'isNotAvailableLink',
 											isNotAvailableLink,
@@ -183,7 +201,12 @@ export function RewardList({
 						)
 					})}
 
-					{showLineAbout && <ChatLineAbout />}
+					{showLineAbout && (
+						<ChatLineAbout
+							isUnLock={hasUnLockJump}
+							hasRewardItem={hasRewardItem}
+						/>
+					)}
 				</div>
 			</div>
 			{gainCouponNode}

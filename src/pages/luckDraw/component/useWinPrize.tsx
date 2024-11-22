@@ -7,6 +7,10 @@ import { useTranslation } from 'react-i18next'
 import { iconMap } from '@/assets/index'
 import priceDisBg from '@/assets/xjpImg/priceDisBg.png'
 
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
+
+const isTai = lang === 'tai'
+
 export function useWinPrize() {
 	const [show, setShow] = useState<boolean>(false)
 	const { t } = useTranslation()
@@ -93,14 +97,25 @@ export function useWinPrize() {
 					{modalShow && (
 						<div className="bg-[url('/src/assets/img/dialogBg.png')] bg-[length:100%_100%] bg-no-repeat w-3/4 pb-5 rounded-lg relative">
 							{showIcon && (
-								<img
-									// @ts-ignore
-									src={iconMap[prizeMsg.current?.id]}
-									alt=""
-									className=" size-[70px] absolute right-[45px] top-[100px]"
-								/>
+								<>
+									{isTai ? (
+										<img
+											// @ts-ignore
+											src={iconMap[prizeMsg.current?.id]}
+											alt=""
+											className=" w-[155px] h-[50px] absolute right-[25px] top-[80px]"
+										/>
+									) : (
+										<img
+											// @ts-ignore
+											src={iconMap[prizeMsg.current?.id]}
+											alt=""
+											className=" size-[70px] absolute right-[45px] top-[100px]"
+										/>
+									)}
+								</>
 							)}
-							{showIcon && (
+							{showIcon && !isTai && (
 								<div className=" absolute z-10  w-[80px] h-[28px] left-1/2 top-1/2 text-white text-xs flex justify-center items-center -translate-x-1/2">
 									<img
 										// @ts-ignore

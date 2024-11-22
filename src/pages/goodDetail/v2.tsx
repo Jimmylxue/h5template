@@ -16,6 +16,7 @@ import { useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useCurrentGood } from './core/useCurrentGood'
 import { ProductDetailView } from './componentsV2/ProductDetailView'
+import { LineModalV2 } from './components/lineModalV2'
 import { LineModal } from './components/lineModal'
 
 export function GoodDetailV2() {
@@ -133,6 +134,8 @@ export function GoodDetailV2() {
 				<ProductDetailView />
 
 				<Address />
+
+				<LineModalV2 />
 
 				<LineModal />
 			</div>

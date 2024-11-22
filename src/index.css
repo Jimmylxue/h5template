@@ -24,3 +24,9 @@
 .glow {
   animation: blink 0.5s infinite;
 }
+
+.mosaic {
+  background-size: cover;
+  filter: blur(5px) contrast(1.2);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}

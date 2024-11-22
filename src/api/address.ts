@@ -20,7 +20,7 @@ export type addressParams = {
 	memberCode: string
 	shop: string
 	sku: string
-	isTempLink: number
+	productLinkType: number
 }
 
 type TFbData = {

@@ -7,6 +7,8 @@ export function useCurrentGood() {
 	const query = new URLSearchParams(location.search)
 	const goodId = query.get('goodId')
 
+	const isSharePage = query.get('isSharePage') === '1'
+
 	const good = useMemo(() => {
 		return PrizeList.find(prize => prize.id === Number(goodId))
 	}, [goodId])
@@ -14,5 +16,6 @@ export function useCurrentGood() {
 	return {
 		good,
 		goodId,
+		isSharePage,
 	}
 }

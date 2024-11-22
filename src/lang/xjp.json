@@ -57,6 +57,7 @@
   "ChatLineAbout":{
     "kefuLine":"whatsapp",
     "findKf":"Take a screenshot of this page and contact customer service for verification",
+    "UnLockFindKf":"Receive the product and enter your address to add the LINE ID.",
     "hasCopyText":"Copied id",
     "quChat":"Link"
   },

@@ -57,6 +57,7 @@
   "ChatLineAbout":{
     "kefuLine":"客服LINE",
     "findKf":"請截圖此頁面去找客服核對",
+    "UnLockFindKf":"请先領取商品填写地址後聯繫LINE核對",
     "hasCopyText":"已複製id",
     "quChat":"去聯絡"
   },
@@ -91,7 +92,7 @@
     "userNameLabel":"聯絡人",
     "userNameRule":"請填寫聯絡人",
     "detailLabel":"詳細地址",
-    "detailRule":"請填寫詳細地址",
+    "detailRule":"僅支持黑貓、新竹送貨上門",
     "shopLabel":"超商門市",
     "shopRule":"請輸入7-11或全家超市門市",
     "cityLabel":"區 域",
