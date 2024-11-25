@@ -9,6 +9,7 @@
     "dev:xjp": "vite --mode xjp",
     "dev:tai": "vite --mode tai",
     "build": "tsc -b && vite --mode production build",
+    "build-tw2": "tsc -b && vite --mode production2 build",
     "build-jiujiu": "tsc -b && vite --mode jiujiu build",
     "build-en": "tsc -b && vite --mode en build",
     "build-xjp": "tsc -b && vite --mode xjp build",
