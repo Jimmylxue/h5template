@@ -21,6 +21,7 @@ import { RewardList } from './component/RewardList'
 import { useCheckLink, useUpdateLink, useUploadAddToCart } from '@/api/address'
 import { useFbData } from '@/hooks/useFb'
 import { useConfirmInput } from './component/ConfirmInput'
+import { useInviteLink } from './core'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 const memberCodeLength = Number(import.meta.env.VITE_APP_MEMBER_CODE_LENGTH)
@@ -57,14 +58,12 @@ export function LuckDraw() {
 	const { node: confirmInput, showConfirm } = useConfirmInput()
 
 	const query = new URLSearchParams(location.search)
-	/**
-	 * 链接上的分享用户的memberCode
-	 */
-	const shareMemberCode = query.get('shareMemberCode')
+
+	const { isInviteLink, shareMemberCode } = useInviteLink()
+
+	console.log('isInviteLink', isInviteLink)
 
 	const subSite = query.get('subSite')
-
-	// console.log('isShareLink', isShareLink)
 
 	const audioRef = useRef(null)
 
@@ -97,6 +96,9 @@ export function LuckDraw() {
 		}
 	)
 
+	/**
+	 * 会员码
+	 */
 	const [inviteCode, setInviteCode] = useLocalStorageState<string>(
 		'snow-invite-code',
 		{
@@ -129,9 +131,9 @@ export function LuckDraw() {
 	 */
 	const isNotAvailableLink = useMemo(() => {
 		if (useTempLink) {
-			return !!(shareMemberCode && !isAvailableTempLink)
+			return !!(isInviteLink && !isAvailableTempLink)
 		}
-		if (!shareMemberCode) {
+		if (!isInviteLink) {
 			return false
 		}
 		return shareMemberCode !== (inviteCode || '')
