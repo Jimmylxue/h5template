@@ -211,42 +211,6 @@ const smallTextMap = {
 
 export const smallText = smallTextMap[lang]
 
-import zhPowerbank1 from '@/assets/img/swiper/powerbank1.jpg'
-import enPowerbank1 from '@/assets/enImg/swiper/powerbank1.jpg'
-
-const powerbank1Map = {
-	zh: zhPowerbank1,
-	en: enPowerbank1,
-	xjp: enPowerbank1,
-	tai: enPowerbank1,
-}
-
-export const spowerbank1 = powerbank1Map[lang]
-
-import zhPowerbank2 from '@/assets/img/swiper/powerbank2.jpg'
-import enPowerbank2 from '@/assets/enImg/swiper/powerbank2.jpg'
-
-const powerbank2Map = {
-	zh: zhPowerbank2,
-	en: enPowerbank2,
-	xjp: enPowerbank2,
-	tai: enPowerbank2,
-}
-
-export const spowerbank2 = powerbank2Map[lang]
-
-import zhPowerbank3 from '@/assets/img/swiper/powerbank3.jpg'
-import enPowerbank3 from '@/assets/enImg/swiper/powerbank3.jpg'
-
-const powerbank3Map = {
-	zh: zhPowerbank3,
-	en: enPowerbank3,
-	xjp: enPowerbank3,
-	tai: enPowerbank3,
-}
-
-export const spowerbank3 = powerbank3Map[lang]
-
 import zh2Icon from '@/assets/img/2Icon.png'
 import en2Icon from '@/assets/enImg/2Icon.png'
 import xjp2Icon from '@/assets/xjpImg/2Icon.png'
@@ -302,6 +266,18 @@ const chatLineMap = {
 }
 
 export const chatLine = chatLineMap[lang]
+
+import zhIphoneGift from '@/assets/img/iphoneGift.png'
+import taiIphoneGift from '@/assets/taiImg/iphoneGift.png'
+
+const iphoneGiftMap = {
+	zh: zhIphoneGift,
+	en: zhIphoneGift,
+	xjp: zhIphoneGift,
+	tai: taiIphoneGift,
+}
+
+export const iphoneGift = iphoneGiftMap[lang]
 
 // import zhChatBtn from '@/assets/img/chatBtn.png'
 // import enChatBtn from '@/assets/enImg/chatBtn.png'

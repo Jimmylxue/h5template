@@ -170,72 +170,100 @@ export const ippd4 = ippd4Map[lang]
 
 import zhippd5 from '@/assets/img/goodDetail/iphoneDetail/5.jpg'
 import enippd5 from '@/assets/enImg/goodDetail/iphoneDetail/5.jpg'
+import taiippd5 from '@/assets/taiImg/goodDetail/iphoneDetail/5.jpg'
 
 const ippd5Map = {
 	zh: zhippd5,
 	en: enippd5,
 	xjp: enippd5,
-	tai: enippd5,
+	tai: taiippd5,
 }
 
 export const ippd5 = ippd5Map[lang]
 
 import zhippd6 from '@/assets/img/goodDetail/iphoneDetail/6.jpg'
 import enippd6 from '@/assets/enImg/goodDetail/iphoneDetail/6.jpg'
+import taiippd6 from '@/assets/taiImg/goodDetail/iphoneDetail/6.jpg'
 
 const ippd6Map = {
 	zh: zhippd6,
 	en: enippd6,
 	xjp: enippd6,
-	tai: enippd6,
+	tai: taiippd6,
 }
 
 export const ippd6 = ippd6Map[lang]
 
 import zhippd7 from '@/assets/img/goodDetail/iphoneDetail/7.jpg'
 import enippd7 from '@/assets/enImg/goodDetail/iphoneDetail/7.jpg'
+import taiippd7 from '@/assets/taiImg/goodDetail/iphoneDetail/7.jpg'
 
 const ippd7Map = {
 	zh: zhippd7,
 	en: enippd7,
 	xjp: enippd7,
-	tai: enippd7,
+	tai: taiippd7,
 }
 
 export const ippd7 = ippd7Map[lang]
 
 import zhippd8 from '@/assets/img/goodDetail/iphoneDetail/8.jpg'
 import enippd8 from '@/assets/enImg/goodDetail/iphoneDetail/8.jpg'
+import taiippd8 from '@/assets/taiImg/goodDetail/iphoneDetail/8.jpg'
 
 const ippd8Map = {
 	zh: zhippd8,
 	en: enippd8,
 	xjp: enippd8,
-	tai: enippd8,
+	tai: taiippd8,
 }
 
 export const ippd8 = ippd8Map[lang]
 
 import zhippd9 from '@/assets/img/goodDetail/iphoneDetail/9.jpg'
 import enippd9 from '@/assets/enImg/goodDetail/iphoneDetail/9.jpg'
+import taiippd9 from '@/assets/taiImg/goodDetail/iphoneDetail/9.jpg'
 
 const ippd9Map = {
 	zh: zhippd9,
 	en: enippd9,
 	xjp: enippd9,
-	tai: enippd9,
+	tai: taiippd9,
 }
 
 export const ippd9 = ippd9Map[lang]
 
 import zhippd10 from '@/assets/img/goodDetail/iphoneDetail/10.jpg'
 import enippd10 from '@/assets/enImg/goodDetail/iphoneDetail/10.jpg'
+import taiippd10 from '@/assets/taiImg/goodDetail/iphoneDetail/10.jpg'
 
 const ippd10Map = {
 	zh: zhippd10,
 	en: enippd10,
 	xjp: enippd10,
-	tai: enippd10,
+	tai: taiippd10,
 }
 
 export const ippd10 = ippd10Map[lang]
+
+import taiippd11 from '@/assets/taiImg/goodDetail/iphoneDetail/11.jpg'
+
+const ippd11Map = {
+	zh: taiippd11,
+	en: taiippd11,
+	xjp: taiippd11,
+	tai: taiippd11,
+}
+
+export const ippd11 = ippd11Map[lang]
+
+import taiippd12 from '@/assets/taiImg/goodDetail/iphoneDetail/12.jpg'
+
+const ippd12Map = {
+	zh: taiippd12,
+	en: taiippd12,
+	xjp: taiippd12,
+	tai: taiippd12,
+}
+
+export const ippd12 = ippd12Map[lang]

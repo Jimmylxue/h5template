@@ -18,6 +18,9 @@ import { useCurrentGood } from './core/useCurrentGood'
 import { ProductDetailView } from './componentsV2/ProductDetailView'
 import { LineModalV2 } from './components/lineModalV2'
 import { LineModal } from './components/lineModal'
+import { SwiperV2 } from './componentsV2/Swiper/v2'
+
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 
 export function GoodDetailV2() {
 	const { t } = useTranslation()
@@ -47,7 +50,7 @@ export function GoodDetailV2() {
 	return (
 		<SKUContextProvider>
 			<div className=" bg-[#F7F7F7] pb-[90px]">
-				<Swipers />
+				{['tai'].includes(lang) ? <SwiperV2 /> : <Swipers />}
 				<div className=" w-full h-[65px] relative">
 					<img
 						src={activityBg}

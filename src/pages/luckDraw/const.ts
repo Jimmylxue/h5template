@@ -6,28 +6,18 @@ import {
 	oneZhe,
 	sorry,
 	jiujiu,
-	spowerbank1,
-	spowerbank2,
-	spowerbank3,
 	sorryLogo,
+	iphoneGift,
 } from '@/assets/index'
 
 import iphone from '../../assets/img/iphone2.jpg'
 import chongdianbao from '../../assets/img/chongdianbao.jpg'
-import iphoneGift from '../../assets/img/iphoneGift.png'
 import powerBankGift from '../../assets/img/powerBankGift.png'
-// 轮播图
-import siphone1 from '../../assets/img/swiper/iphone1.jpg'
-import siphone2 from '../../assets/img/swiper/iphone2.jpg'
-import siphone3 from '../../assets/img/swiper/iphone3.jpg'
-import siphone4 from '../../assets/img/swiper/iphone4.jpg'
-import siphone5 from '../../assets/img/swiper/iphone5.jpg'
-import siphone6 from '../../assets/img/swiper/iphone6.jpg'
 
-import blackPowerBank from '@/assets/img/swiper/blackPowrBank.jpg'
-import whitePowerBank from '@/assets/img/swiper/whitePowerBank.jpg'
-import bluePowerBank from '@/assets/img/swiper/bluePowerBank.jpg'
-import pinkPowerBank from '@/assets/img/swiper/pinkPowerBank.jpg'
+import blackPowerBank from '@/assets/img/sku/powerBank/blackPowrBank.jpg'
+import whitePowerBank from '@/assets/img/sku/powerBank/whitePowerBank.jpg'
+import bluePowerBank from '@/assets/img/sku/powerBank/bluePowerBank.jpg'
+import pinkPowerBank from '@/assets/img/sku/powerBank/pinkPowerBank.jpg'
 
 import iphoneComment1 from '@/assets/img/goodDetail/iphoneComment/1.jpg'
 import iphoneComment2 from '@/assets/img/goodDetail/iphoneComment/2.jpg'
@@ -54,6 +44,26 @@ import iphoneComment22 from '@/assets/img/goodDetail/iphoneComment/22.jpg'
 import iphoneComment23 from '@/assets/img/goodDetail/iphoneComment/23.jpg'
 import iphoneComment24 from '@/assets/img/goodDetail/iphoneComment/24.jpg'
 
+import v2iphoneComment1 from '@/assets/taiImg/goodDetail/iphoneComment/1.jpg'
+import v2iphoneComment2 from '@/assets/taiImg/goodDetail/iphoneComment/2.jpg'
+import v2iphoneComment3 from '@/assets/taiImg/goodDetail/iphoneComment/3.jpg'
+import v2iphoneComment4 from '@/assets/taiImg/goodDetail/iphoneComment/4.jpg'
+import v2iphoneComment5 from '@/assets/taiImg/goodDetail/iphoneComment/5.jpg'
+import v2iphoneComment6 from '@/assets/taiImg/goodDetail/iphoneComment/6.jpg'
+import v2iphoneComment7 from '@/assets/taiImg/goodDetail/iphoneComment/7.jpg'
+import v2iphoneComment8 from '@/assets/taiImg/goodDetail/iphoneComment/8.jpg'
+import v2iphoneComment9 from '@/assets/taiImg/goodDetail/iphoneComment/9.jpg'
+import v2iphoneComment10 from '@/assets/taiImg/goodDetail/iphoneComment/10.jpg'
+import v2iphoneComment11 from '@/assets/taiImg/goodDetail/iphoneComment/11.jpg'
+import v2iphoneComment12 from '@/assets/taiImg/goodDetail/iphoneComment/12.jpg'
+import v2iphoneComment13 from '@/assets/taiImg/goodDetail/iphoneComment/13.jpg'
+import v2iphoneComment14 from '@/assets/taiImg/goodDetail/iphoneComment/14.jpg'
+import v2iphoneComment15 from '@/assets/taiImg/goodDetail/iphoneComment/15.jpg'
+import v2iphoneComment16 from '@/assets/taiImg/goodDetail/iphoneComment/16.jpg'
+import v2iphoneComment17 from '@/assets/taiImg/goodDetail/iphoneComment/17.jpg'
+import v2iphoneComment18 from '@/assets/taiImg/goodDetail/iphoneComment/18.jpg'
+import v2iphoneComment19 from '@/assets/taiImg/goodDetail/iphoneComment/19.jpg'
+
 import {
 	pwpd1,
 	pwpd2,
@@ -74,6 +84,8 @@ import {
 	ippd8,
 	ippd9,
 	ippd10,
+	ippd11,
+	ippd12,
 } from '@/assets/goodDetail'
 
 import powerBankComment1_1 from '@/assets/img/goodDetail/powerBankComment/1-1.jpg'
@@ -108,8 +120,23 @@ import powerBankComment13_1 from '@/assets/img/goodDetail/powerBankComment/13-1.
 import powerBankComment14_1 from '@/assets/img/goodDetail/powerBankComment/14-1.jpg'
 
 import i18n from '../../lang/config'
+import {
+	pbsw1,
+	pbsw2,
+	pbsw3,
+	siphone1,
+	siphone2,
+	siphone3,
+	siphone4,
+	siphone5,
+	siphone6,
+} from '@/assets/swiper'
+import { ipsku1, ipsku2, ipsku3, ipsku4, ipsku5 } from '@/assets/sku'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'tai'
+
+const iphoneCommentV1 = ['zh', 'en', 'xjp'].includes(lang)
+const iphoneCommentV2 = ['tai'].includes(lang)
 
 export const PrizeList = [
 	{
@@ -149,7 +176,7 @@ export const PrizeList = [
 		borderRadius: 10,
 		originPrice: i18n.t('prizeList.powerBank.originPrice'),
 		originImage: chongdianbao,
-		swiperImages: [spowerbank1, spowerbank2, spowerbank3, powerBankGift],
+		swiperImages: [pbsw1, pbsw2, pbsw3, powerBankGift],
 		attrImages: [blackPowerBank, whitePowerBank, bluePowerBank, pinkPowerBank],
 		attrs: [
 			{
@@ -472,8 +499,11 @@ export const PrizeList = [
 		originPrice: i18n.t('prizeList.oneZhe.originPrice'),
 		price: i18n.t('prizeList.oneZhe.price'),
 		originImage: iphone,
-		swiperImages: [siphone1, siphone2, siphone3, siphone4, siphone5, siphone6],
-		attrImages: [siphone2, siphone3, siphone4, siphone5, siphone6],
+		swiperImages:
+			lang === 'tai'
+				? [siphone1, siphone2, siphone3, siphone4, siphone5]
+				: [siphone1, siphone2, siphone3, siphone4, siphone5, siphone6],
+		attrImages: [ipsku1, ipsku2, ipsku3, ipsku4, ipsku5],
 		discount: 1,
 		attrs: [
 			{
@@ -482,27 +512,27 @@ export const PrizeList = [
 				values: [
 					{
 						chooseAble: true,
-						src: siphone2,
+						src: ipsku1,
 						name: i18n.t('prizeList.oneZhe.colorAttrValue1'),
 					},
 					{
 						chooseAble: true,
-						src: siphone3,
+						src: ipsku2,
 						name: i18n.t('prizeList.oneZhe.colorAttrValue2'),
 					},
 					{
 						chooseAble: true,
-						src: siphone4,
+						src: ipsku3,
 						name: i18n.t('prizeList.oneZhe.colorAttrValue3'),
 					},
 					{
 						chooseAble: true,
-						src: siphone5,
+						src: ipsku4,
 						name: i18n.t('prizeList.oneZhe.colorAttrValue4'),
 					},
 					{
 						chooseAble: true,
-						src: siphone6,
+						src: ipsku5,
 						name: i18n.t('prizeList.oneZhe.colorAttrValue5'),
 					},
 				],
@@ -597,78 +627,99 @@ export const PrizeList = [
 		productDetailImgs: ['en', 'xjp'].includes(lang)
 			? [ippd1, ippd2, ippd3, ippd4, ippd5, ippd6]
 			: ['tai'].includes(lang)
-			? [ippd1, ippd2, ippd3, ippd4]
+			? [
+					ippd1,
+					ippd2,
+					ippd3,
+					ippd4,
+					ippd5,
+					ippd6,
+					ippd7,
+					ippd8,
+					ippd9,
+					ippd10,
+					ippd11,
+					ippd12,
+			  ]
 			: [ippd1, ippd2, ippd3, ippd4, ippd5, ippd6, ippd7, ippd8, ippd9, ippd10],
 		comments: [
 			{
 				commentId: 1,
-				imgs: [iphoneComment1, iphoneComment2, iphoneComment3],
+				imgs: iphoneCommentV1
+					? [iphoneComment1, iphoneComment2, iphoneComment3]
+					: [v2iphoneComment1, v2iphoneComment2],
 				text: i18n.t('prizeList.oneZhe.commentText1'),
 				userName: 'H***',
 				descText: i18n.t('prizeList.oneZhe.commentDescText1'),
 			},
 			{
 				commentId: 2,
-				imgs: [iphoneComment4, iphoneComment5],
+				imgs: iphoneCommentV1
+					? [iphoneComment4, iphoneComment5]
+					: [v2iphoneComment3, v2iphoneComment4],
 				text: i18n.t('prizeList.oneZhe.commentText2'),
 				userName: 'i***',
 				descText: i18n.t('prizeList.oneZhe.commentDescText2'),
 			},
 			{
 				commentId: 3,
-				imgs: [iphoneComment6, iphoneComment7],
+				imgs: iphoneCommentV1
+					? [iphoneComment6, iphoneComment7]
+					: [v2iphoneComment5, v2iphoneComment6, v2iphoneComment7],
 				text: i18n.t('prizeList.oneZhe.commentText3'),
 				userName: 'p***',
 				descText: i18n.t('prizeList.oneZhe.commentDescText3'),
 			},
 			{
 				commentId: 4,
-				imgs: [iphoneComment8, iphoneComment9],
+				imgs: iphoneCommentV1
+					? [iphoneComment8, iphoneComment9]
+					: [v2iphoneComment8, v2iphoneComment9, v2iphoneComment10],
 				text: i18n.t('prizeList.oneZhe.commentText4'),
 				userName: 'j***',
 				descText: i18n.t('prizeList.oneZhe.commentDescText4'),
 			},
 			{
 				commentId: 5,
-				imgs: [iphoneComment10, iphoneComment11],
+				imgs: iphoneCommentV1
+					? [iphoneComment10, iphoneComment11]
+					: [v2iphoneComment11, v2iphoneComment12],
 				text: i18n.t('prizeList.oneZhe.commentText5'),
 				userName: 'a***',
 				descText: i18n.t('prizeList.oneZhe.commentDescText5'),
 			},
 			{
 				commentId: 6,
-				imgs: [iphoneComment12, iphoneComment13, iphoneComment14],
+				imgs: iphoneCommentV1
+					? [iphoneComment12, iphoneComment13, iphoneComment14]
+					: [v2iphoneComment13, v2iphoneComment14, v2iphoneComment15],
 				text: i18n.t('prizeList.oneZhe.commentText6'),
 				userName: 'w***',
 				descText: i18n.t('prizeList.oneZhe.commentDescText6'),
 			},
 			{
 				commentId: 7,
-				imgs: [
-					iphoneComment15,
-					iphoneComment16,
-					iphoneComment17,
-					iphoneComment18,
-				],
+				imgs: iphoneCommentV1
+					? [iphoneComment15, iphoneComment16, iphoneComment17, iphoneComment18]
+					: [v2iphoneComment16],
 				text: i18n.t('prizeList.oneZhe.commentText7'),
 				userName: 'q***',
 				descText: i18n.t('prizeList.oneZhe.commentDescText7'),
 			},
 			{
 				commentId: 8,
-				imgs: [iphoneComment19, iphoneComment20],
+				imgs: iphoneCommentV1
+					? [iphoneComment19, iphoneComment20]
+					: [v2iphoneComment17],
 				text: i18n.t('prizeList.oneZhe.commentText8'),
 				userName: 'v***',
 				descText: i18n.t('prizeList.oneZhe.commentDescText8'),
 			},
 			{
 				commentId: 9,
-				imgs: [
-					iphoneComment21,
-					iphoneComment22,
-					iphoneComment23,
-					iphoneComment24,
-				],
+				imgs: iphoneCommentV1
+					? [iphoneComment21, iphoneComment22, iphoneComment23, iphoneComment24]
+					: [v2iphoneComment18],
 				text: i18n.t('prizeList.oneZhe.commentText9'),
 				userName: 'k***',
 				descText: i18n.t('prizeList.oneZhe.commentDescText9'),
