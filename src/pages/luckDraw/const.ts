@@ -62,7 +62,6 @@ import v2iphoneComment15 from '@/assets/taiImg/goodDetail/iphoneComment/15.jpg'
 import v2iphoneComment16 from '@/assets/taiImg/goodDetail/iphoneComment/16.jpg'
 import v2iphoneComment17 from '@/assets/taiImg/goodDetail/iphoneComment/17.jpg'
 import v2iphoneComment18 from '@/assets/taiImg/goodDetail/iphoneComment/18.jpg'
-import v2iphoneComment19 from '@/assets/taiImg/goodDetail/iphoneComment/19.jpg'
 
 import {
 	pwpd1,
@@ -136,7 +135,6 @@ import { ipsku1, ipsku2, ipsku3, ipsku4, ipsku5 } from '@/assets/sku'
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'tai'
 
 const iphoneCommentV1 = ['zh', 'en', 'xjp'].includes(lang)
-const iphoneCommentV2 = ['tai'].includes(lang)
 
 export const PrizeList = [
 	{
