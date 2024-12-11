@@ -22,6 +22,7 @@ import { useCheckLink, useUpdateLink, useUploadAddToCart } from '@/api/address'
 import { useFbData } from '@/hooks/useFb'
 import { useConfirmInput } from './component/ConfirmInput'
 import { useInviteLink } from './core'
+import { Luck2 } from './view/luck2'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 const memberCodeLength = Number(import.meta.env.VITE_APP_MEMBER_CODE_LENGTH)
@@ -550,6 +551,8 @@ export function LuckDraw() {
 						</div>
 					</div>
 				</div>
+
+				<Luck2 />
 			</div>
 			{videoNode}
 			{winNode}

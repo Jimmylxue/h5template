@@ -256,5 +256,12 @@
   },
   "home": {
     "title": "首页"
+  },
+  "luck2":{
+    "introduction":"活動介紹",
+    "goodRecommend":"好物推薦",
+    "inHome":"居家必備",
+    "push":"好物推播",
+    "jumpApp":"請在APP端操作"
   }
 }
