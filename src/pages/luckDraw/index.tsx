@@ -245,7 +245,7 @@ export function LuckDraw() {
 	const scrollToTask = () => {
 		document
 			.getElementById('taskContainer')
-			?.scrollIntoView({ behavior: 'smooth' })
+			?.scrollIntoView({ behavior: 'smooth', block: 'end' })
 	}
 
 	return (
@@ -340,7 +340,7 @@ export function LuckDraw() {
 														} else {
 															if (!bindMemberFirst) {
 																navigate(
-																	`/luck?shareMemberCode=15120dz&subSite=${
+																	`/app?shareMemberCode=15120dz&subSite=${
 																		subSite || 0
 																	}`,
 																	{
@@ -445,12 +445,12 @@ export function LuckDraw() {
 
 														if (!isNotAvailableLink && bindMemberFirst) {
 															if (useTempLink) {
-																navigate(`/luck?subSite=${subSite || 0}`, {
+																navigate(`/app?subSite=${subSite || 0}`, {
 																	replace: true,
 																})
 															} else {
 																navigate(
-																	`/luck?shareMemberCode=${inputValue}&subSite=${
+																	`/app?shareMemberCode=${inputValue}&subSite=${
 																		subSite || 0
 																	}`,
 																	{
@@ -468,12 +468,12 @@ export function LuckDraw() {
 												Toast.info(t('luckDraw.bindMemberCodeSuccess'))
 												if (!isNotAvailableLink && bindMemberFirst) {
 													if (useTempLink) {
-														navigate(`/luck?subSite=${subSite || 0}`, {
+														navigate(`/app?subSite=${subSite || 0}`, {
 															replace: true,
 														})
 													} else {
 														navigate(
-															`/luck?shareMemberCode=${inputValue}&subSite=${
+															`/app?shareMemberCode=${inputValue}&subSite=${
 																subSite || 0
 															}`,
 															{

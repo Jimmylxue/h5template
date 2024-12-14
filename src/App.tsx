@@ -19,10 +19,10 @@ function App() {
 			<ImagePreloader src={jinbi} type="audio" />
 			<Router>
 				<Routes>
-					<Route path="/luck" element={<LuckDraw />} />
+					<Route path="/app" element={<LuckDraw />} />
 					{/* <Route path="/good" element={<GoodDetail />} /> */}
 					<Route path="/good" element={<GoodDetailV2 />} />
-					<Route path="*" element={<Navigate to="/luck" replace />} />
+					<Route path="*" element={<Navigate to="/app" replace />} />
 				</Routes>
 			</Router>
 		</>
