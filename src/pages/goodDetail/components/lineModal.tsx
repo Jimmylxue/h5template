@@ -95,7 +95,7 @@ export const LineModal = observer(() => {
 									setTimeout(() => {
 										document
 											.getElementById('taskContainer')
-											?.scrollIntoView({ behavior: 'smooth' })
+											?.scrollIntoView({ behavior: 'smooth', block: 'end' })
 										if (good?.id === 2) {
 											glowEffect.addGlowEffect('reward-1')
 										} else {

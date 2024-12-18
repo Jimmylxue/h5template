@@ -205,8 +205,6 @@ export function LuckDraw() {
 		})
 	}, [isNotAvailableLink])
 
-	console.log('snowHas', hasRewardItem)
-
 	const startDraw = () => {
 		if (drawingRef.current) {
 			return
