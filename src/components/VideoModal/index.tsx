@@ -14,7 +14,7 @@ export function useVideoModal() {
 		>
 			<div className=" relative w-full h-full">
 				<Cross
-					className=" absolute right-4 top-5 z-[1] text-white"
+					className=" absolute right-4 top-5 z-[100] text-white"
 					fontSize="40"
 					onClick={() => {
 						console.log('ssda')

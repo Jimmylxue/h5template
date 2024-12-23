@@ -88,9 +88,7 @@ export function OtherProduct() {
 								<div className=" mt-2 text-[10px]">
 									{t('luck2.nowPriceText')}
 								</div>
-								<div className=" text-2xl font-light">
-									{t('luck2.prod1Now')}
-								</div>
+								<div className=" text-xl font-light">{t('luck2.prod1Now')}</div>
 							</div>
 							<img
 								src={disPrice1}
@@ -116,9 +114,7 @@ export function OtherProduct() {
 								<div className=" mt-2 text-[10px]">
 									{t('luck2.nowPriceText')}
 								</div>
-								<div className=" text-2xl font-light">
-									{t('luck2.prod2Now')}
-								</div>
+								<div className=" text-xl font-light">{t('luck2.prod2Now')}</div>
 							</div>
 							<img
 								src={disPrice2}
@@ -144,9 +140,7 @@ export function OtherProduct() {
 								<div className=" mt-2 text-[10px]">
 									{t('luck2.nowPriceText')}
 								</div>
-								<div className=" text-2xl font-light">
-									{t('luck2.prod3Now')}
-								</div>
+								<div className=" text-xl font-light">{t('luck2.prod3Now')}</div>
 							</div>
 							<img
 								src={disPrice3}
