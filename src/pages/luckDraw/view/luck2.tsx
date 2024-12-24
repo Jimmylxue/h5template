@@ -23,7 +23,7 @@ export function Luck2() {
 						setIsProduct(true)
 					}}
 				>
-					{t('luck2.introduction')}
+					{t('luck2.goodRecommend')}
 				</div>
 				<div
 					className={classNames('p-2 rounded-2xl', {
@@ -36,7 +36,7 @@ export function Luck2() {
 						setIsProduct(false)
 					}}
 				>
-					{t('luck2.goodRecommend')}
+					{t('luck2.introduction')}
 				</div>
 			</div>
 			{isProduct ? <OtherProduct /> : <LuckAbout />}

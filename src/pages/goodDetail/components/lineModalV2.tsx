@@ -8,6 +8,7 @@ import { randomJumpPage } from '@/utils/index'
 import { glowEffect } from '@/pages/common/glowEffect'
 import classNames from 'classnames'
 import { chatLine } from '@/assets/index'
+import { scrollToTask } from '@/pages/luckDraw'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
 
@@ -70,9 +71,7 @@ export const LineModalV2 = observer(() => {
 								fbq('trackCustom', 'confirmEnd')
 
 								setTimeout(() => {
-									document
-										.getElementById('taskContainer')
-										?.scrollIntoView({ behavior: 'smooth', block: 'end' })
+									scrollToTask()
 									if (good?.id === 2) {
 										glowEffect.addGlowEffect('reward-1')
 									} else {

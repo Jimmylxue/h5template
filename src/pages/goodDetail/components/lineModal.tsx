@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next'
 import { useCurrentGood } from '../core/useCurrentGood'
 import { randomJumpPage } from '@/utils/index'
 import { glowEffect } from '@/pages/common/glowEffect'
+import { scrollToTask } from '@/pages/luckDraw'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE
 
@@ -93,9 +94,7 @@ export const LineModal = observer(() => {
 									fbq('trackCustom', 'confirmEnd')
 
 									setTimeout(() => {
-										document
-											.getElementById('taskContainer')
-											?.scrollIntoView({ behavior: 'smooth', block: 'end' })
+										scrollToTask()
 										if (good?.id === 2) {
 											glowEffect.addGlowEffect('reward-1')
 										} else {

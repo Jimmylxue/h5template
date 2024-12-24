@@ -47,6 +47,12 @@ const useBindMemberConfirm =
 
 const isNotZh = lang !== 'zh'
 
+export const scrollToTask = () => {
+	document
+		.getElementById('taskContainer')
+		?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+}
+
 export function LuckDraw() {
 	const myLucky = useRef<any>()
 	const navigate = useNavigate()
@@ -240,12 +246,6 @@ export function LuckDraw() {
 		drawingRef.current = true
 	}
 
-	const scrollToTask = () => {
-		document
-			.getElementById('taskContainer')
-			?.scrollIntoView({ behavior: 'smooth', block: 'end' })
-	}
-
 	return (
 		<div
 			className={classNames(' w-screen ', {
@@ -271,6 +271,7 @@ export function LuckDraw() {
 			</div>
 
 			<div className=" py-6 -mt-6 ">
+				<div onClick={scrollToTask}>11</div>
 				<div className=" flex justify-center items-center">
 					<LuckyGrid
 						ref={myLucky}
