@@ -50,7 +50,7 @@ const isNotZh = lang !== 'zh'
 export const scrollToTask = () => {
 	document
 		.getElementById('taskContainer')
-		?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+		?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
 export function LuckDraw() {
@@ -271,7 +271,6 @@ export function LuckDraw() {
 			</div>
 
 			<div className=" py-6 -mt-6 ">
-				<div onClick={scrollToTask}>11</div>
 				<div className=" flex justify-center items-center">
 					<LuckyGrid
 						ref={myLucky}
@@ -377,6 +376,7 @@ export function LuckDraw() {
 					></LuckyGrid>
 				</div>
 
+				<div id="taskContainer" className=" my-2 h-3"></div>
 				<RewardList
 					hasDrawPrizeIds={hasDrawPrizeIds}
 					hasRewardItem={hasRewardItem}
@@ -389,10 +389,7 @@ export function LuckDraw() {
 				/>
 
 				<div className=" px-4 relative">
-					<div
-						id="taskContainer"
-						className="bg-[#fff] mx-auto mt-4 relative pt-10 pb-2 border px-4 text-[#333] rounded-2xl"
-					>
+					<div className="bg-[#fff] mx-auto mt-6 relative pt-10 pb-2 border px-4 text-[#333] rounded-2xl">
 						<div
 							className={`absolute px-3 rounded -top-2  z-[1] bg-contain bg-no-repeat text-white flex justify-center items-center text-xl left-1/2 -translate-x-1/2`}
 						>

@@ -82,7 +82,7 @@ export function RewardList({
 
 	return (
 		<>
-			<div className=" px-4 relative mt-6">
+			<div className=" px-4 relative">
 				<div
 					className={`absolute px-3 rounded -top-2  z-[1] bg-contain bg-no-repeat text-white flex justify-center items-center text-xl left-1/2 -translate-x-1/2`}
 				>
