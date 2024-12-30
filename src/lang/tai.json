@@ -11,11 +11,11 @@
     "bindMember":"ผูกสมาชิก",
     "inputMemberCodeText":"กรอกรหัสสมาชิก",
     "pleaseInputText":"กรุณากรอกรหัสสมาชิก",
-    "pleaseBindMemberCode":"หมายเลขสมาชิกของpandabuy",
+    "pleaseBindMemberCode":"ดาวน์โหลดแอปผูกบัญชีรหัสสมาชิก",
     "pleaseInputTreeMemberCode":"กรุณากรอกรหัสสมาชิกให้ถูกต้อง",
-    "inputMemberPlaceholder":"หมายเลขสมาชิกของpandabuy",
+    "inputMemberPlaceholder":"ดาวน์โหลดแอปผูกบัญชีรหัสสมาชิก",
     "bindMemberCodeSuccess":"ผูกรหัสสมาชิกเรียบร้อยแล้ว",
-    "bindModalTitle":"หมายเลขสมาชิกของpandabuy",
+    "bindModalTitle":"ดาวน์โหลดแอปผูกบัญชีรหัสสมาชิก",
     "editText":"แก้ไข",
     "bindText":"ผูก",
     "changeSuccessText":"การแก้ไขสำเร็จ",
@@ -78,7 +78,7 @@
     "toGain":"รับสินค้า",
     "onceAgain":"ลองอีกครั้ง - ยังเหลือ",
     "count":"ครั้ง",
-    "bindAppText":"หมายเลขสมาชิกของpandabuy",
+    "bindAppText":"ดาวน์โหลดแอปผูกบัญชีรหัสสมาชิก",
     "sorryText":"ขอบคุณที่เข้าร่วม"
   }, 
   "addressSelect":{

@@ -11,11 +11,11 @@
     "bindMember":"绑定會員",
     "inputMemberCodeText":"輸入會員碼",
     "pleaseInputText":"請輸入會員碼",
-    "pleaseBindMemberCode":"關聯pandabuy會員編碼",
+    "pleaseBindMemberCode":"下載APP綁定會員id編碼",
     "pleaseInputTreeMemberCode":"請輸入正確的會員碼",
-    "inputMemberPlaceholder":"關聯pandabuy會員編碼",
+    "inputMemberPlaceholder":"下載APP綁定會員id編碼",
     "bindMemberCodeSuccess":"會員碼綁定成功",
-    "bindModalTitle":"正確關聯pandabuy會員編碼",
+    "bindModalTitle":"正確下載APP綁定會員id編碼",
     "editText":"修改",
     "bindText":"绑定",
     "changeSuccessText":"修改成功",
@@ -78,7 +78,7 @@
     "toGain":"去领取",
     "onceAgain":"再来一次 - 剩餘",
     "count":"次",
-    "bindAppText":"關聯pandabuy會員編碼",
+    "bindAppText":"下載APP綁定會員id編碼",
     "sorryText":"感謝參與"
   },
   "addressSelect":{

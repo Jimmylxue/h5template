@@ -130,6 +130,7 @@ export function RewardList({
 									{reward.giftName}
 								</div>
 								<div
+									id={`reward-${index}-btn`}
 									className={classNames(
 										'w-[80px] h-[35px] bg-contain flex justify-center items-center',
 										{

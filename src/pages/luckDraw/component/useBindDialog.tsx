@@ -49,6 +49,7 @@ export function useBindDialog() {
 							setTimeout(() => {
 								addGlowEffect('memberCodeInput')
 								addGlowEffect('seeJiaoCheng')
+								addGlowEffect('reward-0-btn')
 							}, 200)
 						}}
 					>
