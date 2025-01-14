@@ -12,9 +12,13 @@ import pod9 from '@/assets/img/common/pod9.png'
 import pod10 from '@/assets/img/common/pod10.png'
 import otherTag from '@/assets/img/common/otherTag.png'
 import { disPrice1, disPrice2, disPrice3 } from '@/assets/luck2'
+import classNames from 'classnames'
+import { isEnglish } from '../core'
 
 export function OtherProduct() {
 	const { t } = useTranslation()
+
+	const isEn = isEnglish()
 
 	const jumpApp = () => {
 		Toast.info(t('luck2.jumpApp'))
@@ -88,7 +92,13 @@ export function OtherProduct() {
 								<div className=" mt-2 text-[10px]">
 									{t('luck2.nowPriceText')}
 								</div>
-								<div className=" text-xl font-light">{t('luck2.prod1Now')}</div>
+								<div
+									className={classNames(' text-xl font-light', {
+										' font-semibold': isEn,
+									})}
+								>
+									{t('luck2.prod1Now')}
+								</div>
 							</div>
 							<img
 								src={disPrice1}
@@ -114,7 +124,13 @@ export function OtherProduct() {
 								<div className=" mt-2 text-[10px]">
 									{t('luck2.nowPriceText')}
 								</div>
-								<div className=" text-xl font-light">{t('luck2.prod2Now')}</div>
+								<div
+									className={classNames(' text-xl font-light', {
+										' font-semibold': isEn,
+									})}
+								>
+									{t('luck2.prod2Now')}
+								</div>
 							</div>
 							<img
 								src={disPrice2}
@@ -124,10 +140,16 @@ export function OtherProduct() {
 						</div>
 
 						<div
-							className=" w-[95px] h-[160px] bg-[#fef9f9] rounded-lg text-xs flex flex-col justify-center items-center pt-2 relative"
+							className={classNames(
+								' w-[95px] h-[160px] bg-[#fef9f9] rounded-lg text-xs flex flex-col justify-center items-center pt-2 relative'
+							)}
 							onClick={jumpApp}
 						>
-							<div className=" text-center font-semibold">
+							<div
+								className={classNames(' text-center font-semibold', {
+									'px-4': isEn,
+								})}
+							>
 								{t('luck2.prod3Name')}
 							</div>
 							<div className=" flex justify-center mt-2">
@@ -140,7 +162,13 @@ export function OtherProduct() {
 								<div className=" mt-2 text-[10px]">
 									{t('luck2.nowPriceText')}
 								</div>
-								<div className=" text-xl font-light">{t('luck2.prod3Now')}</div>
+								<div
+									className={classNames(' text-xl font-light', {
+										' font-semibold': isEn,
+									})}
+								>
+									{t('luck2.prod3Now')}
+								</div>
 							</div>
 							<img
 								src={disPrice3}
@@ -152,8 +180,15 @@ export function OtherProduct() {
 
 					<div className=" w-full h-[80px] bg-gradient-to-br from-[#fae9ee] to-[#ede3fb] rounded-xl flex items-center justify-between px-2 mt-4 relative">
 						<img src={pod4} className=" w-[45%] flex-shrink-0" alt="" />
-						<div className=" text-center px-2 font-semibold flex flex-col items-center">
-							{t('luck2.gainProductText')}
+						<div
+							className={classNames(
+								' text-center px-2 font-semibold flex flex-col items-center',
+								{
+									'min-w-[200px] -ml-2 leading-4': isEn,
+								}
+							)}
+						>
+							<div className=" mb-2">{t('luck2.gainProductText')}</div>
 							<div
 								className=" text-[10px] bg-[#f9d9b6] text-[#88552e] flex w-fit px-4 py-1 rounded-2xl"
 								onClick={jumpApp}
@@ -174,7 +209,11 @@ export function OtherProduct() {
 							className=" flex bg-white rounded-2xl justify-between px-2 w-[49%] py-4"
 							onClick={jumpApp}
 						>
-							<img src={pod5} className="  w-[45%] flex flex-shrink-0" alt="" />
+							<img
+								src={pod5}
+								className="  w-[45%] h-[65px] flex flex-shrink-0"
+								alt=""
+							/>
 							<div className=" flex flex-col justify-center items-center">
 								<div className=" text-2xl text-[#9f3cbb]">
 									{t('luck2.smartUse1Price')}
@@ -186,7 +225,11 @@ export function OtherProduct() {
 							className=" flex bg-white rounded-2xl justify-between px-2 w-[49%] py-4 "
 							onClick={jumpApp}
 						>
-							<img src={pod6} className="  w-[45%] flex flex-shrink-0" alt="" />
+							<img
+								src={pod6}
+								className="  w-[45%] h-[65px] flex flex-shrink-0"
+								alt=""
+							/>
 							<div className=" flex flex-col justify-center items-center">
 								<div className=" text-2xl text-[#9f3cbb]">
 									{t('luck2.smartUse2Price')}
@@ -215,11 +258,19 @@ export function OtherProduct() {
 						onClick={jumpApp}
 					>
 						<div className=" font-semibold">{t('luck2.miaosha2Text')}</div>
-						<div>{t('luck2.miaosha2Time')}</div>
-						<div className=" mt-4 leading-3">{t('luck2.miaosha2Desc')}</div>
+						<div className="">{t('luck2.miaosha2Time')}</div>
+						<div
+							className={classNames(' mt-4 leading-3', {
+								'opacity-0': isEn,
+							})}
+						>
+							{t('luck2.miaosha2Desc')}
+						</div>
 						<img
 							src={pod8}
-							className=" absolute w-[42%] right-2 bottom-2"
+							className={classNames(' absolute w-[42%] right-2 bottom-2', {
+								'w-[32%]': isEn,
+							})}
 							alt=""
 						/>
 					</div>
@@ -228,18 +279,26 @@ export function OtherProduct() {
 						onClick={jumpApp}
 					>
 						<div className=" font-semibold">{t('luck2.miaosha3Text')}</div>
-						<div>{t('luck2.miaosha3Time')}</div>
-						<div className=" mt-4 leading-3">{t('luck2.miaosha3Desc')}</div>
+						<div className=" mb-8">{t('luck2.miaosha3Time')}</div>
+						<div
+							className={classNames(' mt-4 leading-3', {
+								'opacity-0': isEn,
+							})}
+						>
+							{t('luck2.miaosha3Desc')}
+						</div>
 						<img
 							src={pod9}
-							className=" absolute w-[42%] right-2 bottom-2"
+							className={classNames(' absolute w-[42%] right-2 bottom-2', {
+								'w-[32%]': isEn,
+							})}
 							alt=""
 						/>
 					</div>
 				</div>
 			</div>
 
-			<div className="px-4">
+			<div className="px-4" onClick={jumpApp}>
 				<div className=" w-full bg-gradient-to-br from-[#f7e1d5] to-[#ffffff] py-1 pb-4 rounded-2xl mt-4 relative">
 					<img
 						src={otherTag}

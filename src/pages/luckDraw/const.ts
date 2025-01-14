@@ -8,6 +8,7 @@ import {
 	jiujiu,
 	sorryLogo,
 	iphoneGift,
+	_0zhe,
 } from '@/assets/index'
 
 import iphone from '../../assets/img/iphone2.jpg'
@@ -128,13 +129,13 @@ import {
 	siphone3,
 	siphone4,
 	siphone5,
-	siphone6,
+	// siphone6,
 } from '@/assets/swiper'
 import { ipsku1, ipsku2, ipsku3, ipsku4, ipsku5 } from '@/assets/sku'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'tai'
 
-const iphoneCommentV1 = ['zh', 'en', 'xjp'].includes(lang)
+const iphoneCommentV1 = ['en', 'xjp'].includes(lang)
 
 export const PrizeList = [
 	{
@@ -497,10 +498,11 @@ export const PrizeList = [
 		originPrice: i18n.t('prizeList.oneZhe.originPrice'),
 		price: i18n.t('prizeList.oneZhe.price'),
 		originImage: iphone,
-		swiperImages:
-			lang === 'tai'
-				? [siphone1, siphone2, siphone3, siphone4, siphone5]
-				: [siphone1, siphone2, siphone3, siphone4, siphone5, siphone6],
+		swiperImages: ['tai'].includes(lang)
+			? [siphone1, siphone2, siphone3, siphone4, siphone5]
+			: ['zh'].includes(lang)
+			? [siphone1, siphone2, siphone3, siphone4]
+			: [siphone1, siphone2, siphone3, siphone4, siphone5],
 		attrImages: [ipsku1, ipsku2, ipsku3, ipsku4, ipsku5],
 		discount: 1,
 		attrs: [
@@ -623,7 +625,7 @@ export const PrizeList = [
 			},
 		],
 		productDetailImgs: ['en', 'xjp'].includes(lang)
-			? [ippd1, ippd2, ippd3, ippd4, ippd5, ippd6]
+			? [ippd1, ippd2]
 			: ['tai'].includes(lang)
 			? [
 					ippd1,
@@ -639,7 +641,7 @@ export const PrizeList = [
 					ippd11,
 					ippd12,
 			  ]
-			: [ippd1, ippd2, ippd3, ippd4, ippd5, ippd6, ippd7, ippd8, ippd9, ippd10],
+			: [ippd1, ippd2, ippd3],
 		comments: [
 			{
 				commentId: 1,
@@ -731,7 +733,7 @@ export const PrizeList = [
 		background: '#fefffa',
 		imgs: [
 			{
-				src: sorry,
+				src: _0zhe,
 				width: 100,
 				height: 100,
 			},

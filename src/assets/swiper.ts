@@ -40,11 +40,12 @@ const pbsw3Map = {
 export const pbsw3 = pbsw3Map[lang]
 
 import zhSwiperIPhone1 from '@/assets/img/swiper/iphone1.jpg'
+import enSwiperIPhone1 from '@/assets/enImg/swiper/iphone1.jpg'
 import taiSwiperIPhone1 from '@/assets/taiImg/swiper/iphone1.jpg'
 
 const siphone1Map = {
 	zh: zhSwiperIPhone1,
-	en: zhSwiperIPhone1,
+	en: enSwiperIPhone1,
 	xjp: zhSwiperIPhone1,
 	tai: taiSwiperIPhone1,
 }
@@ -52,11 +53,12 @@ const siphone1Map = {
 export const siphone1 = siphone1Map[lang]
 
 import zhSwiperIPhone2 from '@/assets/img/swiper/iphone2.jpg'
+import enSwiperIPhone2 from '@/assets/enImg/swiper/iphone2.jpg'
 import taiSwiperIPhone2 from '@/assets/taiImg/swiper/iphone2.jpg'
 
 const siphone2Map = {
 	zh: zhSwiperIPhone2,
-	en: zhSwiperIPhone2,
+	en: enSwiperIPhone2,
 	xjp: zhSwiperIPhone2,
 	tai: taiSwiperIPhone2,
 }
@@ -64,11 +66,12 @@ const siphone2Map = {
 export const siphone2 = siphone2Map[lang]
 
 import zhSwiperIPhone3 from '@/assets/img/swiper/iphone3.jpg'
+import enSwiperIPhone3 from '@/assets/enImg/swiper/iphone3.jpg'
 import taiSwiperIPhone3 from '@/assets/taiImg/swiper/iphone3.jpg'
 
 const siphone3Map = {
 	zh: zhSwiperIPhone3,
-	en: zhSwiperIPhone3,
+	en: enSwiperIPhone3,
 	xjp: zhSwiperIPhone3,
 	tai: taiSwiperIPhone3,
 }
@@ -76,11 +79,12 @@ const siphone3Map = {
 export const siphone3 = siphone3Map[lang]
 
 import zhSwiperIPhone4 from '@/assets/img/swiper/iphone4.jpg'
+import enSwiperIPhone4 from '@/assets/enImg/swiper/iphone4.jpg'
 import taiSwiperIPhone4 from '@/assets/taiImg/swiper/iphone4.jpg'
 
 const siphone4Map = {
 	zh: zhSwiperIPhone4,
-	en: zhSwiperIPhone4,
+	en: enSwiperIPhone4,
 	xjp: zhSwiperIPhone4,
 	tai: taiSwiperIPhone4,
 }
@@ -88,11 +92,12 @@ const siphone4Map = {
 export const siphone4 = siphone4Map[lang]
 
 import zhSwiperIPhone5 from '@/assets/img/swiper/iphone5.jpg'
+import enSwiperIPhone5 from '@/assets/enImg/swiper/iphone5.jpg'
 import taiSwiperIPhone5 from '@/assets/taiImg/swiper/iphone5.jpg'
 
 const siphone5Map = {
 	zh: zhSwiperIPhone5,
-	en: zhSwiperIPhone5,
+	en: enSwiperIPhone5,
 	xjp: zhSwiperIPhone5,
 	tai: taiSwiperIPhone5,
 }

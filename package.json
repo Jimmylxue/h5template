@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --mode production",
+    "dev": "vite --mode production2",
     "dev:en": "vite --mode en",
     "dev:xjp": "vite --mode xjp",
     "dev:tai": "vite --mode tai",

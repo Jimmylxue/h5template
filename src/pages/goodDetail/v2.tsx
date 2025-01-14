@@ -50,7 +50,7 @@ export function GoodDetailV2() {
 	return (
 		<SKUContextProvider>
 			<div className=" bg-[#F7F7F7] pb-[90px]">
-				{['tai'].includes(lang) ? <SwiperV2 /> : <Swipers />}
+				{['tai', 'zh', 'en'].includes(lang) ? <SwiperV2 /> : <Swipers />}
 				<div className=" w-full h-[65px] relative">
 					<img
 						src={activityBg}

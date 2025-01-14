@@ -38,7 +38,7 @@ export function SwiperV2() {
 	}
 
 	return (
-		<div className=" w-full relative">
+		<div className=" w-full  relative">
 			<Swiper ref={swipperRef} enabled={false} indicator={() => null}>
 				{good?.swiperImages?.map((item, index) => (
 					<Swiper.Item key={index}>
@@ -75,6 +75,7 @@ export function SwiperV2() {
 							key={index}
 							onClick={() => {
 								swipperRef.current?.swipeTo(index)
+								setCurrentIndex(index)
 							}}
 						>
 							<img src={item} alt="" />

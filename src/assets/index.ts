@@ -135,12 +135,13 @@ const jiujiuMap = {
 export const jiujiu = jiujiuMap[lang]
 
 import zhSorryLogo from '@/assets/img/sorryLogo.png'
+import enSorryLogo from '@/assets/enImg/sorryLogo.png'
 import taiSorryLogo from '@/assets/taiImg/sorryLogo.png'
 
 const sorryLogoMap = {
 	zh: zhSorryLogo,
-	en: zhSorryLogo,
-	xjp: zhSorryLogo,
+	en: enSorryLogo,
+	xjp: enSorryLogo,
 	tai: taiSorryLogo,
 }
 
@@ -278,6 +279,18 @@ const iphoneGiftMap = {
 }
 
 export const iphoneGift = iphoneGiftMap[lang]
+
+import _0Zhe from '@/assets/img/sorry.png'
+import en_0Zhe from '@/assets/enImg/0zhe.png'
+
+const _0ZheMap = {
+	zh: _0Zhe,
+	en: en_0Zhe,
+	xjp: _0Zhe,
+	tai: _0Zhe,
+}
+
+export const _0zhe = _0ZheMap[lang]
 
 // import zhChatBtn from '@/assets/img/chatBtn.png'
 // import enChatBtn from '@/assets/enImg/chatBtn.png'

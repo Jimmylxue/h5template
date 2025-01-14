@@ -96,7 +96,7 @@ export function useWinPrize() {
 					)}
 					{modalShow && (
 						<div className="bg-[url('/src/assets/img/dialogBg.png')] bg-[length:100%_100%] bg-no-repeat w-3/4 pb-5 rounded-lg relative">
-							{showIcon && (
+							{showIcon && !['en', 'xjp'].includes(lang) && (
 								<>
 									{isTai ? (
 										<img
@@ -110,7 +110,7 @@ export function useWinPrize() {
 											// @ts-ignore
 											src={iconMap[prizeMsg.current?.id]}
 											alt=""
-											className=" size-[70px] absolute right-[45px] top-[100px]"
+											className=" size-[70px] absolute right-[45px] top-[80px]"
 										/>
 									)}
 								</>

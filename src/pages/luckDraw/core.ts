@@ -1,6 +1,8 @@
 import { useLocation } from 'react-router-dom'
 import { glowEffect } from '../common/glowEffect'
 
+const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'xjp' | 'tai'
+
 const isUseNewInviteLink =
 	import.meta.env.VITE_APP_USE_NEW_INVITE_LINK === 'true'
 
@@ -43,4 +45,8 @@ export function useInviteLink() {
 		shareMemberCode,
 		utm_id,
 	}
+}
+
+export function isEnglish() {
+	return ['en', 'xjp'].includes(lang)
 }
