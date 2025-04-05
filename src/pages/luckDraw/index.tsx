@@ -68,8 +68,6 @@ export function LuckDraw() {
 
 	const { isInviteLink, shareMemberCode } = useInviteLink()
 
-	console.log('isInviteLink', isInviteLink)
-
 	const subSite = query.get('subSite')
 
 	const audioRef = useRef(null)

@@ -24,7 +24,7 @@ export function LuckAbout() {
 				<div className=" w-full bg-white px-2 pt-10 pb-4 mt-8 relative">
 					<div className=" w-[150px] h-[40px] absolute left-1/2 -translate-x-1/2 -top-[10px] flex justify-center items-center">
 						<img src={comTitle} alt="" className=" absolute" />
-						<div className=" absolute text-white text-lg">
+						<div className=" absolute text-white text-base">
 							{t('luck2.goodIntroTitle')}
 						</div>
 					</div>
@@ -51,7 +51,7 @@ export function LuckAbout() {
 				<div className=" w-full bg-white px-2 text-sm pt-10 pb-2 relative mt-8">
 					<div className=" w-[150px] h-[40px] absolute left-1/2 -translate-x-1/2 -top-[10px] flex justify-center items-center">
 						<img src={comTitle} alt="" className=" absolute" />
-						<div className=" absolute text-white text-lg">
+						<div className=" absolute text-white text-base">
 							{t('luck2.ruleTitle')}
 						</div>
 					</div>
@@ -104,7 +104,7 @@ export function LuckAbout() {
 				<div className=" w-full bg-white mt-8 px-2 text-sm pt-10 pb-4 relative">
 					<div className=" w-[150px] h-[40px] absolute left-1/2 -translate-x-1/2 -top-[10px] flex justify-center items-center">
 						<img src={comTitle} alt="" className=" absolute" />
-						<div className=" absolute text-white text-lg">
+						<div className=" absolute text-white text-base">
 							{t('luck2.noticeTitle')}
 						</div>
 					</div>

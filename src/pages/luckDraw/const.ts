@@ -135,7 +135,7 @@ import { ipsku1, ipsku2, ipsku3, ipsku4, ipsku5 } from '@/assets/sku'
 
 const lang = import.meta.env.VITE_APP_LANGUAGE as 'zh' | 'en' | 'tai'
 
-const iphoneCommentV1 = ['en', 'xjp'].includes(lang)
+const iphoneCommentV1 = ['xjp'].includes(lang)
 
 export const PrizeList = [
 	{

@@ -307,7 +307,7 @@ export function OtherProduct() {
 					/>
 
 					<div className=" relative w-fit ml-4 mt-2 ">
-						<div className=" relative z-10">{t('luck2.renqiTitle')}</div>
+						<div className=" relative z-[2]">{t('luck2.renqiTitle')}</div>
 						<div className=" absolute w-full h-[4px] bg-[#cfb9f7] bottom-1"></div>
 					</div>
 
